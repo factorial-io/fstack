@@ -1,4 +1,4 @@
-# @factorial/javascript
+# @factorial/stack-javascript
 
 This is the JavaScript plugin for `@factorial/core`.
 

@@ -1,4 +1,4 @@
-# @factorial/core
+# @factorial/stack-core
 
 This is the core package for the [factorial frontend stack](http://www.github.com/factorial-io/fstack).
 

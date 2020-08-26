@@ -1,4 +1,4 @@
-# @factorial/twig
+# @factorial/stack-twig
 
 This is the Twig plugin for `@factorial/core`.
 

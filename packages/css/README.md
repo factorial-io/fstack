@@ -1,4 +1,4 @@
-# @factorial/css
+# @factorial/stack-css
 
 This is the CSS plugin for `@factorial/core`.
 
