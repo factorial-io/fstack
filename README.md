@@ -13,6 +13,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 - [Options](#options)
 - [Usage](#usage)
 - [Commands](#commands)
+  - [init](#init)
   - [lint](#lint)
   - [build](#build)
   - [watch](#watch)
@@ -92,6 +93,14 @@ module.exports = {
 You can either set a `targets` or `browserslist` key in your `package.json`. The former wins over the latter.
 
 ## Commands
+
+### init
+
+```bash
+yarn factorial init
+```
+
+This will allow you to pick the packages you want to install and afterwards create a configuration file. If it already exists, you can skip that step.
 
 ### lint
 
