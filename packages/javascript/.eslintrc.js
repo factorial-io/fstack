@@ -27,7 +27,7 @@ module.exports = {
     describe: true,
     it: true,
     jest: true,
-    test: true
+    test: true,
     expect: true,
   },
 };
