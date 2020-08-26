@@ -13,7 +13,7 @@ const packages = ["css", "javascript", "twig"];
  * @returns {string}
  */
 function getNodeModuleName(name) {
-  return `@factorial/${name}`;
+  return `@factorial/stack-${name}`;
 }
 
 /**
@@ -28,9 +28,7 @@ function installPackages(selectedPackages) {
   return new Promise((resolve) => {
     const process = spawn("yarn", [
       "add",
-      ...selectedPackages.map(
-        (p) => `git+https://source.factorial.io/fe-stack/${p}.git`
-      ),
+      ...selectedPackages.map((p) => getNodeModuleName(p)),
     ]);
 
     process.stdout.on("data", (data) => {
