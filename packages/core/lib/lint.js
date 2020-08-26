@@ -35,9 +35,13 @@ module.exports = function lint(config, fileType) {
   // add the corresponding linters to a dedicated array
   if (fileTypes) {
     fileTypes.forEach((type) => {
-      linters.push(
-        fileTypeLinters.find(({ extensions }) => extensions.includes(type))
+      const linter = fileTypeLinters.find(({ extensions }) =>
+        extensions.includes(type)
       );
+
+      if (linter) {
+        linters.push(linter);
+      }
     });
   }
 

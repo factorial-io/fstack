@@ -47,9 +47,13 @@ module.exports = async function build(config, fileType) {
   // add the corresponding builders to a dedicated array
   if (fileTypes) {
     fileTypes.forEach((type) => {
-      builders.push(
-        fileTypeBuilders.find(({ extensions }) => extensions.includes(type))
+      const builder = fileTypeBuilders.find(({ extensions }) =>
+        extensions.includes(type)
       );
+
+      if (builder) {
+        builders.push(builder);
+      }
     });
   }
 

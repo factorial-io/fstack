@@ -35,9 +35,13 @@ module.exports = function test(config, fileType) {
   // add the corresponding tests to a dedicated array
   if (fileTypes) {
     fileTypes.forEach((type) => {
-      testers.push(
-        fileTypeTests.find(({ extensions }) => extensions.includes(type))
+      const tester = fileTypeTests.find(({ extensions }) =>
+        extensions.includes(type)
       );
+
+      if (tester) {
+        testers.push(tester);
+      }
     });
   }
 
