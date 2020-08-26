@@ -1,0 +1,34 @@
+{
+  "name": "@factorial/stack-css",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factorial-io/fstack.git"
+  },
+  "author": "Michael Großklaus <michael@factorial.io>",
+  "scripts": {
+    "release": "standard-version -t css/v"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "chalk": "^4.1.0",
+    "cssnano": "^4.1.10",
+    "fs-extra": "^9.0.1",
+    "postcss": "^7.0.32",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-import": "^12.0.1",
+    "postcss-url": "^8.0.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-suitcss": "^15.0.0",
+    "stylelint-selector-bem-pattern": "^2.1.0"
+  }
+}

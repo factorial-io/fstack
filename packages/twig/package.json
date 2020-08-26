@@ -1,0 +1,24 @@
+{
+  "name": "@factorial/stack-twig",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factorial-io/fstack.git"
+  },
+  "author": "Michael Großklaus <michael@factorial.io>",
+  "scripts": {
+    "release": "standard-version -t twig/v"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "peerDependencies": {
+    "twig-testing-library": "^1.1.1"
+  }
+}

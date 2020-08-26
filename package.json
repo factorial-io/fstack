@@ -1,0 +1,30 @@
+{
+  "name": "stack",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factorial-io/fstack.git"
+  },
+  "author": "Michael Großklaus <michael@factorial.io>",
+  "devDependencies": {
+    "deepmerge": "^4.2.2",
+    "eslint": "^7.7.0",
+    "jest": "^26.4.2",
+    "standard-version": "^8.0.2"
+  },
+  "dependencies": {
+    "@factorial/core": "file:packages/core",
+    "@factorial/css": "file:packages/css",
+    "@factorial/javascript": "file:packages/javascript",
+    "@factorial/twig": "file:packages/twig"
+  },
+  "scripts": {
+    "lint": "eslint packages",
+    "test": "jest --testPathIgnorePatterns test.js",
+    "core:release": "yarn --cwd packages/core release",
+    "css:release": "yarn --cwd packages/css release",
+    "javascript:release": "yarn --cwd packages/javascript release",
+    "twig:release": "yarn --cwd packages/twig release"
+  }
+}
