@@ -5,17 +5,12 @@ const { spawn } = require("child_process");
 const { getAdditionalParams } = require("./_helpers");
 
 /**
- * Lints all JS files in `rootFolder`, logs the result,
- * resolves with true or false based on linting result
- * or rejects if an error occured.
- *
- * @param {object} obj - the user configuration object
- * @param {string} obj.rootFolder - the root folder for linting files
- * @param {string} obj.testsFolder - the tests folder for linting files
- * @param {Array} obj.use - the extension passed by the user
- * @returns {Promise} - gets resolved with a boolean, describes if JS linting failed or not
+ * @param {Array} use
+ * @param {string} rootFolder
+ * @param {string} testsFolder
+ * @returns {Array}
  */
-module.exports = function lintJS({ rootFolder, testsFolder, use }) {
+function getArgs(use, rootFolder, testsFolder) {
   const args = [
     rootFolder,
     testsFolder,
@@ -32,6 +27,23 @@ module.exports = function lintJS({ rootFolder, testsFolder, use }) {
       });
     }
   });
+
+  return args;
+}
+
+/**
+ * Lints all JS files in `rootFolder`, logs the result,
+ * resolves with true or false based on linting result
+ * or rejects if an error occured.
+ *
+ * @param {object} obj
+ * @param {string} obj.rootFolder
+ * @param {string} obj.testsFolder
+ * @param {Array} obj.use
+ * @returns {Promise} - gets resolved with a boolean, describes if JS linting failed or not
+ */
+module.exports = function lintJS({ rootFolder, testsFolder, use }) {
+  const args = getArgs(use, rootFolder, testsFolder);
 
   return new Promise((resolve) => {
     const process = spawn("./node_modules/.bin/eslint", args);

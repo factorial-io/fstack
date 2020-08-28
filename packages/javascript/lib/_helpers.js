@@ -4,10 +4,17 @@ module.exports = {
    * @returns {Array}
    */
   getAdditionalParams(command) {
-    const index = process.argv.indexOf(command);
+    const indexCommand = process.argv.indexOf(command);
 
-    if (index >= 0) {
-      return process.argv.slice(index + 1);
+    if (indexCommand >= 0) {
+      const args = process.argv.slice(indexCommand + 1);
+
+      if (args.includes("--only")) {
+        const indexOnly = args.indexOf("--only");
+        args.splice(indexOnly, 2);
+      }
+
+      return args;
     }
 
     return [];

@@ -5,8 +5,12 @@ const { spawn } = require("child_process");
 
 const { getAdditionalParams } = require("./_helpers");
 
-module.exports = function testJS({ rootFolder }) {
-  let args = [
+/**
+ * @param {string} rootFolder
+ * @returns {Array}
+ */
+function getArgs(rootFolder) {
+  const args = [
     "--config",
     path.join(__dirname, "../jest.config.js"),
     "--colors",
@@ -17,7 +21,16 @@ module.exports = function testJS({ rootFolder }) {
     `${rootFolder.replace(`${process.cwd()}/`, "")}/**/*.js`,
   ];
 
-  args = [...args, ...getAdditionalParams("test")];
+  return [...args, ...getAdditionalParams("test")];
+}
+
+/**
+ * @param {object} obj
+ * @param {string} obj.rootFolder
+ * @returns {Promise} gets resolved with a boolean, describing if the tests failed or not
+ */
+module.exports = function testJS({ rootFolder }) {
+  const args = getArgs(rootFolder);
 
   return new Promise((resolve) => {
     const process = spawn("./node_modules/.bin/jest", args);

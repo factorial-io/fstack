@@ -9,6 +9,7 @@ module.exports = {
   plugins: ["prettier", "jsdoc"],
   rules: {
     "prettier/prettier": "error",
+    "no-use-before-define": ["error", { functions: false }],
     "jsdoc/require-jsdoc": [
       "warn",
       {

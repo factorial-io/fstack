@@ -1,5 +1,4 @@
 /* eslint no-console: 0 */
-
 const chalk = require("chalk");
 const rollup = require("rollup");
 const babel = require("@rollup/plugin-babel");
@@ -9,16 +8,77 @@ const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
 
 /**
+ * @param {Array} use
+ * @param {string} rootFolder
+ * @param {object} targets
+ * @returns {Array}
+ */
+function getPlugins(use, rootFolder, targets) {
+  const additionalPlugins = [];
+
+  use.forEach((extension) => {
+    if (extension.build && extension.build.js) {
+      extension.build.js.plugins.forEach((plugin) => {
+        additionalPlugins.push(plugin);
+      });
+    }
+  });
+
+  const plugins = [
+    babel.babel({
+      babelHelpers: "bundled",
+      plugins: [
+        require.resolve("@babel/plugin-syntax-dynamic-import"),
+        require.resolve("@babel/plugin-proposal-object-rest-spread"),
+      ],
+      presets: [
+        [
+          require.resolve("@babel/preset-env"),
+          {
+            modules: false,
+            targets,
+          },
+        ],
+      ],
+    }),
+    url({
+      limit: 0,
+      fileName: "[dirname][name][extname]",
+      sourceDir: rootFolder.replace(`${process.cwd()}/`, ""),
+    }),
+    nodeResolve(),
+    commonjs({ transformMixedEsModules: true }),
+    ...additionalPlugins,
+  ];
+
+  if (process.env.NODE_ENV === "production") {
+    plugins.push(terser.terser());
+  }
+
+  return plugins;
+}
+
+/**
+ * @param {object} targets
+ * @returns {string}
+ */
+function getFormat(targets) {
+  if (targets.node && targets.browsers) return "umd";
+  if (targets.node) return "cjs";
+  return "iife";
+}
+
+/**
  * Compiles the JS entry files with Babel and rollup
  * and saves the output files in `distFolder`.
  *
- * @param {object} obj - the configuration object
- * @param {Array} obj.use - the additional extensions
- * @param {string} obj.rootFolder - the root folder where the components and assets live
- * @param {Array} obj.jsFiles - the js entry files
- * @param {string} obj.distFolder - the folder where the files should be put
- * @param {object} obj.targets - the target configuration, can container `node` and `browsers`
- * @returns {Promise} - Gets resolved when building is done
+ * @param {object} obj
+ * @param {Array} obj.use
+ * @param {string} obj.rootFolder
+ * @param {Array} obj.jsFiles
+ * @param {string} obj.distFolder
+ * @param {object} obj.targets
+ * @returns {Promise}
  */
 module.exports = function buildJS({
   use,
@@ -28,57 +88,9 @@ module.exports = function buildJS({
   targets,
 }) {
   if (jsFiles.length > 0) {
-    const additionalPlugins = [];
-
-    use.forEach((extension) => {
-      if (extension.build && extension.build.js) {
-        extension.build.js.plugins.forEach((plugin) => {
-          additionalPlugins.push(plugin);
-        });
-      }
-    });
-
-    const plugins = [
-      babel.babel({
-        babelHelpers: "bundled",
-        plugins: [
-          require.resolve("@babel/plugin-syntax-dynamic-import"),
-          require.resolve("@babel/plugin-proposal-object-rest-spread"),
-        ],
-        presets: [
-          [
-            require.resolve("@babel/preset-env"),
-            {
-              modules: false,
-              targets,
-            },
-          ],
-        ],
-      }),
-      url({
-        limit: 0,
-        fileName: "[dirname][name][extname]",
-        sourceDir: rootFolder.replace(`${process.cwd()}/`, ""),
-      }),
-      nodeResolve(),
-      commonjs({ transformMixedEsModules: true }),
-      ...additionalPlugins,
-    ];
-
-    if (process.env.NODE_ENV === "production") {
-      plugins.push(terser.terser());
-    }
-
+    const plugins = getPlugins(use, rootFolder, targets);
+    const format = getFormat(targets);
     const promises = [];
-
-    let format;
-    if (targets.node && targets.browsers) {
-      format = "umd";
-    } else if (targets.node) {
-      format = "cjs";
-    } else {
-      format = "iife";
-    }
 
     jsFiles.forEach((file) => {
       promises.push(
