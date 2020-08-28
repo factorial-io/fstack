@@ -7,11 +7,11 @@ const { spawn } = require("child_process");
  * resolves with true or false based on linting result
  * or rejects if an error occured.
  *
- * @param {object} obj - the user configuration object
- * @param {string} obj.rootFolder - the root folder for linting files
+ * @param {object} obj
+ * @param {string} obj.rootFolder
  * @returns {Promise} - gets resolved with a boolean, describes if twig linting failed or not
  */
-function lintTwig({ rootFolder }) {
+function lint({ rootFolder }) {
   const args = [rootFolder];
 
   return new Promise((resolve) => {
@@ -46,8 +46,9 @@ function lintTwig({ rootFolder }) {
 }
 
 module.exports = {
-  lint: {
-    extensions: ["twig", "html.twig"],
-    linter: lintTwig,
+  type: "twig",
+  extensions: ["twig", "html.twig"],
+  tasks: {
+    lint,
   },
 };
