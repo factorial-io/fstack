@@ -162,13 +162,13 @@ Passing additional params to `build` is not supported at the moment.
 
 ### Linting
 
-You can lint this project by running itself:
+You can lint this project by running:
 
 ```bash
-yarn run lint
+yarn lint
 ```
 
-Please note that this does not work if there are errors in the code which make it crash.
+This will use the same eslint configuration as exposed by the `javascript` package.
 
 ### Committing
 
@@ -176,10 +176,15 @@ We are using [Conventional commits](https://www.conventionalcommits.org/).
 
 ### Creating a release
 
-To create a release, please run:
+To create a release, please run any of:
 
 ```bash
-yarn run release
+yarn core:release
+yarn css:release
+yarn javascript:release
+yarn twig:release
 ```
 
 This will automatically update the changelog based on the commit messages.
+
+**NOTE**: This only updates the changelog, creates a tag and commit. It does not push to GitHub or publish the package on npm. This needs to be done manually.
