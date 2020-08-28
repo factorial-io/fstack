@@ -16,10 +16,10 @@ const cssnano = require("cssnano");
  * Compiles the CSS entry files with PostCSS
  * and saves the output files in `distFolder`.
  *
- * @param {object} obj - the configuration object
- * @param {Array} obj.cssFiles - the css entry files
- * @param {string} obj.distFolder - the folder where the files should be put
- * @param {object} obj.targets - the targets object from the configuration object
+ * @param {object} obj
+ * @param {Array} obj.cssFiles
+ * @param {string} obj.distFolder
+ * @param {object} obj.targets
  * @returns {Promise} - Gets resolved when building is done
  */
 module.exports = function buildCSS({ cssFiles, distFolder, targets }) {

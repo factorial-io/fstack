@@ -1,18 +1,16 @@
 const path = require("path");
 
-const lintCSS = require("./lib/lint");
-const buildCSS = require("./lib/build");
+const build = require("./lib/build");
+const lint = require("./lib/lint");
 
-let stylelintConfig = require(path.join(__dirname, ".stylelintrc")); // eslint-disable-line
+const stylelintConfig = require(path.join(__dirname, ".stylelintrc")); // eslint-disable-line
 
 module.exports = {
   stylelint: stylelintConfig,
-  build: {
-    extensions: ["css"],
-    builder: buildCSS,
-  },
-  lint: {
-    extensions: ["css"],
-    linter: lintCSS,
+  type: "css",
+  extensions: ["css"],
+  tasks: {
+    build,
+    lint,
   },
 };

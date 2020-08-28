@@ -8,13 +8,43 @@ const { spawn } = require("child_process");
  * @returns {Array}
  */
 function getAdditionalParams(command) {
-  const index = process.argv.indexOf(command);
+  const indexCommand = process.argv.indexOf(command);
 
-  if (index >= 0) {
-    return process.argv.slice(index + 1);
+  if (indexCommand >= 0) {
+    const args = process.argv.slice(indexCommand + 1);
+
+    if (args.includes("--only")) {
+      const indexOnly = args.indexOf("--only");
+      args.splice(indexOnly, 2);
+    }
+
+    return args;
   }
 
   return [];
+}
+
+/**
+ * @param {string} rootFolder
+ * @returns {Array}
+ */
+function getArgs(rootFolder) {
+  const fileExtensions = ["css"];
+
+  // use.forEach((extension) => {
+  //   if (extension.stylelint && extension.stylelint.extensions) {
+  //     extension.stylelint.extensions.forEach((ext) => {
+  //       fileExtensions.push(ext);
+  //     });
+  //   }
+  // });
+
+  return [
+    path.join(rootFolder, `**/*.(${fileExtensions.join("|")})`),
+    "--color",
+    "--allow-empty-input",
+    ...getAdditionalParams("lint"),
+  ];
 }
 
 /**
@@ -22,28 +52,12 @@ function getAdditionalParams(command) {
  * resolves with true or false based on linting result
  * or rejects if an error occured.
  *
- * @param {object} obj - the user configuration object
- * @param {string} obj.rootFolder - the root folder for linting files
- * @param {Array} obj.use - the extension passed by the user
- * @returns {Promise} - gets resolved with a boolean, describes CSS JS linting failed or not
+ * @param {object} obj
+ * @param {string} obj.rootFolder
+ * @returns {Promise} - gets resolved with a boolean, describes if linting failed or not
  */
-module.exports = function lintCSS({ rootFolder, use }) {
-  const fileExtensions = ["css"];
-
-  use.forEach((extension) => {
-    if (extension.stylelint && extension.stylelint.extensions) {
-      extension.stylelint.extensions.forEach((ext) => {
-        fileExtensions.push(ext);
-      });
-    }
-  });
-
-  const args = [
-    path.join(rootFolder, `**/*.(${fileExtensions.join("|")})`),
-    "--color",
-    "--allow-empty-input",
-    ...getAdditionalParams("lint"),
-  ];
+module.exports = function lintCSS({ rootFolder }) {
+  const args = getArgs(rootFolder);
 
   return new Promise((resolve) => {
     const process = spawn("./node_modules/.bin/stylelint", args);
