@@ -110,6 +110,12 @@ yarn factorial lint
 
 This will lint all files (found in `rootFolder`) based on your installed packages once.
 
+You can also lint a specific type via e.g.:
+
+```bash
+yarn factorial lint --only css
+```
+
 ### build
 
 ```bash
@@ -123,6 +129,12 @@ NODE_ENV=production yarn factorial build
 ```
 
 When referencing/importing assets in your component files (`import` in your JS files or `url` in your CSS file), the referenced/imported files are copied into your build folder and the paths are adapted. That means, the assets are not inlined.
+
+You can also build a specific type via e.g.:
+
+```bash
+yarn factorial build --only css
+```
 
 ### watch
 
@@ -142,6 +154,12 @@ You can run tests based on your installed packages with
 
 ```bash
 yarn factorial test
+```
+
+You can also test a specific type via e.g.:
+
+```bash
+yarn factorial test --only js
 ```
 
 ### Adding additional params via CLI

@@ -1,5 +1,4 @@
 /* eslint no-console: 0 */
-
 const chokidar = require("chokidar");
 const path = require("path");
 
@@ -9,31 +8,29 @@ const build = require("./build");
 let inProgress = false;
 
 /**
- * Lints and builds (if param is "--build") all files
- *
- * @param {object} config - the configuration object
- * @param {string} param - param passed via cli
- * @param {string} [fileType] - the type of the file that has been changed
+ * @param {object} config
+ * @param {string} param - the param passed via cli
+ * @param {string} [fileExtension] - the type of the file that has been changed
  */
-async function lintAndBuild(config, param, fileType) {
+async function lintAndBuild(config, param, fileExtension) {
   if (!inProgress) {
     inProgress = true;
 
     if (param === "--build") {
-      await build(config, fileType);
+      await build({ config, fileExtension });
     }
 
-    await lint(config);
+    await lint({ config });
 
     inProgress = false;
   }
 }
 
 /**
- * Watches all assets defined in the configuration,
+ * Watches all assets defined in the configuration file,
  * lints them and builds them if `--build` is passed via CLI.
  *
- * @param {object} config - the configuration object
+ * @param {object} config
  */
 module.exports = function watch(config) {
   const param = process.argv.slice(2)[1];

@@ -1,5 +1,4 @@
 /* eslint no-console: 0 */
-
 const chalk = require("chalk");
 const fs = require("fs-extra");
 const path = require("path");
@@ -7,10 +6,10 @@ const path = require("path");
 /**
  * Copies all files from `assetFolders` to `distFolder`
  *
- * @param {object} obj - the configuration object
- * @param {string} obj.rootFolder - the root folder of the assets
- * @param {Array} obj.assetFolders - the asset folders that should be copied
- * @param {string} obj.distFolder - the folder where the files should be put
+ * @param {object} obj
+ * @param {string} obj.rootFolder
+ * @param {Array} obj.assetFolders
+ * @param {string} obj.distFolder
  * @returns {Promise} - Gets resolved when building is done
  */
 module.exports = function buildAssets({

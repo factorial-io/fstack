@@ -44,11 +44,7 @@ function installPackages(selectedPackages) {
     });
 
     process.on("close", (code) => {
-      if (code === 0 || code === 2) {
-        resolve(true);
-      } else {
-        resolve(false);
-      }
+      resolve(code === 0);
     });
   });
 }
