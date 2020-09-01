@@ -5,4 +5,5 @@ module.exports = deepMerge(jestConfig, {
   rootDir: "packages",
   collectCoverage: true,
   collectCoverageFrom: ["**/*.js", "!**/.*.js", "!**/*.config.js"],
+  setupFilesAfterEnv: ["../setupTests.js"],
 });

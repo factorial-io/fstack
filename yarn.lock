@@ -856,7 +856,7 @@
     minimist "^1.2.0"
 
 "@factorial/core@file:packages/core":
-  version "0.0.0"
+  version "0.1.2"
   dependencies:
     chalk "^4.1.0"
     chokidar "^3.4.2"
@@ -866,7 +866,7 @@
     inquirer "^7.3.3"
 
 "@factorial/css@file:packages/css":
-  version "0.0.0"
+  version "0.1.0"
   dependencies:
     autoprefixer "^9.8.6"
     chalk "^4.1.0"
@@ -884,7 +884,7 @@
     stylelint-selector-bem-pattern "^2.1.0"
 
 "@factorial/javascript@file:packages/javascript":
-  version "0.0.0"
+  version "0.1.1"
   dependencies:
     "@babel/core" "^7.11.4"
     "@babel/plugin-proposal-object-rest-spread" "^7.11.0"
@@ -910,7 +910,7 @@
     rollup-plugin-terser "^7.0.0"
 
 "@factorial/twig@file:packages/twig":
-  version "0.0.0"
+  version "0.1.0"
   dependencies:
     chalk "^4.1.0"
 
@@ -6817,7 +6817,7 @@ regenerate@^1.4.0:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
   integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
 
-regenerator-runtime@^0.13.4:
+regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
   version "0.13.7"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
   integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==

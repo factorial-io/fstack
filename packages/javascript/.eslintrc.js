@@ -5,8 +5,9 @@ module.exports = {
     "airbnb-base",
     "plugin:prettier/recommended",
     "plugin:jsdoc/recommended",
+    "plugin:jest/recommended",
   ],
-  plugins: ["prettier", "jsdoc"],
+  plugins: ["prettier", "jsdoc", "jest"],
   rules: {
     "prettier/prettier": "error",
     "no-use-before-define": ["error", { functions: false }],
@@ -23,12 +24,6 @@ module.exports = {
   },
   env: {
     browser: true,
-  },
-  globals: {
-    describe: true,
-    it: true,
-    jest: true,
-    test: true,
-    expect: true,
+    "jest/globals": true,
   },
 };
