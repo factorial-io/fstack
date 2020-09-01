@@ -30,7 +30,9 @@ module.exports = function buildCSS({ cssFiles, distFolder, targets }) {
       postcssCustomProperties(),
       postcssColorFunction(),
       postcssCustomMedia(),
-      postcssAutoprefixer({ overrideBrowserslist: targets.browsers }),
+      postcssAutoprefixer({
+        overrideBrowserslist: targets.browsers || targets.browserslist,
+      }),
     ];
     const promises = [];
 

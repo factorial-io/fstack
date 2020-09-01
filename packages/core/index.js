@@ -1,11 +1,25 @@
+const chalk = require("chalk");
+
 const init = require("./lib/tasks/init");
 const build = require("./lib/tasks/build");
 const lint = require("./lib/tasks/lint");
 const watch = require("./lib/tasks/watch");
 const test = require("./lib/tasks/test");
-const { config, targets } = require("./lib/config");
+const getConfig = require("./lib/config");
 
-const commands = new Set(["init", "lint", "build", "watch", "test"]);
+module.exports = async function (command) {
+  await run(command);
+  // } else {
+  //   config.use.forEach((extension) => {
+  //     if (extension.eslint && extension.eslint.config) {
+  //       eslintConfig = deepMerge(eslintConfig, extension.eslint.config);
+  //     }
+
+  //     if (extension.stylelint && extension.stylelint.config) {
+  //       stylelintConfig = deepMerge(stylelintConfig, extension.stylelint.config);
+  //     }
+  //   });
+};
 
 /**
  * Returns the type that is passed as a CLI arg via --only
@@ -24,6 +38,8 @@ function getType() {
  * @param {string} cmd - the command from the cli
  */
 async function run(cmd) {
+  const config = getConfig();
+
   switch (cmd) {
     case "init": {
       init();
@@ -55,25 +71,12 @@ async function run(cmd) {
       break;
     }
     default:
+      console.error(
+        `${chalk.red.bold("Error:")} Please run any command of ${chalk.cyan(
+          "init"
+        )}, ${chalk.cyan("lint")}, ${chalk.cyan("build")}, ${chalk.cyan(
+          "watch"
+        )} or ${chalk.cyan("test")}.`
+      );
   }
 }
-
-const command = process.argv.slice(2)[0];
-
-if (command && commands.has(command)) {
-  run(command);
-  // } else {
-  //   config.use.forEach((extension) => {
-  //     if (extension.eslint && extension.eslint.config) {
-  //       eslintConfig = deepMerge(eslintConfig, extension.eslint.config);
-  //     }
-
-  //     if (extension.stylelint && extension.stylelint.config) {
-  //       stylelintConfig = deepMerge(stylelintConfig, extension.stylelint.config);
-  //     }
-  //   });
-}
-
-module.exports = {
-  targets,
-};

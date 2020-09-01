@@ -1,13 +1,27 @@
 /* eslint no-console: 0 */
-const deepMerge = require("deepmerge");
 const path = require("path");
 
 const targets = getTargets();
-const config = getConfig();
 
-module.exports = {
-  config,
-  targets,
+/**
+ * Merges the default configuration with the user configuration
+ * and resolves the paths.
+ *
+ * @returns {object} the merged configuration object
+ */
+module.exports = function getConfig() {
+  const userConfig = getUserConfig();
+  const defaultConfig = {
+    use: [],
+    assetFolders: [],
+    cssFiles: [],
+    distFolder: "dist",
+    jsFiles: [],
+    rootFolder: "src",
+    testsFolder: "tests",
+  };
+
+  return resolveConfigPaths({ ...defaultConfig, ...userConfig });
 };
 
 /**
@@ -58,12 +72,14 @@ function getUserConfig() {
     conf = require(path.join(process.cwd(), configFileName)); // eslint-disable-line
   } catch (e) {
     conf = {};
-    console.log(e.message);
+    console.error(e.message);
   }
 
-  return deepMerge(conf, {
-    targets,
-  });
+  if (conf && !conf.targets) {
+    conf.targets = targets;
+  }
+
+  return conf;
 }
 
 /**
@@ -84,25 +100,4 @@ function resolveConfigPaths(conf) {
   );
 
   return copy;
-}
-
-/**
- * Merges the default configuration with the user configuration
- * and resolves the paths.
- *
- * @returns {object} the merged configuration object
- */
-function getConfig() {
-  const userConfig = getUserConfig();
-  const defaultConfig = {
-    use: [],
-    assetFolders: [],
-    cssFiles: [],
-    distFolder: "dist",
-    jsFiles: [],
-    rootFolder: "src",
-    testsFolder: "tests",
-  };
-
-  return resolveConfigPaths(deepMerge(defaultConfig, userConfig));
 }
