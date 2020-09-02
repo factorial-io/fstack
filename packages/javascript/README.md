@@ -77,6 +77,10 @@ module.exports = deepMerge(eslintConfig, {
 });
 ```
 
+## Exclude files from linting
+
+If you want to exclude files from linting, you can do it by adding a `.eslintignore` file to your root where you reference all files that should be ignored.
+
 ## Tests
 
 The test task uses [jest](https://github.com/facebook/jest), which "_by default it looks for `.js`, `.jsx`, `.ts` and `.tsx` files inside of `__tests__` folders, as well as any files with a suffix of `.test` or `.spec` (e.g. `Component.test.js` or `Component.spec.js`). It will also find files called `test.js` or `spec.js`._" ([Jest documentation](https://jestjs.io/docs/en/configuration.html#testmatch-arraystring))

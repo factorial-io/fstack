@@ -67,3 +67,7 @@ module.exports = deepMerge(stylelintConfig, {
   },
 });
 ```
+
+## Exclude files from linting
+
+If you want to exclude files from linting, you can do it by adding a `.stylelintignore` file to your root where you reference all files that should be ignored.
