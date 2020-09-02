@@ -1,6 +1,6 @@
 # @factorial/stack-css
 
-This is the CSS plugin for `@factorial/core`.
+This is the CSS plugin for `@factorial/stack-core`.
 
 It adds
 
@@ -30,7 +30,7 @@ yarn factorial init
 or manually via:
 
 ```bash
-yarn add @factorial/css
+yarn add @factorial/stack-css
 ```
 
 Make sure it is added to your `.factorialrc.js` like this:
@@ -39,7 +39,7 @@ Make sure it is added to your `.factorialrc.js` like this:
 // .factorialrc.js
 
 module.exports = {
-  use: [require("@factorial/css")],
+  use: [require("@factorial/stack-css")],
 };
 ```
 
@@ -48,7 +48,7 @@ And add a `.stylelintrc.js`:
 ```js
 // .stylelintrc.js
 
-const stylelintConfig = require("@factorial/css").stylelint;
+const stylelintConfig = require("@factorial/stack-css").stylelint;
 
 module.exports = stylelintConfig;
 ```
@@ -58,7 +58,7 @@ module.exports = stylelintConfig;
 If you need to extend or overwrite the linting rules, you can do that like this:
 
 ```js
-const stylelintConfig = require("@factorial/css").stylelint;
+const stylelintConfig = require("@factorial/stack-css").stylelint;
 const deepMerge = require("deepmerge");
 
 module.exports = deepMerge(stylelintConfig, {

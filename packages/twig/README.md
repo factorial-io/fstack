@@ -1,6 +1,6 @@
 # @factorial/stack-twig
 
-This is the Twig plugin for `@factorial/core`.
+This is the Twig plugin for `@factorial/stack-core`.
 
 It adds a lint task using `twigcs`.
 
@@ -15,7 +15,7 @@ yarn factorial init
 or manually via:
 
 ```bash
-yarn add @factorial/twig
+yarn add @factorial/stack-twig
 ```
 
 Make sure it is added to your `.factorialrc.js` like this:
@@ -24,7 +24,7 @@ Make sure it is added to your `.factorialrc.js` like this:
 // .factorialrc.js
 
 module.exports = {
-  use: [require("@factorial/twig")],
+  use: [require("@factorial/stack-twig")],
 };
 ```
 
