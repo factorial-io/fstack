@@ -27,7 +27,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 Add `core` via:
 
 ```bash
-yarn add @factorial/core
+yarn add @factorial/stack-core
 ```
 
 Afterwards run

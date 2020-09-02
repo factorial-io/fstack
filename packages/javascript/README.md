@@ -1,6 +1,6 @@
 # @factorial/stack-javascript
 
-This is the JavaScript plugin for `@factorial/core`.
+This is the JavaScript plugin for `@factorial/stack-core`.
 
 It adds
 
@@ -39,7 +39,7 @@ yarn factorial init
 or manually via:
 
 ```bash
-yarn add @factorial/javascript
+yarn add @factorial/stack-javascript
 ```
 
 Make sure it is added to your `.factorialrc.js` like this:
@@ -48,7 +48,7 @@ Make sure it is added to your `.factorialrc.js` like this:
 // .factorialrc.js
 
 module.exports = {
-  use: [require("@factorial/javascript")],
+  use: [require("@factorial/stack-javascript")],
 };
 ```
 
@@ -57,7 +57,7 @@ And add a `.eslintrc.js`:
 ```js
 // .eslintrc.js
 
-const eslintConfig = require("@factorial/javascript").eslint;
+const eslintConfig = require("@factorial/stack-javascript").eslint;
 
 module.exports = eslintConfig;
 ```
@@ -67,7 +67,7 @@ module.exports = eslintConfig;
 If you need to extend or overwrite the linting rules, you can do that like this:
 
 ```js
-const eslintConfig = require("@factorial/javascript").eslint;
+const eslintConfig = require("@factorial/stack-javascript").eslint;
 const deepMerge = require("deepmerge");
 
 module.exports = deepMerge(eslintConfig, {
