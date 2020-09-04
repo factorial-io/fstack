@@ -18,6 +18,7 @@ It adds
   - [stylelint-config-prettier](https://www.npmjs.com/package/stylelint-config-prettier)
   - [stylelint-config-suitcss](https://www.npmjs.com/package/stylelint-config-suitcss)
   - [stylelint-selector-bem-pattern](https://www.npmjs.com/package/stylelint-selector-bem-pattern)
+  - [stylelint-plugin-ecss](https://www.npmjs.com/package/stylelint-plugin-ecss)
 
 ## Installation
 

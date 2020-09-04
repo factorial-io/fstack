@@ -3617,6 +3617,13 @@ stylelint-order@^4.1.0:
     postcss "^7.0.31"
     postcss-sorting "^5.0.1"
 
+stylelint-plugin-ecss@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-plugin-ecss/-/stylelint-plugin-ecss-1.0.1.tgz#b9149b838bed428706aff5eb3ec74bb86823652e"
+  integrity sha512-dLnkdzgescOmqe5FcD5u5t2ULDE01laYwq8WLYfTE5M7ymB/WOK/ZgL37KeyuLlWxMVTInHPqQq4B5HiXBXNzA==
+  dependencies:
+    lodash "^4.17.15"
+
 stylelint-selector-bem-pattern@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-selector-bem-pattern/-/stylelint-selector-bem-pattern-2.1.0.tgz#3a78370ab67b777e571ef0fa2059428816f2d5e3"
