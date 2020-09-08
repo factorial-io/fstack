@@ -40,12 +40,12 @@ function getArgs(use, rootFolder, testsFolder) {
  * @param {string} obj.rootFolder
  * @param {string} obj.testsFolder
  * @param {Array} obj.use
- * @returns {Promise} - gets resolved with a boolean, describes if JS linting failed or not
+ * @returns {Promise} - gets resolved/rejected based on if JS linting failed or not
  */
 module.exports = function lintJS({ rootFolder, testsFolder, use }) {
   const args = getArgs(use, rootFolder, testsFolder);
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/eslint", args);
 
     process.stdout.on("data", (data) => {
@@ -63,10 +63,10 @@ module.exports = function lintJS({ rootFolder, testsFolder, use }) {
     process.on("close", (code) => {
       if (code === 0 || code === 2) {
         console.log(`\neslint: ${chalk.green("0 errors!")}`);
-        resolve(true);
+        resolve();
       } else {
         console.log(`\neslint: ${chalk.red("error!")}`);
-        resolve(false);
+        reject();
       }
     });
   });

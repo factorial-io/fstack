@@ -15,15 +15,17 @@ module.exports = function lint({ config, type, fileExtension }) {
   const tasksToRun = [];
 
   // adds the extension tasks to the full list of tasks
-  config.use.forEach((extension) => {
-    if (extension.tasks && extension.tasks.lint) {
-      allTasks.push({
-        type: extension.type,
-        extensions: extension.extensions,
-        task: extension.tasks.lint,
-      });
-    }
-  });
+  if (config.use) {
+    config.use.forEach((extension) => {
+      if (extension.tasks && extension.tasks.lint) {
+        allTasks.push({
+          type: extension.type,
+          extensions: extension.extensions,
+          task: extension.tasks.lint,
+        });
+      }
+    });
+  }
 
   // if a task type is passed to the linter,
   // add the corresponding task to the list of tasks to run
@@ -49,8 +51,6 @@ module.exports = function lint({ config, type, fileExtension }) {
   }
 
   return Promise.all(tasksToRun)
-    .then((res) => !res.includes(false))
-    .catch(() => {
-      return false;
-    });
+    .then(() => true)
+    .catch(() => false);
 };

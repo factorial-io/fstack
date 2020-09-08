@@ -1,6 +1,11 @@
 module.exports = {
   root: true,
-  ignorePatterns: [".factorialrc.js", ".eslintrc.js", ".stylelintrc.js"],
+  ignorePatterns: [
+    ".factorialrc.js",
+    ".eslintrc.js",
+    ".stylelintrc.js",
+    "coverage",
+  ],
   extends: [
     "airbnb-base",
     "plugin:prettier/recommended",

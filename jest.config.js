@@ -4,6 +4,12 @@ const jestConfig = require("./packages/javascript/jest.config.js");
 module.exports = deepMerge(jestConfig, {
   rootDir: "packages",
   collectCoverage: true,
-  collectCoverageFrom: ["**/*.js", "!**/.*.js", "!**/*.config.js"],
+  collectCoverageFrom: [
+    "**/*.js",
+    "!**/.*.js",
+    "!**/*.config.js",
+    "!./coverage/**/*.js",
+  ],
   setupFilesAfterEnv: ["../setupTests.js"],
+  testPathIgnorePatterns: ["test.js"],
 });

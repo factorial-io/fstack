@@ -28,15 +28,17 @@ module.exports = async function build({ config, type, fileExtension }) {
   ];
 
   // adds the extension tasks to the full list of tasks
-  config.use.forEach((extension) => {
-    if (extension.tasks && extension.tasks.build) {
-      allTasks.push({
-        type: extension.type,
-        extensions: extension.extensions,
-        task: extension.tasks.build,
-      });
-    }
-  });
+  if (config.use) {
+    config.use.forEach((extension) => {
+      if (extension.tasks && extension.tasks.build) {
+        allTasks.push({
+          type: extension.type,
+          extensions: extension.extensions,
+          task: extension.tasks.build,
+        });
+      }
+    });
+  }
 
   // if a task type is passed to the build,
   // add the corresponding task to the list of tasks to run
@@ -65,8 +67,6 @@ module.exports = async function build({ config, type, fileExtension }) {
   }
 
   return Promise.all(tasksToRun)
-    .then((res) => !res.includes(false))
-    .catch(() => {
-      return false;
-    });
+    .then(() => true)
+    .catch(() => false);
 };

@@ -54,12 +54,12 @@ function getArgs(rootFolder) {
  *
  * @param {object} obj
  * @param {string} obj.rootFolder
- * @returns {Promise} - gets resolved with a boolean, describes if linting failed or not
+ * @returns {Promise} - gets resolved/rejected based on if linting failed or not
  */
 module.exports = function lintCSS({ rootFolder }) {
   const args = getArgs(rootFolder);
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/stylelint", args);
 
     process.stdout.on("data", (data) => {
@@ -77,10 +77,10 @@ module.exports = function lintCSS({ rootFolder }) {
     process.on("close", (code) => {
       if (code === 0) {
         console.log(`\nstylelint: ${chalk.green("0 errors!")}`);
-        resolve(true);
+        resolve();
       } else {
         console.log(`\nstylelint: ${chalk.red("error!")}`);
-        resolve(false);
+        reject();
       }
     });
   });

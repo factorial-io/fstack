@@ -1,4 +1,5 @@
 const path = require("path");
+
 const targets = {
   browsers: [
     "last 2 versions",

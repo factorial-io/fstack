@@ -1,4 +1,5 @@
 const chalk = require("chalk");
+
 const errorMessage = `${chalk.red.bold(
   "Error:"
 )} Please run any command of ${chalk.cyan("init")}, ${chalk.cyan(

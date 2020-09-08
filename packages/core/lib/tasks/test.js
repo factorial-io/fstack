@@ -14,15 +14,17 @@ module.exports = function test({ config, type }) {
   const tasksToRun = [];
 
   // adds the extension tasks to the full list of tasks
-  config.use.forEach((extension) => {
-    if (extension.tasks && extension.tasks.test) {
-      allTasks.push({
-        type: extension.type,
-        extensions: extension.extensions,
-        task: extension.tasks.test,
-      });
-    }
-  });
+  if (config.use) {
+    config.use.forEach((extension) => {
+      if (extension.tasks && extension.tasks.test) {
+        allTasks.push({
+          type: extension.type,
+          extensions: extension.extensions,
+          task: extension.tasks.test,
+        });
+      }
+    });
+  }
 
   // if a task type is passed to the tests,
   // add the corresponding task to the list of tasks to run
@@ -40,8 +42,6 @@ module.exports = function test({ config, type }) {
   }
 
   return Promise.all(tasksToRun)
-    .then((res) => !res.includes(false))
-    .catch(() => {
-      return false;
-    });
+    .then(() => true)
+    .catch(() => false);
 };

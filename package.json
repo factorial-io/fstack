@@ -22,7 +22,7 @@
   },
   "scripts": {
     "lint": "eslint packages",
-    "test": "jest --testPathIgnorePatterns test.js",
+    "test": "jest",
     "core:release": "yarn --cwd packages/core release",
     "css:release": "yarn --cwd packages/css release",
     "javascript:release": "yarn --cwd packages/javascript release",
