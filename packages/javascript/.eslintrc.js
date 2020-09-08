@@ -10,9 +10,8 @@ module.exports = {
     "airbnb-base",
     "plugin:prettier/recommended",
     "plugin:jsdoc/recommended",
-    "plugin:jest/recommended",
   ],
-  plugins: ["prettier", "jsdoc", "jest"],
+  plugins: ["prettier", "jsdoc"],
   rules: {
     "prettier/prettier": "error",
     "no-use-before-define": ["error", { functions: false }],
@@ -27,6 +26,16 @@ module.exports = {
     "jsdoc/require-param-description": 0,
     "jsdoc/require-returns-description": 0,
   },
+  overrides: [
+    {
+      files: ["**/__tests__/**/*.spec.js"],
+      extends: ["plugin:jest/recommended"],
+      plugins: ["jest"],
+      rules: {
+        "global-require": 0,
+      },
+    },
+  ],
   env: {
     browser: true,
     "jest/globals": true,
