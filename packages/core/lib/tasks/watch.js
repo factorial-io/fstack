@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 const chokidar = require("chokidar");
 const path = require("path");
 

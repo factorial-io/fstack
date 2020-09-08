@@ -7,7 +7,7 @@ describe("lib/tasks/test", () => {
   });
 
   describe("with a given type", () => {
-    test("runs the related task", async (done) => {
+    test("runs the related task", async () => {
       jest.mock("../../../../../packages/javascript");
       jest.mock("../../../../../packages/css", () => {
         return {
@@ -20,9 +20,9 @@ describe("lib/tasks/test", () => {
 
       const js = require("../../../../javascript");
       const css = require("../../../../css");
-      const test = require("../../../lib/tasks/test");
+      const testTask = require("../../../lib/tasks/test");
 
-      await test({
+      await testTask({
         config: {
           use: [js, css],
         },
@@ -31,12 +31,11 @@ describe("lib/tasks/test", () => {
 
       expect(js.tasks.test).not.toHaveBeenCalled();
       expect(css.tasks.test).toHaveBeenCalledTimes(1);
-      done();
     });
   });
 
   describe("without a given type", () => {
-    test("test runs all tasks", async (done) => {
+    test("test runs all tasks", async () => {
       jest.mock("../../../../../packages/javascript", () => {
         return {
           type: "javascript",
@@ -56,9 +55,9 @@ describe("lib/tasks/test", () => {
 
       const js = require("../../../../javascript");
       const css = require("../../../../css");
-      const test = require("../../../lib/tasks/test");
+      const testTask = require("../../../lib/tasks/test");
 
-      await test({
+      await testTask({
         config: {
           use: [js, css],
         },
@@ -66,12 +65,11 @@ describe("lib/tasks/test", () => {
 
       expect(css.tasks.test).toHaveBeenCalledTimes(1);
       expect(js.tasks.test).toHaveBeenCalledTimes(1);
-      done();
     });
   });
 
   describe("with a failing test task", () => {
-    test("test returns false", async (done) => {
+    test("test returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
@@ -80,22 +78,21 @@ describe("lib/tasks/test", () => {
         };
       });
 
-      const test = require("../../../lib/tasks/test");
+      const testTask = require("../../../lib/tasks/test");
       const css = require("../../../../css");
 
-      const valid = await test({
+      const valid = await testTask({
         config: {
           use: [css],
         },
       });
 
       expect(valid).toBe(false);
-      done();
     });
   });
 
   describe("with only succeeding test tasks", () => {
-    test("test returns false", async (done) => {
+    test("test returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
@@ -104,17 +101,16 @@ describe("lib/tasks/test", () => {
         };
       });
 
-      const test = require("../../../lib/tasks/test");
+      const testTask = require("../../../lib/tasks/test");
       const css = require("../../../../css");
 
-      const valid = await test({
+      const valid = await testTask({
         config: {
           use: [css],
         },
       });
 
       expect(valid).toBe(true);
-      done();
     });
   });
 });

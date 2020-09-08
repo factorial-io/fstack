@@ -7,7 +7,7 @@ const watch = require("./lib/tasks/watch");
 const test = require("./lib/tasks/test");
 const getConfig = require("./lib/config");
 
-module.exports = async function (command) {
+module.exports = async function core(command) {
   await run(command);
   // } else {
   //   config.use.forEach((extension) => {

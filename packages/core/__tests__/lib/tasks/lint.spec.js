@@ -7,7 +7,7 @@ describe("lib/tasks/lint", () => {
   });
 
   describe("with a given type", () => {
-    test("runs the related task", async (done) => {
+    test("runs the related task", async () => {
       jest.mock("../../../../../packages/javascript");
       jest.mock("../../../../../packages/css", () => {
         return {
@@ -31,12 +31,11 @@ describe("lib/tasks/lint", () => {
 
       expect(js.tasks.lint).not.toHaveBeenCalled();
       expect(css.tasks.lint).toHaveBeenCalledTimes(1);
-      done();
     });
   });
 
   describe("without a given type", () => {
-    test("lint runs all tasks", async (done) => {
+    test("lint runs all tasks", async () => {
       jest.mock("../../../../../packages/javascript", () => {
         return {
           type: "javascript",
@@ -66,12 +65,11 @@ describe("lib/tasks/lint", () => {
 
       expect(css.tasks.lint).toHaveBeenCalledTimes(1);
       expect(js.tasks.lint).toHaveBeenCalledTimes(1);
-      done();
     });
   });
 
   describe("with a given file extension", () => {
-    test("runs the related task", async (done) => {
+    test("runs the related task", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           extensions: ["css"],
@@ -92,12 +90,11 @@ describe("lib/tasks/lint", () => {
       });
 
       expect(css.tasks.lint).toHaveBeenCalledTimes(1);
-      done();
     });
   });
 
   describe("with a failing lint task", () => {
-    test("lint returns false", async (done) => {
+    test("lint returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
@@ -116,12 +113,11 @@ describe("lib/tasks/lint", () => {
       });
 
       expect(valid).toBe(false);
-      done();
     });
   });
 
   describe("with only succeeding lint tasks", () => {
-    test("lint returns false", async (done) => {
+    test("lint returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
@@ -140,7 +136,6 @@ describe("lib/tasks/lint", () => {
       });
 
       expect(valid).toBe(true);
-      done();
     });
   });
 });

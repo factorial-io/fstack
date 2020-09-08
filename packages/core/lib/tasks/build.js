@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 const del = require("del");
 const chalk = require("chalk");
 

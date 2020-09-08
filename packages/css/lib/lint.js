@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 const chalk = require("chalk");
 const path = require("path");
 const { spawn } = require("child_process");

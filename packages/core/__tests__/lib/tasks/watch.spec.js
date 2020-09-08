@@ -26,7 +26,7 @@ describe("lib/tasks/watch", () => {
   });
 
   describe("with --build", () => {
-    test("build calls build and lint", async (done) => {
+    test("build calls build and lint", async () => {
       process.argv[3] = "--build";
 
       jest.mock("../../../lib/tasks/lint");
@@ -42,7 +42,7 @@ describe("lib/tasks/watch", () => {
       expect(build).toHaveBeenCalledWith({ config, fileExtension: undefined });
       expect(lint).toHaveBeenCalledTimes(1);
       expect(lint).toHaveBeenCalledWith({ config });
-      done();
+
       process.argv[3] = null;
     });
   });
