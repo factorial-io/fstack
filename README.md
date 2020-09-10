@@ -5,6 +5,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 
 - `css`
 - `javascript`
+- `svg`
 - `twig`
 
 ## Content
