@@ -15,9 +15,11 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 - [Commands](#commands)
   - [init](#init)
   - [lint](#lint)
+  - [optimize](#optimize)
   - [build](#build)
   - [watch](#watch)
   - [test](#test)
+  - [Custom commands](#custom-commands)
   - [Adding additional params via CLI](#adding-additional-params-via-cli)
 - [Contributing](#contributing)
   - [Creating a release](#creating-a-release)
@@ -116,6 +118,20 @@ You can also lint a specific type via e.g.:
 yarn factorial lint --only css
 ```
 
+### optimize
+
+```bash
+yarn factorial optimize
+```
+
+This will optimize all files (found in `rootFolder`) based on your installed packages once.
+
+You can also optimize a specific type via e.g.:
+
+```bash
+yarn factorial optimize --only svg
+```
+
 ### build
 
 ```bash
@@ -161,6 +177,10 @@ You can also test a specific type via e.g.:
 ```bash
 yarn factorial test --only js
 ```
+
+### Custom commands
+
+Packages can also export custom commands (e.g. `sprite` by the SVG package). When running a custom command, `core` would simply execute the related external task (while `core` has more sophisticated functionality for the fixed tasks).
 
 ### Adding additional params via CLI
 
