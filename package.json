@@ -26,6 +26,7 @@
     "core:release": "yarn --cwd packages/core release",
     "css:release": "yarn --cwd packages/css release",
     "javascript:release": "yarn --cwd packages/javascript release",
+    "svg:release": "yarn --cwd packages/svg release",
     "twig:release": "yarn --cwd packages/twig release"
   }
 }
