@@ -1,14 +1,11 @@
 const chalk = require("chalk");
 
-const errorMessage = `${chalk.red.bold(
-  "Error:"
-)} Please run any command of ${chalk.cyan("init")}, ${chalk.cyan(
-  "lint"
-)}, ${chalk.cyan("build")}, ${chalk.cyan("watch")} or ${chalk.cyan("test")}.`;
+const errorMessage = `${chalk.red.bold("Error:")} Please run any command of:
+- build
+- init
+- watch
+`;
 
-jest.mock("../lib/config", () => {
-  return () => ({});
-});
 jest.mock("../lib/tasks/build");
 jest.mock("../lib/tasks/init");
 jest.mock("../lib/tasks/lint");
@@ -47,6 +44,12 @@ describe("core", () => {
     });
 
     describe("build", () => {
+      beforeEach(() => {
+        jest.mock("../lib/config", () => {
+          return () => ({});
+        });
+      });
+
       describe("without --only", () => {
         test("calls build task with the correct params", async () => {
           const build = require("../lib/tasks/build");
@@ -64,6 +67,7 @@ describe("core", () => {
 
       describe("with --only", () => {
         test("calls build task with the correct params", async () => {
+          process.argv[2] = "build";
           process.argv[3] = "--only";
           process.argv[4] = "css";
           const build = require("../lib/tasks/build");
@@ -118,6 +122,20 @@ describe("core", () => {
     });
 
     describe("lint", () => {
+      beforeEach(() => {
+        jest.mock("../lib/config", () => {
+          return () => ({
+            use: [
+              {
+                tasks: {
+                  lint: "",
+                },
+              },
+            ],
+          });
+        });
+      });
+
       describe("without --only", () => {
         test("calls lint task with the correct params", async () => {
           const lint = require("../lib/tasks/lint");
@@ -127,7 +145,15 @@ describe("core", () => {
 
           expect(lint).toHaveBeenCalledTimes(1);
           expect(lint).toHaveBeenCalledWith({
-            config: {},
+            config: {
+              use: [
+                {
+                  tasks: {
+                    lint: "",
+                  },
+                },
+              ],
+            },
             type: null,
           });
         });
@@ -135,6 +161,7 @@ describe("core", () => {
 
       describe("with --only", () => {
         test("calls lint task with the correct params", async () => {
+          process.argv[2] = "lint";
           process.argv[3] = "--only";
           process.argv[4] = "css";
           const lint = require("../lib/tasks/lint");
@@ -144,10 +171,19 @@ describe("core", () => {
 
           expect(lint).toHaveBeenCalledTimes(1);
           expect(lint).toHaveBeenCalledWith({
-            config: {},
+            config: {
+              use: [
+                {
+                  tasks: {
+                    lint: "",
+                  },
+                },
+              ],
+            },
             type: "css",
           });
 
+          process.argv[2] = null;
           process.argv[3] = null;
           process.argv[4] = null;
         });
@@ -189,6 +225,20 @@ describe("core", () => {
     });
 
     describe("test", () => {
+      beforeEach(() => {
+        jest.mock("../lib/config", () => {
+          return () => ({
+            use: [
+              {
+                tasks: {
+                  test: "",
+                },
+              },
+            ],
+          });
+        });
+      });
+
       describe("without --only", () => {
         test("calls test task with the correct params", async () => {
           const test = require("../lib/tasks/test");
@@ -198,7 +248,15 @@ describe("core", () => {
 
           expect(test).toHaveBeenCalledTimes(1);
           expect(test).toHaveBeenCalledWith({
-            config: {},
+            config: {
+              use: [
+                {
+                  tasks: {
+                    test: "",
+                  },
+                },
+              ],
+            },
             type: null,
           });
         });
@@ -206,6 +264,7 @@ describe("core", () => {
 
       describe("with --only", () => {
         test("calls test task with the correct params", async () => {
+          process.argv[2] = "test";
           process.argv[3] = "--only";
           process.argv[4] = "css";
           const test = require("../lib/tasks/test");
@@ -215,10 +274,19 @@ describe("core", () => {
 
           expect(test).toHaveBeenCalledTimes(1);
           expect(test).toHaveBeenCalledWith({
-            config: {},
+            config: {
+              use: [
+                {
+                  tasks: {
+                    test: "",
+                  },
+                },
+              ],
+            },
             type: "css",
           });
 
+          process.argv[2] = null;
           process.argv[3] = null;
           process.argv[4] = null;
         });
@@ -261,6 +329,10 @@ describe("core", () => {
 
     describe("watch", () => {
       test("calls watch task", async () => {
+        jest.mock("../lib/config", () => {
+          return () => ({});
+        });
+
         const watch = require("../lib/tasks/watch");
         const core = require("..");
 

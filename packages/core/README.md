@@ -4,12 +4,15 @@ This is the core package for the [factorial frontend stack](http://www.github.co
 
 When running any of the following commands, it executes the related tasks added by the other packages:
 
-- `build`
+- `build` (also copies all assets from `assetFolders` to `distFolder` without installing additional packages)
 - `lint`
 - `test`
-- `watch`
 
-It also allows you to add other packages to your stack via cli by running:
+`watch` listens for file changes and then runs `lint` and additionally `build` if `--build` is passed.
+
+It also runs any custom commands exported by installed packages.
+
+You can install other packages to your stack via cli by running:
 
 ```bash
 yarn factorial init
