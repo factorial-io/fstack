@@ -32,6 +32,7 @@ describe("core/lib/config", () => {
         distFolder: path.join(process.cwd(), "dist"),
         jsFiles: [],
         rootFolder: path.join(process.cwd(), "src"),
+        svgFolders: [],
         testsFolder: "tests",
         targets,
       });
@@ -67,6 +68,7 @@ describe("core/lib/config", () => {
         distFolder: path.join(process.cwd(), "dist"),
         jsFiles: [],
         rootFolder: path.join(process.cwd(), "src"),
+        svgFolders: [],
         testsFolder: "tests",
         targets,
       });
@@ -84,6 +86,7 @@ describe("core/lib/config", () => {
             cssFiles: ["index.css"],
             distFolder: "build",
             jsFiles: ["index.js"],
+            svgFolders: ["icons"],
           };
         },
         {
@@ -101,6 +104,7 @@ describe("core/lib/config", () => {
         jsFiles: [path.join("src", "index.js")],
         rootFolder: path.join(process.cwd(), "src"),
         testsFolder: "tests",
+        svgFolders: [path.join(process.cwd(), "src", "icons")],
         targets,
       });
     });
@@ -141,6 +145,7 @@ describe("core/lib/config", () => {
           distFolder: path.join(process.cwd(), "dist"),
           jsFiles: [],
           rootFolder: path.join(process.cwd(), "src"),
+          svgFolders: [],
           testsFolder: "tests",
           targets: ["Chrome 83"],
         });
@@ -171,6 +176,7 @@ describe("core/lib/config", () => {
           distFolder: path.join(process.cwd(), "dist"),
           jsFiles: [],
           rootFolder: path.join(process.cwd(), "src"),
+          svgFolders: [],
           testsFolder: "tests",
           targets: {
             browsers: ["Chrome 83"],
