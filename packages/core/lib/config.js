@@ -18,6 +18,7 @@ module.exports = function getConfig() {
     jsFiles: [],
     rootFolder: "src",
     testsFolder: "tests",
+    svgFolders: [],
   };
 
   return resolveConfigPaths({ ...defaultConfig, ...userConfig });
@@ -95,6 +96,9 @@ function resolveConfigPaths(conf) {
   copy.cssFiles = conf.cssFiles.map((file) => path.join(conf.rootFolder, file));
   copy.jsFiles = conf.jsFiles.map((file) => path.join(conf.rootFolder, file));
   copy.assetFolders = conf.assetFolders.map((folder) =>
+    path.join(copy.rootFolder, folder)
+  );
+  copy.svgFolders = conf.svgFolders.map((folder) =>
     path.join(copy.rootFolder, folder)
   );
 

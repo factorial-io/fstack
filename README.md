@@ -59,6 +59,9 @@ _The JavaScript entry files, relative from `rootFolder`. These files will be use
 **`rootFolder`**, default: `"src"`<br>
 _The root folder for `jsFiles`, `cssFiles` and `assetFolders`_
 
+**`svgFolders`**, default: `[]`<br>
+_Folders that contain SVG files._
+
 **`targets`**, default:
 
 ```js
