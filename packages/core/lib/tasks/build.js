@@ -46,6 +46,9 @@ module.exports = async function build({ config, type, fileExtension }) {
 
     if (task) {
       tasksToRun.push(task.task(config));
+    } else {
+      console.log("\nNo build task found, skipping…");
+      tasksToRun.push(Promise.resolve());
     }
     // otherwise if the build task is triggered by the watcher
     // add the task which is connected to the given file type
@@ -57,11 +60,12 @@ module.exports = async function build({ config, type, fileExtension }) {
 
     if (task) {
       tasksToRun.push(task.task(config));
+    } else {
+      console.log("\nNo build task found, skipping…");
+      tasksToRun.push(Promise.resolve());
     }
-  }
-
-  // if no tasks to run have been added, simply run all tasks
-  if (tasksToRun.length === 0) {
+    // else simply run all tasks
+  } else {
     allTasks.forEach(({ task }) => tasksToRun.push(task(config)));
   }
 

@@ -33,6 +33,9 @@ module.exports = function lint({ config, type, fileExtension }) {
 
     if (task) {
       tasksToRun.push(task.task(config));
+    } else {
+      console.log("\nNo lint task found, skipping…");
+      tasksToRun.push(Promise.resolve());
     }
   } else if (fileExtension) {
     const task = allTasks.find(
@@ -41,11 +44,12 @@ module.exports = function lint({ config, type, fileExtension }) {
 
     if (task) {
       tasksToRun.push(task.task(config));
+    } else {
+      console.log("\nNo lint task found, skipping…");
+      tasksToRun.push(Promise.resolve());
     }
-  }
-
-  // if no tasks to run have been added, simply run all tasks
-  if (tasksToRun.length === 0) {
+    // else simply run all tasks
+  } else {
     allTasks.forEach(({ task }) => tasksToRun.push(task(config)));
   }
 

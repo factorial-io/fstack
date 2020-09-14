@@ -32,11 +32,12 @@ module.exports = function test({ config, type }) {
 
     if (task) {
       tasksToRun.push(task.task(config));
+    } else {
+      console.log("\nNo test task found, skipping…");
+      tasksToRun.push(Promise.resolve());
     }
-  }
-
-  // if no tasks to run have been added, simply run all tasks
-  if (tasksToRun.length === 0) {
+    // else simply run all tasks
+  } else {
     allTasks.forEach(({ task }) => tasksToRun.push(task(config)));
   }
 
