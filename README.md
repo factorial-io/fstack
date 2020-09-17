@@ -51,6 +51,9 @@ _Asset folders for fonts, icons, etc., relative from `rootFolder`. These files w
 **`cssFiles`**, default: `[]`<br>
 _The CSS entry files, relative from `rootFolder`. These files will be used to create a build._
 
+**`cssTokens`**<br>
+_Please refer to [packages/css/README.md](packages/css/README.md) for more information._
+
 **`distFolder`**, default: `"dist"`<br>
 _The folder where the build files will be put_
 

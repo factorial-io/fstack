@@ -9,6 +9,7 @@ describe("css/index", () => {
     const css = require("..");
     const build = require("../lib/build");
     const lint = require("../lib/lint");
+    const tokenImport = require("../lib/token-import");
 
     expect(css).toEqual({
       stylelint: "stylelint",
@@ -17,6 +18,7 @@ describe("css/index", () => {
       tasks: {
         build,
         lint,
+        "token-import": tokenImport,
       },
     });
   });
