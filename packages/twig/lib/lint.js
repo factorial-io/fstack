@@ -9,16 +9,16 @@ const { spawn } = require("child_process");
  */
 function getArgs(rootFolder) {
   const indexOfOnly = process.argv.indexOf("--only");
-  const indexOfLink = process.argv.indexOf("lint");
+  const indexOfLint = process.argv.indexOf("lint");
   let args;
 
   if (indexOfOnly >= 0) {
     args = process.argv.slice(indexOfOnly + 2);
-  } else {
-    args = process.argv.slice(indexOfLink + 1);
+  } else if (indexOfLint >= 0) {
+    args = process.argv.slice(indexOfLint + 1);
   }
 
-  return [rootFolder, ...args];
+  return args ? [rootFolder, ...args] : [rootFolder];
 }
 
 /**
