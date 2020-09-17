@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/factorial-io/fstack/compare/twig/v0.1.1...twig/v0.1.2) (2020-09-17)
+
+
+### Features
+
+* **twig:** Allow passing of custom cli args ([e897d88](https://github.com/factorial-io/fstack/commit/e897d88177278dbaba49585e1e57c1398c8c061a))
+
 ### 0.1.1 (2020-09-09)
 
 
