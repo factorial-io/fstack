@@ -2,6 +2,26 @@ const chalk = require("chalk");
 const { spawn } = require("child_process");
 
 /**
+ * Returns an array with all cli params after "lint --only twig"
+ *
+ * @param {string} rootFolder
+ * @returns {Array}
+ */
+function getArgs(rootFolder) {
+  const indexOfOnly = process.argv.indexOf("--only");
+  const indexOfLink = process.argv.indexOf("lint");
+  let args;
+
+  if (indexOfOnly >= 0) {
+    args = process.argv.slice(indexOfOnly + 2);
+  } else {
+    args = process.argv.slice(indexOfLink + 1);
+  }
+
+  return [rootFolder, ...args];
+}
+
+/**
  * Lints all twig files in `rootFolder`, logs the result,
  * resolves with true or false based on linting result
  * or rejects if an error occured.
@@ -11,7 +31,7 @@ const { spawn } = require("child_process");
  * @returns {Promise} - gets resolved/rejected based on if twig linting failed or not
  */
 module.exports = function lint({ rootFolder }) {
-  const args = [rootFolder];
+  const args = getArgs(rootFolder);
 
   return new Promise((resolve, reject) => {
     const process = spawn("./vendor/bin/twigcs", args);
