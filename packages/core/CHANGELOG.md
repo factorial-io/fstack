@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/core/v0.1.5...core/v0.2.0) (2020-09-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** only allow node 10, 12, 14
+
+### Bug Fixes
+
+* **core:** install packages via init as devDependencies, not dependencies ([3c61a97](https://github.com/factorial-io/fstack/commit/3c61a974dc1fd180fa0af4370c992e7f5d11bc42))
+
+
+* **core:** only allow node 10, 12, 14 ([f5b572e](https://github.com/factorial-io/fstack/commit/f5b572eefe0b3cbe81410bd34664d5232d748ff0))
+
 ### [0.1.5](https://github.com/factorial-io/fstack/compare/core/v0.1.4...core/v0.1.5) (2020-09-22)
 
 
