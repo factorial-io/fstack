@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/javascript/v0.1.2...javascript/v0.2.0) (2020-09-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** eslint-plugin-jest
+
+* **javascript:** updated node modules ([531d302](https://github.com/factorial-io/fstack/commit/531d302ec1874f3d56a04bf00bf0556f64b6b441))
+
 ### [0.1.2](https://github.com/factorial-io/fstack/compare/javascript/v0.1.1...javascript/v0.1.2) (2020-09-09)
 
 
