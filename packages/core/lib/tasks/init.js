@@ -27,6 +27,7 @@ function installPackages(selectedPackages) {
   return new Promise((resolve) => {
     const process = spawn("yarn", [
       "add",
+      "-D",
       ...selectedPackages.map((p) => getNodeModuleName(p)),
     ]);
 
