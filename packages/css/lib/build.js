@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const fs = require("fs-extra");
+const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
 const postcssAutoprefixer = require("autoprefixer");
