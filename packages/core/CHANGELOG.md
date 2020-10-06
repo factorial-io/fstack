@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/factorial-io/fstack/compare/core/v0.2.0...core/v0.2.1) (2020-10-06)
+
+
+### Features
+
+* **core:** added option "addHashes" ([1f3cc03](https://github.com/factorial-io/fstack/commit/1f3cc03fefb903e0eab4d0baf949752ac357de33))
+
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/core/v0.1.5...core/v0.2.0) (2020-09-23)
 
 
