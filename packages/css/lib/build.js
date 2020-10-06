@@ -18,9 +18,15 @@ const cssnano = require("cssnano");
  * @param {Array} obj.cssFiles
  * @param {string} obj.distFolder
  * @param {object} obj.targets
+ * @param {boolean} obj.addHashes
  * @returns {Promise} - Gets resolved when building is done
  */
-module.exports = function buildCSS({ cssFiles, distFolder, targets }) {
+module.exports = function buildCSS({
+  cssFiles,
+  distFolder,
+  targets,
+  addHashes,
+}) {
   if (cssFiles.length > 0) {
     const plugins = [
       postcssImport(),
@@ -43,12 +49,22 @@ module.exports = function buildCSS({ cssFiles, distFolder, targets }) {
         new Promise((resolve, reject) => {
           const fullPath = path.join(process.cwd(), file);
           const basename = path.basename(file);
+          const hash = Date.now().toString();
+          const fileName = addHashes
+            ? path.join(
+                distFolder,
+                `${path.basename(
+                  file,
+                  path.extname(file)
+                )}.${hash}${path.extname(file)}`
+              )
+            : path.join(distFolder, basename);
 
           fs.readFile(fullPath, (err, css) => {
             postcss(plugins)
               .process(css, {
                 from: fullPath,
-                to: path.join(distFolder, basename),
+                to: fileName,
                 map: {
                   inline: false,
                 },
@@ -58,11 +74,7 @@ module.exports = function buildCSS({ cssFiles, distFolder, targets }) {
 
                 proms.push(
                   new Promise((res) => {
-                    fs.writeFile(
-                      path.join(distFolder, basename),
-                      result.css,
-                      () => res()
-                    );
+                    fs.writeFile(fileName, result.css, () => res());
                   })
                 );
 
@@ -70,7 +82,7 @@ module.exports = function buildCSS({ cssFiles, distFolder, targets }) {
                   proms.push(
                     new Promise((res) => {
                       fs.writeFile(
-                        path.join(distFolder, `${basename}.map`),
+                        `${fileName}.map`,
                         JSON.stringify(result.map),
                         () => res()
                       );
