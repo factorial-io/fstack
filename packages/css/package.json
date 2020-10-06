@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "license": "MIT",
   "private": false,
@@ -31,6 +31,6 @@
     "stylelint-selector-bem-pattern": "^2.1.0"
   },
   "peerDependencies": {
-    "@factorial/core": "^0.2.0"
+    "@factorial/core": "^0.2.1"
   }
 }

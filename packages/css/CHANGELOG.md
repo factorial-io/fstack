@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/factorial-io/fstack/compare/css/v0.2.0...css/v0.2.1) (2020-10-06)
+
+
+### Features
+
+* **css:** add hash to build files when setting addHashes to true ([25adbe0](https://github.com/factorial-io/fstack/commit/25adbe0f3f25b53983669a9ef385b7dfde63a54c))
+
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/css/v0.1.1...css/v0.2.0) (2020-09-23)
 
 
