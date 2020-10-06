@@ -19,6 +19,7 @@ module.exports = function getConfig() {
     rootFolder: "src",
     testsFolder: "tests",
     svgFolders: [],
+    addHashes: false,
   };
 
   return resolveConfigPaths({ ...defaultConfig, ...userConfig });

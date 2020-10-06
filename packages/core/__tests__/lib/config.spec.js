@@ -27,6 +27,7 @@ describe("core/lib/config", () => {
 
       expect(config).toEqual({
         use: [],
+        addHashes: false,
         assetFolders: [],
         cssFiles: [],
         distFolder: path.join(process.cwd(), "dist"),
@@ -63,6 +64,7 @@ describe("core/lib/config", () => {
 
       expect(config).toEqual({
         use: [],
+        addHashes: false,
         assetFolders: [],
         cssFiles: [],
         distFolder: path.join(process.cwd(), "dist"),
@@ -82,6 +84,7 @@ describe("core/lib/config", () => {
         () => {
           return {
             use: ["plugin"],
+            addHashes: true,
             assetFolders: ["assets"],
             cssFiles: ["index.css"],
             distFolder: "build",
@@ -98,6 +101,7 @@ describe("core/lib/config", () => {
 
       expect(config).toEqual({
         use: ["plugin"],
+        addHashes: true,
         assetFolders: [path.join(process.cwd(), "src", "assets")],
         cssFiles: [path.join("src", "index.css")],
         distFolder: path.join(process.cwd(), "build"),
@@ -140,6 +144,7 @@ describe("core/lib/config", () => {
 
         expect(config).toEqual({
           use: [],
+          addHashes: false,
           assetFolders: [],
           cssFiles: [],
           distFolder: path.join(process.cwd(), "dist"),
@@ -171,6 +176,7 @@ describe("core/lib/config", () => {
 
         expect(config).toEqual({
           use: [],
+          addHashes: false,
           assetFolders: [],
           cssFiles: [],
           distFolder: path.join(process.cwd(), "dist"),
