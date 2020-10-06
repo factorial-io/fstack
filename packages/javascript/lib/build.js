@@ -6,6 +6,7 @@ const url = require("@rollup/plugin-url");
 const terser = require("rollup-plugin-terser");
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
+const path = require("path");
 
 /**
  * @param {Array} use
@@ -78,6 +79,7 @@ function getFormat(targets) {
  * @param {Array} obj.jsFiles
  * @param {string} obj.distFolder
  * @param {object} obj.targets
+ * @param {boolean} obj.addHashes
  * @returns {Promise}
  */
 module.exports = function buildJS({
@@ -86,6 +88,7 @@ module.exports = function buildJS({
   jsFiles,
   distFolder,
   targets,
+  addHashes,
 }) {
   if (jsFiles.length > 0) {
     const plugins = getPlugins(use, rootFolder, targets);
@@ -102,7 +105,16 @@ module.exports = function buildJS({
             })
             .then(async (bundle) => {
               await bundle.write({
-                dir: distFolder,
+                name: path.basename(file),
+                file: addHashes
+                  ? path.join(
+                      distFolder,
+                      `${path.basename(
+                        file,
+                        path.extname(file)
+                      )}.${Date.now().toString()}${path.extname(file)}`
+                    )
+                  : path.join(distFolder, path.basename(file)),
                 format,
                 sourcemap: true,
               });
