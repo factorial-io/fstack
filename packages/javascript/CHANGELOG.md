@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/factorial-io/fstack/compare/javascript/v0.2.0...javascript/v0.2.1) (2020-10-06)
+
+
+### Features
+
+* **javascript:** add hash to build files when setting addHashes to true ([acdeddf](https://github.com/factorial-io/fstack/commit/acdeddfc1c0d9f1278fa85ba7bac6be24b3329f5))
+
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/javascript/v0.1.2...javascript/v0.2.0) (2020-09-23)
 
 
