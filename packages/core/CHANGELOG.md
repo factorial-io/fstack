@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/core/v0.2.1...core/v0.2.2) (2020-10-08)
+
+
+### Bug Fixes
+
+* **core:** always properly delete build files, also check for changed file types or --only param ([da71eff](https://github.com/factorial-io/fstack/commit/da71eff4cf1bab525df75a752370924031460696))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/core/v0.2.0...core/v0.2.1) (2020-10-06)
 
 
