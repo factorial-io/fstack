@@ -4,6 +4,34 @@ const chalk = require("chalk");
 const buildAssets = require("./build/assets");
 
 /**
+ * @param {string} type
+ * @param {string} fileExtension
+ * @param {Array} allTasks
+ * @param {string} distFolder
+ */
+async function cleanBuildFolder(type, fileExtension, allTasks, distFolder) {
+  if (type || fileExtension) {
+    if (type) {
+      const task = allTasks.find((t) => t.type === type);
+      if (task && task.extensions) {
+        const paths = [];
+
+        task.extensions.forEach((extension) => {
+          paths.push(`${distFolder}/**/*.${extension}`);
+          paths.push(`${distFolder}/**/*.${extension}.map`);
+        });
+        await del(paths);
+      }
+    } else {
+      const path = `${distFolder}/**/*.${fileExtension}`;
+      await del([path, `${path}.map`]);
+    }
+  } else {
+    await del([`${distFolder}/**/*`]);
+  }
+}
+
+/**
  * @param {object} obj
  * @param {object} obj.config
  * @param {string} [obj.type] - the type of the build task
@@ -12,10 +40,6 @@ const buildAssets = require("./build/assets");
  */
 module.exports = async function build({ config, type, fileExtension }) {
   console.log(`\n${chalk.magenta.bold("Creating build")}…`);
-
-  if (process.env.NODE_ENV === "production") {
-    await del([`${config.distFolder}/**/*`]);
-  }
 
   const tasksToRun = [];
   const allTasks = [
@@ -38,6 +62,8 @@ module.exports = async function build({ config, type, fileExtension }) {
       }
     });
   }
+
+  await cleanBuildFolder(type, fileExtension, allTasks, config.distFolder);
 
   // if a task type is passed to the build,
   // add the corresponding task to the list of tasks to run
