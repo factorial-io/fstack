@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/javascript/v0.2.1...javascript/v0.2.2) (2020-10-08)
+
+
+### Features
+
+* **javascript:** create compiled and uncompiled build files ([8b228cc](https://github.com/factorial-io/fstack/commit/8b228cca939b12444a2d938d75bbbfcba8c3e5dc))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/javascript/v0.2.0...javascript/v0.2.1) (2020-10-06)
 
 
