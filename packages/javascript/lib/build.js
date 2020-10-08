@@ -12,10 +12,12 @@ const path = require("path");
  * @param {Array} use
  * @param {string} rootFolder
  * @param {object} targets
+ * @param {boolean} [compiled]
  * @returns {Array}
  */
-function getPlugins(use, rootFolder, targets) {
+function getPlugins(use, rootFolder, targets, compiled) {
   const additionalPlugins = [];
+  let plugins = [];
 
   use.forEach((extension) => {
     if (extension.build && extension.build.js) {
@@ -25,23 +27,30 @@ function getPlugins(use, rootFolder, targets) {
     }
   });
 
-  const plugins = [
-    babel.babel({
-      babelHelpers: "bundled",
-      plugins: [
-        require.resolve("@babel/plugin-syntax-dynamic-import"),
-        require.resolve("@babel/plugin-proposal-object-rest-spread"),
-      ],
-      presets: [
-        [
-          require.resolve("@babel/preset-env"),
-          {
-            modules: false,
-            targets,
-          },
+  if (compiled) {
+    plugins = [
+      ...plugins,
+      babel.babel({
+        babelHelpers: "bundled",
+        plugins: [
+          require.resolve("@babel/plugin-syntax-dynamic-import"),
+          require.resolve("@babel/plugin-proposal-object-rest-spread"),
         ],
-      ],
-    }),
+        presets: [
+          [
+            require.resolve("@babel/preset-env"),
+            {
+              modules: false,
+              targets,
+            },
+          ],
+        ],
+      }),
+    ];
+  }
+
+  plugins = [
+    ...plugins,
     url({
       limit: 0,
       fileName: "[dirname][name][extname]",
@@ -70,6 +79,26 @@ function getFormat(targets) {
 }
 
 /**
+ * @param {string} file
+ * @param {string} distFolder
+ * @param {boolean} addHashes
+ * @param {boolean} compiled
+ * @returns {string}
+ */
+function getFileName(file, distFolder, addHashes, compiled) {
+  const hashString = addHashes ? `.${Date.now().toString()}` : "";
+  const compiledString = compiled ? ".compiled" : "";
+
+  return path.join(
+    distFolder,
+    `${path.basename(
+      file,
+      path.extname(file)
+    )}${compiledString}${hashString}${path.extname(file)}`
+  );
+}
+
+/**
  * Compiles the JS entry files with Babel and rollup
  * and saves the output files in `distFolder`.
  *
@@ -91,42 +120,37 @@ module.exports = function buildJS({
   addHashes,
 }) {
   if (jsFiles.length > 0) {
-    const plugins = getPlugins(use, rootFolder, targets);
     const format = getFormat(targets);
     const promises = [];
 
     jsFiles.forEach((file) => {
-      promises.push(
-        new Promise((resolve, reject) => {
-          rollup
-            .rollup({
-              input: file,
-              plugins,
-            })
-            .then(async (bundle) => {
-              await bundle.write({
-                name: path.basename(file),
-                file: addHashes
-                  ? path.join(
-                      distFolder,
-                      `${path.basename(
-                        file,
-                        path.extname(file)
-                      )}.${Date.now().toString()}${path.extname(file)}`
-                    )
-                  : path.join(distFolder, path.basename(file)),
-                format,
-                sourcemap: true,
+      [false, true].forEach((compiled) => {
+        const plugins = getPlugins(use, rootFolder, targets, compiled);
+
+        promises.push(
+          new Promise((resolve, reject) => {
+            rollup
+              .rollup({
+                input: file,
+                plugins,
+              })
+              .then(async (bundle) => {
+                await bundle.write({
+                  name: path.basename(file),
+                  file: getFileName(file, distFolder, addHashes, compiled),
+                  format,
+                  sourcemap: true,
+                });
+                resolve();
+              })
+              .catch((e) => {
+                console.log(chalk.bold("\nJS:"));
+                console.log(e);
+                reject();
               });
-              resolve();
-            })
-            .catch((e) => {
-              console.log(chalk.bold("\nJS:"));
-              console.log(e);
-              reject();
-            });
-        })
-      );
+          })
+        );
+      });
     });
 
     return Promise.all(promises)

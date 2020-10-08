@@ -4,7 +4,7 @@ This is the JavaScript plugin for `@factorial/stack-core`.
 
 It adds
 
-- a build task using
+- a build task (creating compiled and uncompiled build files) using
   - [rollup](https://www.npmjs.com/package/rollup)
   - [@rollup/plugin-babel](https://www.npmpjs.com/package/https://www.npmjs.com/package/@rollup/plugin-babel)
   - [@rollup/plugin-url](https://www.npmpjs.com/package/@rollup/plugin-url)
