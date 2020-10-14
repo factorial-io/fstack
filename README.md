@@ -196,7 +196,7 @@ yarn factorial lint --fix
 
 Every param that comes after the command name (`lint`, `watch`, `test`) is passed through, so you can overwrite or define settings.
 
-**NOTE:**: Please note that linting runs `stylelint` and `eslint`, so additional params would passed through to both of them.
+**NOTE:**: Please note that linting runs all tasks, so additional params would passed through to all of them. This might actually cause an error when one package does not support that param and therefore throws an error. If that is the case, try running a more specific command like `yarn factorial lint --only css --fix`.
 
 Passing additional params to `build` is not supported at the moment.
 
