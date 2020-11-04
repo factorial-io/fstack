@@ -18,6 +18,7 @@ const cssnano = require("cssnano");
  *
  * @param {object} obj
  * @param {Array} obj.cssFiles
+ * @param {Array} obj.customProperties
  * @param {string} obj.distFolder
  * @param {object} obj.targets
  * @param {boolean} obj.addHashes
@@ -25,6 +26,7 @@ const cssnano = require("cssnano");
  */
 module.exports = function buildCSS({
   cssFiles,
+  customPropertyFiles,
   distFolder,
   targets,
   addHashes,
@@ -46,7 +48,12 @@ module.exports = function buildCSS({
     );
 
     if (!customPropertiesSupported) {
-      plugins.push(postcssCustomProperties({ preserve: false }));
+      plugins.push(
+        postcssCustomProperties({
+          preserve: false,
+          importFrom: customPropertyFiles,
+        })
+      );
     }
 
     if (process.env.NODE_ENV === "production") {
