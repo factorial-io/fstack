@@ -14,6 +14,7 @@ module.exports = function getConfig() {
     use: [],
     assetFolders: [],
     cssFiles: [],
+    customPropertyFiles: [],
     distFolder: "dist",
     jsFiles: [],
     rootFolder: "src",
@@ -95,6 +96,9 @@ function resolveConfigPaths(conf) {
   copy.distFolder = path.join(process.cwd(), conf.distFolder);
   copy.rootFolder = path.join(process.cwd(), conf.rootFolder);
   copy.cssFiles = conf.cssFiles.map((file) => path.join(conf.rootFolder, file));
+  copy.customPropertyFiles = conf.customPropertyFiles.map((file) =>
+    path.join(conf.rootFolder, file)
+  );
   copy.jsFiles = conf.jsFiles.map((file) => path.join(conf.rootFolder, file));
   copy.assetFolders = conf.assetFolders.map((folder) =>
     path.join(copy.rootFolder, folder)
