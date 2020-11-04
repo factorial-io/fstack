@@ -46,7 +46,7 @@ module.exports = function buildCSS({
     );
 
     if (!customPropertiesSupported) {
-      plugins.push(postcssCustomProperties());
+      plugins.push(postcssCustomProperties({ preserve: false }));
     }
 
     if (process.env.NODE_ENV === "production") {
