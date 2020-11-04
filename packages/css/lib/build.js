@@ -1,4 +1,6 @@
+const browserslist = require("browserslist");
 const chalk = require("chalk");
+const caniuse = require("caniuse-api");
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
@@ -31,7 +33,6 @@ module.exports = function buildCSS({
     const plugins = [
       postcssImport(),
       postcssUrl({ url: "copy" }),
-      postcssCustomProperties(),
       postcssColorFunction(),
       postcssCustomMedia(),
       postcssAutoprefixer({
@@ -39,6 +40,14 @@ module.exports = function buildCSS({
       }),
     ];
     const promises = [];
+    const customPropertiesSupported = caniuse.isSupported(
+      "css-variables",
+      browserslist(targets.browsers || targets.browserslist || null)
+    );
+
+    if (!customPropertiesSupported) {
+      plugins.push(postcssCustomProperties());
+    }
 
     if (process.env.NODE_ENV === "production") {
       plugins.push(cssnano);
