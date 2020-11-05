@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/css/v0.2.1...css/v0.2.2) (2020-11-05)
+
+
+### Features
+
+* **css:** customPropertyFiles option to support custom property conversion in files that do not import custom property definitions ([e6013c9](https://github.com/factorial-io/fstack/commit/e6013c9bd6e8b77a89a6b4de3b70e4f9e24e6907))
+* **css:** do not preserve custom properties when they need to be converted anyway ([c7e4590](https://github.com/factorial-io/fstack/commit/c7e45907072c2c9d61ceb183f91c6f411568fbc8))
+* **css:** only use postcss custom properties plugin when necessary according to browserslist ([e8f2a01](https://github.com/factorial-io/fstack/commit/e8f2a01ee6721c3b2f83699569c967e553fcc446))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/css/v0.2.0...css/v0.2.1) (2020-10-06)
 
 
