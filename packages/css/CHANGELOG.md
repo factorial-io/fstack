@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/factorial-io/fstack/compare/css/v0.2.2...css/v0.2.3) (2020-11-05)
+
+
+### Bug Fixes
+
+* **css): Revert "feat(css:** do not preserve custom properties when they need to be converted anyway" ([5d58a5c](https://github.com/factorial-io/fstack/commit/5d58a5c4b16646d81eb4f22ced5fc32d28600799))
+
 ### [0.2.2](https://github.com/factorial-io/fstack/compare/css/v0.2.1...css/v0.2.2) (2020-11-05)
 
 
