@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/factorial-io/fstack/compare/core/v0.2.2...core/v0.2.3) (2020-11-05)
+
+
+### Features
+
+* **core:** added customPropertyFiles option ([de38305](https://github.com/factorial-io/fstack/commit/de383057766ff79984db782b9ab8c161c73dd972))
+
 ### [0.2.2](https://github.com/factorial-io/fstack/compare/core/v0.2.1...core/v0.2.2) (2020-10-08)
 
 
