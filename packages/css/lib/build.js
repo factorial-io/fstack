@@ -50,7 +50,6 @@ module.exports = function buildCSS({
     if (!customPropertiesSupported) {
       plugins.push(
         postcssCustomProperties({
-          preserve: false,
           importFrom: customPropertyFiles,
         })
       );
