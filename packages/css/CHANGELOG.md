@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/factorial-io/fstack/compare/css/v0.2.3...css/v0.2.4) (2020-11-12)
+
+
+### Features
+
+* **css:** Added task which creates a CSS file with custom properties after import via Figma API ([8cb2ca0](https://github.com/factorial-io/fstack/commit/8cb2ca0dad0e1bad6b5fbce4b151ff5f7904c0a9))
+
 ### [0.2.3](https://github.com/factorial-io/fstack/compare/css/v0.2.2...css/v0.2.3) (2020-11-05)
 
 
