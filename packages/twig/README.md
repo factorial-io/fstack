@@ -28,6 +28,23 @@ module.exports = {
 };
 ```
 
+If `twigcs` is not inside `./vendors`, you can point to the executable like this:
+
+```js
+// .factorialrc.js
+
+module.exports = {
+  use: [
+    [
+      require("@factorial/stack-twig"),
+      {
+        executable: "path/to/the/executable",
+      },
+    ],
+  ],
+};
+```
+
 ### If `friendsoftwig/twigcs` is already added to the `composer.json`
 
 ```

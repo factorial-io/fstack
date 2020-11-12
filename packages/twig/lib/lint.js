@@ -28,13 +28,17 @@ function getArgs(rootFolder) {
  *
  * @param {object} obj
  * @param {string} obj.rootFolder
+ * @param {object} config
  * @returns {Promise} - gets resolved/rejected based on if twig linting failed or not
  */
-module.exports = function lint({ rootFolder }) {
+module.exports = function lint({ rootFolder }, config) {
   const args = getArgs(rootFolder);
 
   return new Promise((resolve, reject) => {
-    const process = spawn("./vendor/bin/twigcs", args);
+    const process = spawn(
+      config && config.executable ? config.executable : "./vendor/bin/twigcs",
+      args
+    );
 
     process.stdout.on("data", (data) => {
       const str = data.toString();
