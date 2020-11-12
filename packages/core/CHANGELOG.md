@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/factorial-io/fstack/compare/core/v0.2.3...core/v0.2.4) (2020-11-12)
+
+
+### Features
+
+* **core:** Allow passing configuration objects from .factorialrc.js to packages ([65392a1](https://github.com/factorial-io/fstack/commit/65392a1890bcce4eb33e1c5e41bed26d409f789e))
+
 ### [0.2.3](https://github.com/factorial-io/fstack/compare/core/v0.2.2...core/v0.2.3) (2020-11-05)
 
 
