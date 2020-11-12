@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/factorial-io/fstack/compare/twig/v0.1.4...twig/v0.1.5) (2020-11-12)
+
+
+### Features
+
+* **twig:** use provided path to twigcs executable, otherwise use default path ([4b1db9a](https://github.com/factorial-io/fstack/commit/4b1db9a7c7a55474c68fd9f93ab75099b649b98a))
+
 ### [0.1.4](https://github.com/factorial-io/fstack/compare/twig/v0.1.3...twig/v0.1.4) (2020-09-23)
 
 ### [0.1.3](https://github.com/factorial-io/fstack/compare/twig/v0.1.2...twig/v0.1.3) (2020-09-17)
