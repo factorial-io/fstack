@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/factorial-io/fstack/compare/twig/v0.1.5...twig/v0.1.6) (2020-11-12)
+
+
+### Features
+
+* **twig:** By default do not throw an error when for linter warnings, only errors ([5f4030c](https://github.com/factorial-io/fstack/commit/5f4030c62d58d10dc7de9289b6bcd7bfb02c0dde))
+
 ### [0.1.5](https://github.com/factorial-io/fstack/compare/twig/v0.1.4...twig/v0.1.5) (2020-11-12)
 
 
