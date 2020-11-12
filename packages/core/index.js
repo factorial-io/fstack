@@ -49,8 +49,10 @@ function getAvailableCommands(packages = []) {
   // TODO: This should probably be refactored.
   const commands = ["build", "init", "watch"];
 
-  packages.forEach(({ tasks }) => {
-    Object.keys(tasks).forEach((command) => {
+  packages.forEach((ext) => {
+    const extension = Array.isArray(ext) ? ext[0] : ext;
+
+    Object.keys(extension.tasks).forEach((command) => {
       if (!commands.includes(command)) {
         commands.push(command);
       }

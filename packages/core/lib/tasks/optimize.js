@@ -14,12 +14,16 @@ module.exports = function optimize({ config, type }) {
 
   // adds the extension tasks to the full list of tasks
   if (config.use) {
-    config.use.forEach((extension) => {
+    config.use.forEach((ext) => {
+      const extension = Array.isArray(ext) ? ext[0] : ext;
+      const extensionConfig = Array.isArray(ext) ? ext[1] : null;
+
       if (extension.tasks && extension.tasks.optimize) {
         allTasks.push({
           type: extension.type,
           extensions: extension.extensions,
           task: extension.tasks.optimize,
+          config: extensionConfig,
         });
       }
     });
@@ -31,13 +35,15 @@ module.exports = function optimize({ config, type }) {
     const task = allTasks.find((t) => t.type === type);
 
     if (task) {
-      tasksToRun.push(task.task(config.svgFolders));
+      tasksToRun.push(task.task(config.svgFolders, task.extensionConfig));
     }
   }
 
   // if no tasks to run have been added, simply run all tasks
   if (tasksToRun.length === 0) {
-    allTasks.forEach(({ task }) => tasksToRun.push(task(config.svgFolders)));
+    allTasks.forEach((task) =>
+      tasksToRun.push(task.task(config.svgFolders, task.extensionConfig))
+    );
   }
 
   return Promise.all(tasksToRun)

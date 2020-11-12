@@ -7,9 +7,11 @@
 module.exports = function custom(config, command, type) {
   const tasksToRun = [];
 
-  config.use.forEach(({ tasks }) => {
-    if (tasks[command]) {
-      tasksToRun.push(tasks[command](config, type));
+  config.use.forEach((ext) => {
+    const extension = Array.isArray(ext) ? ext[0] : ext;
+
+    if (extension.tasks[command]) {
+      tasksToRun.push(extension.tasks[command](config, type));
     }
   });
 

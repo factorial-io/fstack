@@ -14,12 +14,16 @@ module.exports = function test({ config, type }) {
 
   // adds the extension tasks to the full list of tasks
   if (config.use) {
-    config.use.forEach((extension) => {
+    config.use.forEach((ext) => {
+      const extension = Array.isArray(ext) ? ext[0] : ext;
+      const extensionConfig = Array.isArray(ext) ? ext[1] : null;
+
       if (extension.tasks && extension.tasks.test) {
         allTasks.push({
           type: extension.type,
           extensions: extension.extensions,
           task: extension.tasks.test,
+          config: extensionConfig,
         });
       }
     });
@@ -31,14 +35,16 @@ module.exports = function test({ config, type }) {
     const task = allTasks.find((t) => t.type === type);
 
     if (task) {
-      tasksToRun.push(task.task(config));
+      tasksToRun.push(task.task(config, task.extensionConfig));
     } else {
       console.log("\nNo test task found, skipping…");
       tasksToRun.push(Promise.resolve());
     }
     // else simply run all tasks
   } else {
-    allTasks.forEach(({ task }) => tasksToRun.push(task(config)));
+    allTasks.forEach((task) =>
+      tasksToRun.push(task.task(config, task.extensionConfig))
+    );
   }
 
   return Promise.all(tasksToRun)

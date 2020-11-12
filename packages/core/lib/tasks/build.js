@@ -52,12 +52,16 @@ module.exports = async function build({ config, type, fileExtension }) {
 
   // adds the extension tasks to the full list of tasks
   if (config.use) {
-    config.use.forEach((extension) => {
+    config.use.forEach((ext) => {
+      const extension = Array.isArray(ext) ? ext[0] : ext;
+      const extensionConfig = Array.isArray(ext) ? ext[1] : null;
+
       if (extension.tasks && extension.tasks.build) {
         allTasks.push({
           type: extension.type,
           extensions: extension.extensions,
           task: extension.tasks.build,
+          config: extensionConfig,
         });
       }
     });
@@ -71,7 +75,7 @@ module.exports = async function build({ config, type, fileExtension }) {
     const task = allTasks.find((t) => t.type === type);
 
     if (task) {
-      tasksToRun.push(task.task(config));
+      tasksToRun.push(task.task(config, task.config));
     } else {
       console.log("\nNo build task found, skipping…");
       tasksToRun.push(Promise.resolve());
@@ -85,14 +89,14 @@ module.exports = async function build({ config, type, fileExtension }) {
     );
 
     if (task) {
-      tasksToRun.push(task.task(config));
+      tasksToRun.push(task.task(config, task.config));
     } else {
       console.log("\nNo build task found, skipping…");
       tasksToRun.push(Promise.resolve());
     }
     // else simply run all tasks
   } else {
-    allTasks.forEach(({ task }) => tasksToRun.push(task(config)));
+    allTasks.forEach((task) => tasksToRun.push(task.task(config, task.config)));
   }
 
   return Promise.all(tasksToRun)
