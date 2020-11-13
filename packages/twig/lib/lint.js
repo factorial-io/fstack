@@ -18,7 +18,7 @@ function getArgs(rootFolder) {
     args = process.argv.slice(indexOfLint + 1);
   }
 
-  args = ["--severity", "error", ...args];
+  args = ["--severity", "error", ...(args || [])];
 
   return args ? [rootFolder, ...args] : [rootFolder];
 }
