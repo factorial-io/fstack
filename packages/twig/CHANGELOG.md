@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/factorial-io/fstack/compare/twig/v0.1.6...twig/v0.1.7) (2020-11-13)
+
+
+### Bug Fixes
+
+* **twig:** twig error when no arguments are passed to linter ([2f7c727](https://github.com/factorial-io/fstack/commit/2f7c7275df19c3f5566c9ee4ea1670afa0905da2))
+
 ### [0.1.6](https://github.com/factorial-io/fstack/compare/twig/v0.1.5...twig/v0.1.6) (2020-11-12)
 
 
