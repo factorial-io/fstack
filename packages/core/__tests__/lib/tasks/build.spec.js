@@ -6,48 +6,27 @@ describe("lib/tasks/build", () => {
     console.log = jest.fn();
   });
 
-  describe("NODE_ENV !== 'production'", () => {
-    test("does not delete files in the dist folder", async () => {
-      jest.mock("del");
+  test("deletes all files in the dist folder", async () => {
+    jest.mock("del");
 
-      const del = require("del");
-      const build = require("../../../lib/tasks/build");
-      const distFolder = "distFolder";
+    const del = require("del");
+    const build = require("../../../lib/tasks/build");
+    const distFolder = "distFolder";
+    const origNodeEnv = process.env.NODE_ENV;
 
-      await build({
-        config: {
-          distFolder,
-          assetFolders: [],
-        },
-      });
+    process.env.NODE_ENV = "production";
 
-      expect(del).not.toHaveBeenCalled();
+    await build({
+      config: {
+        distFolder,
+        assetFolders: [],
+      },
     });
-  });
 
-  describe("NODE_ENV === 'production'", () => {
-    test("deletes all files in the dist folder", async () => {
-      jest.mock("del");
+    expect(del).toHaveBeenCalledTimes(1);
+    expect(del).toHaveBeenCalledWith([`${distFolder}/**/*`]);
 
-      const del = require("del");
-      const build = require("../../../lib/tasks/build");
-      const distFolder = "distFolder";
-      const origNodeEnv = process.env.NODE_ENV;
-
-      process.env.NODE_ENV = "production";
-
-      await build({
-        config: {
-          distFolder,
-          assetFolders: [],
-        },
-      });
-
-      expect(del).toHaveBeenCalledTimes(1);
-      expect(del).toHaveBeenCalledWith([`${distFolder}/**/*`]);
-
-      process.env.NODE_ENV = origNodeEnv;
-    });
+    process.env.NODE_ENV = origNodeEnv;
   });
 
   describe("with a given type", () => {

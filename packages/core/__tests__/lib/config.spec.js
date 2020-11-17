@@ -34,6 +34,7 @@ describe("core/lib/config", () => {
         jsFiles: [],
         rootFolder: path.join(process.cwd(), "src"),
         svgFolders: [],
+        customPropertyFiles: [],
         testsFolder: "tests",
         targets,
       });
@@ -71,6 +72,7 @@ describe("core/lib/config", () => {
         jsFiles: [],
         rootFolder: path.join(process.cwd(), "src"),
         svgFolders: [],
+        customPropertyFiles: [],
         testsFolder: "tests",
         targets,
       });
@@ -109,6 +111,7 @@ describe("core/lib/config", () => {
         rootFolder: path.join(process.cwd(), "src"),
         testsFolder: "tests",
         svgFolders: [path.join(process.cwd(), "src", "icons")],
+        customPropertyFiles: [],
         targets,
       });
     });
@@ -151,6 +154,7 @@ describe("core/lib/config", () => {
           jsFiles: [],
           rootFolder: path.join(process.cwd(), "src"),
           svgFolders: [],
+          customPropertyFiles: [],
           testsFolder: "tests",
           targets: ["Chrome 83"],
         });
@@ -183,6 +187,7 @@ describe("core/lib/config", () => {
           jsFiles: [],
           rootFolder: path.join(process.cwd(), "src"),
           svgFolders: [],
+          customPropertyFiles: [],
           testsFolder: "tests",
           targets: {
             browsers: ["Chrome 83"],
