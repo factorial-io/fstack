@@ -2,10 +2,11 @@ const chalk = require("chalk");
 const { spawn } = require("child_process");
 
 /**
- * @param {Array} svgFolders
+ * @param {object} obj
+ * @param {Array} obj.svgFolders
  * @returns {Promise} - gets resolved/rejected based on if SVG optimization failed or not
  */
-module.exports = function optimizeSvg(svgFolders) {
+module.exports = function optimizeSvg({ svgFolders }) {
   return new Promise((resolve, reject) => {
     const args = [];
 
