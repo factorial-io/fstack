@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/factorial-io/fstack/compare/twig/v0.1.7...twig/v0.1.8) (2020-12-02)
+
 ### [0.1.7](https://github.com/factorial-io/fstack/compare/twig/v0.1.6...twig/v0.1.7) (2020-11-13)
 
 
