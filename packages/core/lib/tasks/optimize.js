@@ -35,14 +35,14 @@ module.exports = function optimize({ config, type }) {
     const task = allTasks.find((t) => t.type === type);
 
     if (task) {
-      tasksToRun.push(task.task(config.svgFolders, task.extensionConfig));
+      tasksToRun.push(task.task(config, task.extensionConfig));
     }
   }
 
   // if no tasks to run have been added, simply run all tasks
   if (tasksToRun.length === 0) {
     allTasks.forEach((task) =>
-      tasksToRun.push(task.task(config.svgFolders, task.extensionConfig))
+      tasksToRun.push(task.task(config, task.extensionConfig))
     );
   }
 

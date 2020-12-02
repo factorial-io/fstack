@@ -17,6 +17,7 @@ module.exports = function getConfig() {
     customPropertyFiles: [],
     distFolder: "dist",
     jsFiles: [],
+    imageFolders: [],
     rootFolder: "src",
     testsFolder: "tests",
     svgFolders: [],
@@ -104,6 +105,9 @@ function resolveConfigPaths(conf) {
     path.join(copy.rootFolder, folder)
   );
   copy.svgFolders = conf.svgFolders.map((folder) =>
+    path.join(copy.rootFolder, folder)
+  );
+  copy.imageFolders = conf.imageFolders.map((folder) =>
     path.join(copy.rootFolder, folder)
   );
 
