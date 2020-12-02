@@ -20,6 +20,6 @@
   },
   "peerDependencies": {
     "twig-testing-library": "^1.1.1",
-    "@factorial/core": "^0.1.4"
+    "@factorial/core": "^0.2.5"
   }
 }
