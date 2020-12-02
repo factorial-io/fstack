@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/factorial-io/fstack/compare/core/v0.2.4...core/v0.2.5) (2020-12-02)
+
+
+### Features
+
+* **core:** added imageFolders option ([6d9b4ee](https://github.com/factorial-io/fstack/commit/6d9b4ee13a06956e5f2760f5f4618647588e3785))
+
 ### [0.2.4](https://github.com/factorial-io/fstack/compare/core/v0.2.3...core/v0.2.4) (2020-11-12)
 
 
