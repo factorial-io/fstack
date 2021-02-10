@@ -23,6 +23,6 @@
     "imagemin-webp": "^6.0.0"
   },
   "peerDependencies": {
-    "@factorial/core": "^0.2.5"
+    "@factorial/core": "^0.2.6"
   }
 }
