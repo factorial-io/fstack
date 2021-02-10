@@ -12,6 +12,9 @@ module.exports = {
     "plugin:jsdoc/recommended",
   ],
   plugins: ["prettier", "jsdoc"],
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
   rules: {
     "prettier/prettier": "error",
     "no-use-before-define": ["error", { functions: false }],
