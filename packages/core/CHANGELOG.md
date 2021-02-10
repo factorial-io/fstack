@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/factorial-io/fstack/compare/core/v0.2.5...core/v0.2.6) (2021-02-10)
+
+
+### Bug Fixes
+
+* **core:** added missing "images" package in init script ([1779a7a](https://github.com/factorial-io/fstack/commit/1779a7a212fff05ad0e4a8502c35da5aec05480a))
+* **core:** only delete the build folder when config.addHashes is true ([8163ad0](https://github.com/factorial-io/fstack/commit/8163ad0a50d8f41bad9e273af01865493e5b7bf8))
+
 ### [0.2.5](https://github.com/factorial-io/fstack/compare/core/v0.2.4...core/v0.2.5) (2020-12-02)
 
 
