@@ -67,7 +67,12 @@ module.exports = async function build({ config, type, fileExtension }) {
     });
   }
 
-  await cleanBuildFolder(type, fileExtension, allTasks, config.distFolder);
+  // deleting the build folder is only necessary if the assets are created
+  // with hashes. if they are not created with hashes, the files get
+  // overwritten anyway
+  if (config.addHashes) {
+    await cleanBuildFolder(type, fileExtension, allTasks, config.distFolder);
+  }
 
   // if a task type is passed to the build,
   // add the corresponding task to the list of tasks to run
