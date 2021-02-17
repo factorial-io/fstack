@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const rollup = require("rollup");
 const babel = require("@rollup/plugin-babel");
 const url = require("@rollup/plugin-url");
+const replace = require("@rollup/plugin-replace");
 const terser = require("rollup-plugin-terser");
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
@@ -58,6 +59,9 @@ function getPlugins(use, rootFolder, targets, compiled) {
     }),
     nodeResolve(),
     commonjs({ transformMixedEsModules: true }),
+    replace({
+      "process.env.NODE_ENV": JSON.stringify("production"),
+    }),
     ...additionalPlugins,
   ];
 
