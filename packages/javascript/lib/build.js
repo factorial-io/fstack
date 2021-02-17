@@ -85,17 +85,10 @@ function getFormat(targets) {
  * @param {boolean} compiled
  * @returns {string}
  */
-function getFileName(file, distFolder, addHashes, compiled) {
-  const hashString = addHashes ? `.${Date.now().toString()}` : "";
-  const compiledString = compiled ? ".compiled" : "";
-
-  return path.join(
-    distFolder,
-    `${path.basename(
-      file,
-      path.extname(file)
-    )}${compiledString}${hashString}${path.extname(file)}`
-  );
+function getFileName(addHashes, compiled) {
+  return compiled
+    ? `[name]${addHashes ? ".[hash]" : ""}.compiled.js`
+    : `[name]${addHashes ? ".[hash]" : ""}.js`;
 }
 
 /**
@@ -137,7 +130,9 @@ module.exports = function buildJS({
               .then(async (bundle) => {
                 await bundle.write({
                   name: path.basename(file),
-                  file: getFileName(file, distFolder, addHashes, compiled),
+                  dir: distFolder,
+                  entryFileNames: getFileName(addHashes, compiled),
+                  chunkFileNames: getFileName(addHashes, compiled),
                   format,
                   sourcemap: true,
                 });
