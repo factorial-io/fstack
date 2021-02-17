@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/factorial-io/fstack/compare/javascript/v0.2.3...javascript/v0.2.5) (2021-02-17)
+
+
+### Features
+
+* **javascript:** replace process.env.NODE_ENV which is necessary when builds contain a vue import ([ec7fd17](https://github.com/factorial-io/fstack/commit/ec7fd17b05a21d2bd3dc00ced5e9cf302b06e7d4))
+* **javascript:** use actual hashes created by rollup to only update build files when they actually changed ([3f8a7a2](https://github.com/factorial-io/fstack/commit/3f8a7a27d34c2cd902e0df53ee455266605b98eb))
+
+
+### Bug Fixes
+
+* **javascript:** babel targets node now when running tests (fixes error "regeneratorRuntime is undefined") ([b70436b](https://github.com/factorial-io/fstack/commit/b70436bfe760cbec4664eb6599b6bc8d0d350a80))
+* **javascript:** close rollup bundle when it is done ([a7cee77](https://github.com/factorial-io/fstack/commit/a7cee770a07c580464e6a324399b9299269225c8))
+* **javascript:** do not use transformMixedEsModules for commonjs rollup plugin ([ffcc471](https://github.com/factorial-io/fstack/commit/ffcc4718ce0f71a46c54fd3243aed3493ed31db3))
+
 ### [0.2.4](https://github.com/factorial-io/fstack/compare/javascript/v0.2.3...javascript/v0.2.4) (2021-02-10)
 
 ### [0.2.3](https://github.com/factorial-io/fstack/compare/javascript/v0.2.2...javascript/v0.2.3) (2020-12-02)
