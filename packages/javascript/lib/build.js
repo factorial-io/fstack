@@ -141,6 +141,7 @@ module.exports = function buildJS({
                   format,
                   sourcemap: true,
                 });
+                await bundle.close();
                 resolve();
               })
               .catch((e) => {
