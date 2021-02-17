@@ -58,7 +58,7 @@ function getPlugins(use, rootFolder, targets, compiled) {
       sourceDir: rootFolder.replace(`${process.cwd()}/`, ""),
     }),
     nodeResolve(),
-    commonjs({ transformMixedEsModules: true }),
+    commonjs(),
     replace({
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
