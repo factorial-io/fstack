@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/factorial-io/fstack/compare/css/v0.2.5...css/v0.2.7) (2021-02-17)
+
+
+### Features
+
+* **css:** use plugin configs provided by .factorialrc.js ([ce8999b](https://github.com/factorial-io/fstack/commit/ce8999b532149ff059dba61ed985ae3e20a12ede))
+
 ### [0.2.6](https://github.com/factorial-io/fstack/compare/css/v0.2.5...css/v0.2.6) (2021-02-10)
 
 ### [0.2.5](https://github.com/factorial-io/fstack/compare/css/v0.2.4...css/v0.2.5) (2020-12-02)
