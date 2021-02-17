@@ -1,6 +1,7 @@
 const browserslist = require("browserslist");
 const chalk = require("chalk");
 const caniuse = require("caniuse-api");
+const deepMerge = require("deepmerge");
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
@@ -18,28 +19,40 @@ const cssnano = require("cssnano");
  *
  * @param {object} obj
  * @param {Array} obj.cssFiles
- * @param {Array} obj.customProperties
+ * @param {Array} obj.cssAssets
+ * @param {Array} obj.customPropertyFiles
  * @param {string} obj.distFolder
  * @param {object} obj.targets
  * @param {boolean} obj.addHashes
+ * @param {object} [userConfig]
  * @returns {Promise} - Gets resolved when building is done
  */
-module.exports = function buildCSS({
-  cssFiles,
-  customPropertyFiles,
-  distFolder,
-  targets,
-  addHashes,
-}) {
+module.exports = function buildCSS(
+  { cssFiles, customPropertyFiles, distFolder, targets, addHashes },
+  userConfig
+) {
+  const config = deepMerge(
+    {
+      plugins: {
+        "postcss-url": {
+          url: "copy",
+        },
+      },
+    },
+    userConfig || {}
+  );
+
   if (cssFiles.length > 0) {
     const plugins = [
-      postcssImport(),
-      postcssUrl({ url: "copy" }),
-      postcssColorFunction(),
-      postcssCustomMedia(),
-      postcssAutoprefixer({
-        overrideBrowserslist: targets.browsers || targets.browserslist,
-      }),
+      postcssImport(config.plugins["postcss-import"]),
+      postcssUrl(config.plugins["postcss-url"]),
+      postcssColorFunction(config.plugins["postcss-color-function"]),
+      postcssCustomMedia(config.plugins["postcss-custom-media"]),
+      postcssAutoprefixer(
+        deepMerge(config.plugins["autoprefixer"], {
+          overrideBrowserslist: targets.browsers || targets.browserslist,
+        })
+      ),
     ];
     const promises = [];
     const customPropertiesSupported = caniuse.isSupported(
@@ -49,9 +62,11 @@ module.exports = function buildCSS({
 
     if (!customPropertiesSupported) {
       plugins.push(
-        postcssCustomProperties({
-          importFrom: customPropertyFiles,
-        })
+        postcssCustomProperties(
+          deepMerge(config.plugins["postcss-custom-properties"], {
+            importFrom: customPropertyFiles,
+          })
+        )
       );
     }
 

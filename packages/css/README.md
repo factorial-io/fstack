@@ -50,6 +50,21 @@ module.exports = {
 };
 ```
 
+If you need to pass options to one of the plugins, you can do that like this:
+
+```js
+// .factorialrc.js
+
+module.exports = {
+  use: [
+    [
+      require("@factorial/stack-css"),
+      { plugins: { "postcss-url": { url: "copy" } } },
+    ],
+  ],
+};
+```
+
 And add a `.stylelintrc.js`:
 
 ```js
