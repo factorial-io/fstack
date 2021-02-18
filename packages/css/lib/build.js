@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const caniuse = require("caniuse-api");
 const deepMerge = require("deepmerge");
 const fs = require("fs");
+const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
 const postcssAutoprefixer = require("autoprefixer");
@@ -101,21 +102,32 @@ module.exports = function buildCSS(
               })
               .then((result) => {
                 const proms = [];
+                const dirName = path
+                  .dirname(fileName)
+                  .replace(`${process.cwd()}/`, "");
 
                 proms.push(
-                  new Promise((res) => {
-                    fs.writeFile(fileName, result.css, () => res());
+                  new Promise((res, rej) => {
+                    mkdirp(dirName)
+                      .then(() => {
+                        fs.writeFile(fileName, result.css, () => res());
+                      })
+                      .catch(() => rej());
                   })
                 );
 
                 if (result.map) {
                   proms.push(
-                    new Promise((res) => {
-                      fs.writeFile(
-                        `${fileName}.map`,
-                        JSON.stringify(result.map),
-                        () => res()
-                      );
+                    new Promise((res, rej) => {
+                      mkdirp(dirName)
+                        .then(() => {
+                          fs.writeFile(
+                            `${fileName}.map`,
+                            JSON.stringify(result.map),
+                            () => res()
+                          );
+                        })
+                        .catch(() => rej());
                     })
                   );
                 }

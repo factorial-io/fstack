@@ -22,6 +22,7 @@
     "chalk": "^4.1.0",
     "cssnano": "^4.1.10",
     "deepmerge": "^4.2.2",
+    "mkdirp": "^1.0.4",
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.5",
     "postcss-color-function": "^4.1.0",
