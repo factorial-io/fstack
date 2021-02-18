@@ -66,6 +66,7 @@ module.exports = function buildCSS(
         postcssCustomProperties(
           deepMerge(config.plugins["postcss-custom-properties"], {
             importFrom: customPropertyFiles,
+            preserve: false,
           })
         )
       );
