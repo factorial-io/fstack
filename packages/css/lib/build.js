@@ -2,6 +2,7 @@ const browserslist = require("browserslist");
 const chalk = require("chalk");
 const caniuse = require("caniuse-api");
 const deepMerge = require("deepmerge");
+const getRevisionHash = require("rev-hash");
 const fs = require("fs");
 const mkdirp = require("mkdirp");
 const path = require("path");
@@ -81,22 +82,23 @@ module.exports = function buildCSS(
         new Promise((resolve, reject) => {
           const fullPath = path.join(process.cwd(), file);
           const basename = path.basename(file);
-          const hash = Date.now().toString();
           const fileName = addHashes
             ? path.join(
                 distFolder,
                 `${path.basename(
                   file,
                   path.extname(file)
-                )}.${hash}${path.extname(file)}`
+                )}.[hash]${path.extname(file)}`
               )
             : path.join(distFolder, basename);
 
           fs.readFile(fullPath, (err, css) => {
+            const hash = getRevisionHash(css);
+
             postcss(plugins)
               .process(css, {
                 from: fullPath,
-                to: fileName,
+                to: fileName.replace("[hash]", hash),
                 map: {
                   inline: false,
                 },
@@ -111,7 +113,11 @@ module.exports = function buildCSS(
                   new Promise((res, rej) => {
                     mkdirp(dirName)
                       .then(() => {
-                        fs.writeFile(fileName, result.css, () => res());
+                        fs.writeFile(
+                          fileName.replace("[hash]", hash),
+                          result.css,
+                          () => res()
+                        );
                       })
                       .catch(() => rej());
                   })
@@ -123,7 +129,7 @@ module.exports = function buildCSS(
                       mkdirp(dirName)
                         .then(() => {
                           fs.writeFile(
-                            `${fileName}.map`,
+                            `${fileName.replace("[hash]", hash)}.map`,
                             JSON.stringify(result.map),
                             () => res()
                           );
