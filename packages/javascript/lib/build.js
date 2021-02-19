@@ -33,6 +33,7 @@ function getPlugins(use, rootFolder, targets, compiled) {
       ...plugins,
       babel.babel({
         babelHelpers: "bundled",
+        exclude: ["node_modules/core-js/**"],
         plugins: [
           require.resolve("@babel/plugin-syntax-dynamic-import"),
           require.resolve("@babel/plugin-proposal-object-rest-spread"),
