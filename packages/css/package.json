@@ -28,6 +28,7 @@
     "postcss-color-function": "^4.1.0",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-properties": "^11.0.0",
+    "postcss-extract-media-query": "^2.0.0",
     "postcss-import": "^14.0.0",
     "postcss-url": "^10.1.1",
     "rev-hash": "^3.0.0",

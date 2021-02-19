@@ -12,6 +12,7 @@ const postcssColorFunction = require("postcss-color-function");
 const postcssCustomMedia = require("postcss-custom-media");
 const postcssCustomProperties = require("postcss-custom-properties");
 const postcssImport = require("postcss-import");
+const postcssExtractMediaQueries = require("postcss-extract-media-query");
 const postcssUrl = require("postcss-url");
 const cssnano = require("cssnano");
 
@@ -38,6 +39,17 @@ module.exports = function buildCSS(
       plugins: {
         "postcss-url": {
           url: "copy",
+        },
+        "postcss-extract-media-queries": {
+          output: {
+            path: distFolder,
+            name: `[name]-[query].[ext]`,
+          },
+          stats: false,
+          config: {
+            plugins:
+              process.env.NODE_ENV === "production" ? { cssnano: {} } : {},
+          },
         },
       },
     },
@@ -69,6 +81,14 @@ module.exports = function buildCSS(
             importFrom: customPropertyFiles,
             preserve: false,
           })
+        )
+      );
+    }
+
+    if (userConfig?.plugins["postcss-extract-media-queries"] !== null) {
+      plugins.push(
+        postcssExtractMediaQueries(
+          config.plugins["postcss-extract-media-queries"]
         )
       );
     }
