@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/factorial-io/fstack/compare/javascript/v0.2.5...javascript/v0.2.6) (2021-02-19)
+
+
+### Bug Fixes
+
+* **core:** exclude core-js from being babeled when creating a build ([6ff3775](https://github.com/factorial-io/fstack/commit/6ff3775153ad026d4e952794ce9fdc016a351d9f))
+
 ### [0.2.5](https://github.com/factorial-io/fstack/compare/javascript/v0.2.3...javascript/v0.2.5) (2021-02-17)
 
 

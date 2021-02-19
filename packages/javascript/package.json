@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-javascript",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "index.js",
   "license": "MIT",
   "private": false,
