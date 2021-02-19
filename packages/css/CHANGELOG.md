@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/factorial-io/fstack/compare/css/v0.2.7...css/v0.2.8) (2021-02-19)
+
+
+### Features
+
+* **css:** use actual hashes of the file content to only update build file names when the files actually changed ([6b95056](https://github.com/factorial-io/fstack/commit/6b950563fb7afc16b0754002a89b393cad1bd4d2))
+
+
+### Bug Fixes
+
+* **css:** create build folder if it does not exist yet when creating a build ([aaade8c](https://github.com/factorial-io/fstack/commit/aaade8c99c3cdd8c475f976a902121e5413c5710))
+* **css:** do not preserve custom properties when they are converted anyway ([e28b70a](https://github.com/factorial-io/fstack/commit/e28b70afb2547c92a653be8b892029441255b117))
+
 ### [0.2.7](https://github.com/factorial-io/fstack/compare/css/v0.2.5...css/v0.2.7) (2021-02-17)
 
 
