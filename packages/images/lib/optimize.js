@@ -6,21 +6,33 @@ const imageminJpegtran = require("imagemin-jpegtran");
 const imageminPngquant = require("imagemin-pngquant");
 const imageminWebp = require("imagemin-webp");
 
+/**
+ * @param {Array} lists
+ * @returns {Array}
+ */
 function flatten(lists) {
   return lists.reduce((a, b) => a.concat(b), []);
 }
 
-function getDirectories(srcpath) {
+/**
+ * @param {string} srcPath
+ * @returns {Array}
+ */
+function getDirectories(srcPath) {
   return fs
-    .readdirSync(srcpath)
-    .map((file) => path.join(srcpath, file))
-    .filter((path) => fs.statSync(path).isDirectory());
+    .readdirSync(srcPath)
+    .map((file) => path.join(srcPath, file))
+    .filter((p) => fs.statSync(p).isDirectory());
 }
 
-function getDirectoriesRecursive(srcpath) {
+/**
+ * @param {string} srcPath
+ * @returns {Array}
+ */
+function getDirectoriesRecursive(srcPath) {
   return [
-    srcpath,
-    ...flatten(getDirectories(srcpath).map(getDirectoriesRecursive)),
+    srcPath,
+    ...flatten(getDirectories(srcPath).map(getDirectoriesRecursive)),
   ];
 }
 
