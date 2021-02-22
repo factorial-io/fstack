@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/factorial-io/fstack/compare/core/v0.2.6...core/v0.2.7) (2021-02-22)
+
+
+### Features
+
+* **core:** option to run a command after the build has been done during watching ([af46aa4](https://github.com/factorial-io/fstack/commit/af46aa4c82debcb29515fd0877d1c3d2bec32c8d))
+
+
+### Bug Fixes
+
+* **core:** do not watch the dist folder ([48d9bb2](https://github.com/factorial-io/fstack/commit/48d9bb2d64ded6cb60bc6c56ebe4391c5eb7f1da))
+
 ### [0.2.6](https://github.com/factorial-io/fstack/compare/core/v0.2.5...core/v0.2.6) (2021-02-10)
 
 
