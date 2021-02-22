@@ -35,7 +35,7 @@ describe("lib/tasks/test", () => {
   });
 
   describe("without a given type", () => {
-    test("test runs all tasks", async () => {
+    test("'test' runs all tasks", async () => {
       jest.mock("../../../../../packages/javascript", () => {
         return {
           type: "javascript",
@@ -69,7 +69,7 @@ describe("lib/tasks/test", () => {
   });
 
   describe("with a failing test task", () => {
-    test("test returns false", async () => {
+    test("'test' returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
@@ -92,7 +92,7 @@ describe("lib/tasks/test", () => {
   });
 
   describe("with only succeeding test tasks", () => {
-    test("test returns false", async () => {
+    test("'test' returns false", async () => {
       jest.mock("../../../../../packages/css", () => {
         return {
           tasks: {
