@@ -174,6 +174,12 @@ This will watch all files in `rootFolder` for changes and lint them. If you also
 yarn factorial watch --build
 ```
 
+If a specific command should be run every time the build has finished, you can pass that command using `--afterBuild`:
+
+```bash
+yarn factorial watch --build --afterBuild yarn run someCommand
+```
+
 ### test
 
 You can run tests based on your installed packages with

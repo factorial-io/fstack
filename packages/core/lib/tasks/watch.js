@@ -1,5 +1,7 @@
+const chalk = require("chalk");
 const chokidar = require("chokidar");
 const path = require("path");
+const { exec } = require("child_process");
 
 const lint = require("./lint");
 const build = require("./build");
@@ -7,16 +9,19 @@ const build = require("./build");
 let inProgress = false;
 
 /**
- * @param {object} config
- * @param {string} param - the param passed via cli
- * @param {string} [fileExtension] - the type of the file that has been changed
+ * @param {object} obj
+ * @param {object} obj.config
+ * @param {string} obj.param - the param passed via cli
+ * @param {string} obj.fileExtension - the type of the file that has been changed
+ * @param {string} obj.afterBuildCmd
  */
-async function lintAndBuild(config, param, fileExtension) {
+async function lintAndBuild({ config, param, fileExtension, afterBuildCmd }) {
   if (!inProgress) {
     inProgress = true;
 
     if (param === "--build") {
       await build({ config, fileExtension });
+      await executeAfterBuild(afterBuildCmd);
     }
 
     await lint({ config });
@@ -26,17 +31,67 @@ async function lintAndBuild(config, param, fileExtension) {
 }
 
 /**
+ * In a shell script needs to be executed after a build has been created,
+ * this can be set in the config via `afterBuild`
+ *
+ * @param {string} cmd
+ * @returns {Promise} gets resolved when the command has been executed
+ */
+function executeAfterBuild(cmd) {
+  if (!cmd) return Promise.resolve();
+
+  return new Promise((resolve) => {
+    console.log(`\n${chalk.magenta.bold("Executing after build command")}…`);
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error(error);
+      }
+
+      if (stderr) {
+        console.error(stderr);
+      }
+
+      resolve();
+    });
+  });
+}
+
+/**
+ * Get all afterBuild arguments and return them as a joined string
+ *
+ * @param {Array} args
+ * @returns {string|null}
+ */
+function getAfterBuildCommand(args) {
+  const indexOfAfterBuildParam = args.indexOf("--afterBuild");
+
+  if (indexOfAfterBuildParam === -1) return null;
+
+  const argsWithoutAfterBuildParam = args.slice(indexOfAfterBuildParam + 1);
+
+  const indexOfNextParam = argsWithoutAfterBuildParam.indexOf(
+    argsWithoutAfterBuildParam.find((item) => item.startsWith("-"))
+  );
+
+  return indexOfNextParam === -1
+    ? argsWithoutAfterBuildParam.join(" ")
+    : argsWithoutAfterBuildParam.slice(0, indexOfNextParam).join(" ");
+}
+
+/**
  * Watches all assets defined in the configuration file,
  * lints them and builds them if `--build` is passed via CLI.
  *
  * @param {object} config
  */
-module.exports = function watch(config) {
-  const param = process.argv.slice(2)[1];
-
+module.exports = async function watch(config) {
   console.clear();
 
-  lintAndBuild(config, param);
+  const args = process.argv.slice(2);
+  const param = args[1];
+  const afterBuildCmd = getAfterBuildCommand(args);
+
+  await lintAndBuild({ config, param, afterBuildCmd });
 
   chokidar
     .watch(config.rootFolder, {
@@ -45,6 +100,11 @@ module.exports = function watch(config) {
     })
     .on("all", (event, changedPath) => {
       console.clear();
-      lintAndBuild(config, param, path.extname(changedPath).slice(1));
+      lintAndBuild({
+        config,
+        param,
+        afterBuildCmd,
+        fileExtension: path.extname(changedPath).slice(1),
+      });
     });
 };

@@ -4,8 +4,6 @@ describe("lib/tasks/watch", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     jest.resetModules();
-
-    // console.log = jest.fn();
   });
 
   describe("without --build", () => {
@@ -44,6 +42,43 @@ describe("lib/tasks/watch", () => {
       expect(lint).toHaveBeenCalledWith({ config });
 
       process.argv[3] = null;
+    });
+  });
+
+  describe("with --build and --afterBuild", () => {
+    test("build calls build, the afterBuild command and lint", async () => {
+      process.argv[3] = "--build";
+      process.argv.push("--afterBuild");
+      process.argv.push("afterBuildCommand");
+      process.argv.push("--nextParam");
+
+      jest.mock("../../../lib/tasks/lint");
+      jest.mock("../../../lib/tasks/build");
+      jest.mock("child_process");
+      const childProcess = require("child_process");
+
+      childProcess.exec.mockImplementation((command, callback) => callback());
+
+      const lint = require("../../../lib/tasks/lint");
+      const build = require("../../../lib/tasks/build");
+      const watch = require("../../../lib/tasks/watch");
+
+      await watch(config);
+
+      expect(build).toHaveBeenCalledTimes(1);
+      expect(build).toHaveBeenCalledWith({ config, fileExtension: undefined });
+      expect(childProcess.exec).toHaveBeenCalledTimes(1);
+      expect(childProcess.exec).toHaveBeenCalledWith(
+        "afterBuildCommand",
+        expect.anything()
+      );
+      expect(lint).toHaveBeenCalledTimes(1);
+      expect(lint).toHaveBeenCalledWith({ config });
+
+      process.argv[3] = null;
+      process.argv[4] = null;
+      process.argv[5] = null;
+      process.argv[6] = null;
     });
   });
 });
