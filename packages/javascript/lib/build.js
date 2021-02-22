@@ -84,8 +84,6 @@ function getFormat(targets) {
 }
 
 /**
- * @param {string} file
- * @param {string} distFolder
  * @param {boolean} addHashes
  * @param {boolean} compiled
  * @returns {string}
