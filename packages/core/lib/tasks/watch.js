@@ -39,7 +39,10 @@ module.exports = function watch(config) {
   lintAndBuild(config, param);
 
   chokidar
-    .watch(config.rootFolder, { ignoreInitial: true })
+    .watch(config.rootFolder, {
+      ignored: new RegExp(config.distFolder), // ignore the dist folder as in some cases it might be inside the root folder
+      ignoreInitial: true,
+    })
     .on("all", (event, changedPath) => {
       console.clear();
       lintAndBuild(config, param, path.extname(changedPath).slice(1));
