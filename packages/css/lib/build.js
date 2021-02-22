@@ -21,7 +21,6 @@ const cssnano = require("cssnano");
  *
  * @param {object} obj
  * @param {Array} obj.cssFiles
- * @param {Array} obj.cssAssets
  * @param {Array} obj.customPropertyFiles
  * @param {string} obj.distFolder
  * @param {object} obj.targets
@@ -51,7 +50,7 @@ module.exports = function buildCSS(
       postcssColorFunction(config.plugins["postcss-color-function"]),
       postcssCustomMedia(config.plugins["postcss-custom-media"]),
       postcssAutoprefixer(
-        deepMerge(config.plugins["autoprefixer"], {
+        deepMerge(config.plugins.autoprefixer, {
           overrideBrowserslist: targets.browsers || targets.browserslist,
         })
       ),
