@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/factorial-io/fstack/compare/css/v0.2.8...css/v0.2.9) (2021-02-25)
+
+
+### Bug Fixes
+
+* **css:** make sure passed config for postcss-custom-properties is respected ([48cd325](https://github.com/factorial-io/fstack/commit/48cd325354321aa41a476aaabc6e221bbd68f5be))
+
 ### [0.2.8](https://github.com/factorial-io/fstack/compare/css/v0.2.7...css/v0.2.8) (2021-02-19)
 
 
