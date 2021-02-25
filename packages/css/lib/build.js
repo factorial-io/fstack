@@ -38,6 +38,10 @@ module.exports = function buildCSS(
         "postcss-url": {
           url: "copy",
         },
+        "postcss-custom-properties": {
+          importFrom: customPropertyFiles,
+          preserve: false,
+        },
       },
     },
     userConfig || {}
@@ -63,12 +67,7 @@ module.exports = function buildCSS(
 
     if (!customPropertiesSupported) {
       plugins.push(
-        postcssCustomProperties(
-          deepMerge(config.plugins["postcss-custom-properties"], {
-            importFrom: customPropertyFiles,
-            preserve: false,
-          })
-        )
+        postcssCustomProperties(config.plugins["postcss-custom-properties"])
       );
     }
 
