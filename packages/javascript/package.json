@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-javascript",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "main": "index.js",
   "license": "MIT",
   "private": false,
@@ -41,6 +41,6 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "peerDependencies": {
-    "@factorial/core": "^0.2.7"
+    "@factorial/stack-core": "^0.2.7"
   }
 }
