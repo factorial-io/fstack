@@ -37,7 +37,7 @@ function getPackageJsonObject() {
     // When using Sublime Text with a project, where the package.json, .eslintrc, .stylelintrc etc
     // are not in the root folder, `process.cwd()` would point to the root folder instead of the folder where
     // those files are. That's why we need to go up from the running process (this stack in the node_modules folder).
-    return require(path.join(__dirname, "../../../package.json")); // eslint-disable-line
+    return require(path.join(__dirname, "../../../../package.json")); // eslint-disable-line
   } catch (e) {
     return {};
   }
