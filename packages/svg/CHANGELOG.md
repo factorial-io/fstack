@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/factorial-io/fstack/compare/svg/v0.1.2...svg/v0.1.4) (2021-02-27)
+
+
+### Features
+
+* **svg:** create sprite css when creating a sprite ([3588808](https://github.com/factorial-io/fstack/commit/3588808cb7ea9cd1fe08512f231c0c0e35acf959))
+
 ### [0.1.3](https://github.com/factorial-io/fstack/compare/svg/v0.1.2...svg/v0.1.3) (2021-02-10)
 
 
