@@ -37,6 +37,6 @@
     "stylelint-selector-bem-pattern": "^2.1.0"
   },
   "peerDependencies": {
-    "@factorial/core": "^0.2.6"
+    "@factorial/core": "^0.2.7"
   }
 }
