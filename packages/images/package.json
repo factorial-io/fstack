@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-images",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "license": "MIT",
   "private": false,
@@ -23,6 +23,6 @@
     "imagemin-webp": "^6.0.0"
   },
   "peerDependencies": {
-    "@factorial/core": "^0.2.7"
+    "@factorial/stack-core": "^0.2.7"
   }
 }
