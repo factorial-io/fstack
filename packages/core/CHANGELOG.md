@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/factorial-io/fstack/compare/core/v0.2.7...core/v0.2.8) (2021-02-27)
+
+
+### Bug Fixes
+
+* **core:** fix package.json couldnt be found ([e0b5f6f](https://github.com/factorial-io/fstack/commit/e0b5f6f8c282ada5a792277a811c72b151ac93b5))
+
 ### [0.2.7](https://github.com/factorial-io/fstack/compare/core/v0.2.6...core/v0.2.7) (2021-02-22)
 
 
