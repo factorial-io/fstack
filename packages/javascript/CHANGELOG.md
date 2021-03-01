@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/factorial-io/fstack/compare/javascript/v0.2.10...javascript/v0.2.11) (2021-03-01)
+
+
+### Bug Fixes
+
+* **javascript:** fix name for certain files in prod build ([cd16324](https://github.com/factorial-io/fstack/commit/cd16324934426d7b7c3f0d6c63285dfa79c9381b))
+
 ### [0.2.10](https://github.com/factorial-io/fstack/compare/javascript/v0.2.9...javascript/v0.2.10) (2021-03-01)
 
 ### [0.2.9](https://github.com/factorial-io/fstack/compare/javascript/v0.2.8...javascript/v0.2.9) (2021-02-27)
