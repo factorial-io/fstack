@@ -90,7 +90,7 @@ function getFormat(targets) {
  */
 function getFileName(addHashes, compiled) {
   return compiled
-    ? `[name]${addHashes ? ".[hash]" : ""}.compiled.js`
+    ? `[name].compiled.${addHashes ? ".[hash]" : ""}.js`
     : `[name]${addHashes ? ".[hash]" : ""}.js`;
 }
 
