@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/factorial-io/fstack/compare/css/v0.2.11...css/v0.3.0) (2021-03-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** adds "hash-" to hash in build file name for easier regexing
+
+### other
+
+* **css:** adds "hash-" to hash in build file name for easier regexing ([b992d66](https://github.com/factorial-io/fstack/commit/b992d662bfb7bc54e626eaba206f821c77a69809))
+
 ### [0.2.11](https://github.com/factorial-io/fstack/compare/css/v0.2.10...css/v0.2.11) (2021-02-27)
 
 ### [0.2.10](https://github.com/factorial-io/fstack/compare/css/v0.2.9...css/v0.2.10) (2021-02-27)
