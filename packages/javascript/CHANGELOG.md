@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/factorial-io/fstack/compare/javascript/v0.2.11...javascript/v0.3.0) (2021-03-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** adds "hash-" to hash in build file name for easier regexing
+
+### other
+
+* **javascript:** adds "hash-" to hash in build file name for easier regexing ([d0ea752](https://github.com/factorial-io/fstack/commit/d0ea752e3787e06ae8452866ca357ed82e83b00d))
+
 ### [0.2.11](https://github.com/factorial-io/fstack/compare/javascript/v0.2.10...javascript/v0.2.11) (2021-03-01)
 
 
