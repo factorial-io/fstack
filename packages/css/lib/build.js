@@ -86,7 +86,7 @@ module.exports = function buildCSS(
                 `${path.basename(
                   file,
                   path.extname(file)
-                )}.[hash]${path.extname(file)}`
+                )}.hash-[hash]${path.extname(file)}`
               )
             : path.join(distFolder, basename);
 
