@@ -139,7 +139,14 @@ describe("core/lib/config", () => {
           path.join(process.cwd(), "package.json"),
           () => {
             return {
-              browserslist: ["Chrome 83"],
+              browserslist: [
+                "last 2 versions",
+                ">1%",
+                "not ie 10",
+                "not op_mini all",
+                "not op_mob <= 46",
+                "not ie_mob <= 11",
+              ],
             };
           },
           {
@@ -160,7 +167,16 @@ describe("core/lib/config", () => {
           imageFolders: [],
           customPropertyFiles: [],
           testsFolder: "tests",
-          targets: ["Chrome 83"],
+          targets: {
+            browsers: [
+              "last 2 versions",
+              ">1%",
+              "not ie 10",
+              "not op_mini all",
+              "not op_mob <= 46",
+              "not ie_mob <= 11",
+            ],
+          },
         });
       });
     });
@@ -172,7 +188,14 @@ describe("core/lib/config", () => {
           () => {
             return {
               targets: {
-                browsers: ["Chrome 83"],
+                browsers: [
+                  "last 2 versions",
+                  ">1%",
+                  "not ie 10",
+                  "not op_mini all",
+                  "not op_mob <= 46",
+                  "not ie_mob <= 11",
+                ],
               },
             };
           },
@@ -195,7 +218,14 @@ describe("core/lib/config", () => {
           customPropertyFiles: [],
           testsFolder: "tests",
           targets: {
-            browsers: ["Chrome 83"],
+            browsers: [
+              "last 2 versions",
+              ">1%",
+              "not ie 10",
+              "not op_mini all",
+              "not op_mob <= 46",
+              "not ie_mob <= 11",
+            ],
           },
         });
       });
