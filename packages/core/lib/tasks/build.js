@@ -36,9 +36,13 @@ async function cleanBuildFolder(type, fileExtension, allTasks, distFolder) {
  * @param {object} obj.config
  * @param {string} [obj.type] - the type of the build task
  * @param {string} [obj.fileExtension] - the type of the file that has been changed
+ * @param {boolean} [emptyAssets]
  * @returns {Promise} - gets resolved with a boolean, describes if the build failed or not
  */
-module.exports = async function build({ config, type, fileExtension }) {
+module.exports = async function build(
+  { config, type, fileExtension },
+  emptyAssets
+) {
   console.log(`\n${chalk.magenta.bold("Creating build")}…`);
 
   const tasksToRun = [];
@@ -69,8 +73,11 @@ module.exports = async function build({ config, type, fileExtension }) {
 
   // deleting the build folder is only necessary if the assets are created
   // with hashes. if they are not created with hashes, the files get
-  // overwritten anyway
-  if (config.addHashes) {
+  // overwritten anyway.
+  // `emptyAssets` would be true when starting the watch command, since there
+  // might be assets with hashes in the build folder. to make sure that this
+  // doesn't cause problems, we throw away all assets initially.
+  if (config.addHashes || emptyAssets) {
     await cleanBuildFolder(type, fileExtension, allTasks, config.distFolder);
   }
 

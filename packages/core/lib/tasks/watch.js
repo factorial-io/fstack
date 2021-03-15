@@ -14,13 +14,17 @@ let inProgress = false;
  * @param {string} obj.param - the param passed via cli
  * @param {string} obj.fileExtension - the type of the file that has been changed
  * @param {string} obj.afterBuildCmd
+ * @param {boolean} [emptyAssets]
  */
-async function lintAndBuild({ config, param, fileExtension, afterBuildCmd }) {
+async function lintAndBuild(
+  { config, param, fileExtension, afterBuildCmd },
+  emptyAssets
+) {
   if (!inProgress) {
     inProgress = true;
 
     if (param === "--build") {
-      await build({ config, fileExtension });
+      await build({ config, fileExtension }, emptyAssets);
       await executeAfterBuild(afterBuildCmd);
     }
 
@@ -91,7 +95,7 @@ module.exports = async function watch(config) {
   const param = args[1];
   const afterBuildCmd = getAfterBuildCommand(args);
 
-  await lintAndBuild({ config, param, afterBuildCmd });
+  await lintAndBuild({ config, param, afterBuildCmd }, true);
 
   chokidar
     .watch(config.rootFolder, {
