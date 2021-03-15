@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/factorial-io/fstack/compare/core/v0.2.8...core/v0.2.9) (2021-03-15)
+
+
+### Bug Fixes
+
+* **core:** clean build folder when starting the watcher to avoid conflicts with old files ([2f7d85d](https://github.com/factorial-io/fstack/commit/2f7d85daafad776cfbf57757229ee13f4c8c7a77))
+
 ### [0.2.8](https://github.com/factorial-io/fstack/compare/core/v0.2.7...core/v0.2.8) (2021-02-27)
 
 
