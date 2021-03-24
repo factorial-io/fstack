@@ -11,7 +11,12 @@ module.exports = {
         namespace: "",
       },
     },
-    "rule-empty-line-before": ["always", { except: ["first-nested"] }],
+    "rule-empty-line-before": [
+      "always",
+      { except: ["first-nested"], ignore: ["after-comment"] },
+    ],
+    "comment-empty-line-before": ["always", { except: ["first-nested"] }],
     "suitcss/custom-property-no-outside-root": null,
+    "value-no-vendor-prefix": [true, { ignoreValues: ["fill-available"] }],
   },
 };
