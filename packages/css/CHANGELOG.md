@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/factorial-io/fstack/compare/css/v0.3.0...css/v0.3.1) (2021-03-24)
+
+
+### Features
+
+* **css:** improved linting rules ([278b0d1](https://github.com/factorial-io/fstack/commit/278b0d1266d89e0ae1a76990cc58ab1aef059576))
+
 ## [0.3.0](https://github.com/factorial-io/fstack/compare/css/v0.2.11...css/v0.3.0) (2021-03-03)
 
 
