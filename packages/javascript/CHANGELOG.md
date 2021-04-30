@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/factorial-io/fstack/compare/javascript/v0.3.1...javascript/v0.4.0) (2021-04-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** sets preventAssignment in rollup replace plugin to true
+
+### Features
+
+* **javascript:** sets preventAssignment in rollup replace plugin to true ([76549bf](https://github.com/factorial-io/fstack/commit/76549bf5ecf4ad3913423a768623b643bdc3c64e))
+
 ### [0.3.1](https://github.com/factorial-io/fstack/compare/javascript/v0.3.0...javascript/v0.3.1) (2021-04-30)
 
 ## [0.3.0](https://github.com/factorial-io/fstack/compare/javascript/v0.2.11...javascript/v0.3.0) (2021-03-03)
