@@ -22,11 +22,11 @@
     "release": "standard-version -t core/v"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.1",
     "chokidar": "^3.4.2",
     "deepmerge": "^4.2.2",
     "del": "^6.0.0",
     "fs-extra": "^9.0.1",
-    "inquirer": "^7.3.3"
+    "inquirer": "^8.0.0"
   }
 }
