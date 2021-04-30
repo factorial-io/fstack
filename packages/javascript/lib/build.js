@@ -61,7 +61,10 @@ function getPlugins(use, rootFolder, targets, compiled) {
     nodeResolve(),
     commonjs(),
     replace({
-      "process.env.NODE_ENV": JSON.stringify("production"),
+      values: {
+        "process.env.NODE_ENV": JSON.stringify("production"),
+      },
+      preventAssignment: true,
     }),
     ...additionalPlugins,
   ];
