@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/factorial-io/fstack/compare/svg/v0.1.5...svg/v0.1.6) (2021-04-30)
+
+
+### Bug Fixes
+
+* **svg:** do not create unnecessary svg file ([d40f641](https://github.com/factorial-io/fstack/commit/d40f6413dad4b93a1827e6eefb5a1d559536f320))
+
 ### [0.1.5](https://github.com/factorial-io/fstack/compare/svg/v0.1.4...svg/v0.1.5) (2021-02-27)
 
 ### [0.1.4](https://github.com/factorial-io/fstack/compare/svg/v0.1.2...svg/v0.1.4) (2021-02-27)
