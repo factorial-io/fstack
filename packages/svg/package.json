@@ -16,9 +16,9 @@
     "release": "standard-version -t svg/v"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.1",
     "svg-sprite": "^1.5.0",
-    "svgo": "^1.3.2"
+    "svgo": "^2.3.0"
   },
   "peerDependencies": {
     "@factorial/stack-core": "^0.2.7"
