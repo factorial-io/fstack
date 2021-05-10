@@ -123,6 +123,13 @@ module.exports = function buildJS({
     const promises = [];
 
     jsFiles.forEach((file) => {
+      const folderRelativeFromRootFolder = path.dirname(
+        file.replace(
+          path.join(rootFolder.replace(path.join(process.cwd(), "/"), ""), "/"),
+          ""
+        )
+      );
+
       [false, true].forEach((compiled) => {
         const plugins = getPlugins(use, rootFolder, targets, compiled);
 
@@ -136,7 +143,7 @@ module.exports = function buildJS({
               .then(async (bundle) => {
                 await bundle.write({
                   name: path.basename(file),
-                  dir: distFolder,
+                  dir: path.join(distFolder, folderRelativeFromRootFolder),
                   entryFileNames: getFileName(addHashes, compiled),
                   chunkFileNames: getFileName(addHashes, compiled),
                   format,
