@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/factorial-io/fstack/compare/javascript/v0.4.0...javascript/v0.5.0) (2021-05-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** build files will now be put not directly into the distFolder, but instead the same directory structure is kept inside the distFolder
+
+### Features
+
+* **javascript:** build files will now be put not directly into the distFolder, but instead the same directory structure is kept inside the distFolder ([0959274](https://github.com/factorial-io/fstack/commit/0959274d4ccc9dda9863cfb3556f729a04ac6f69))
+
 ## [0.4.0](https://github.com/factorial-io/fstack/compare/javascript/v0.3.1...javascript/v0.4.0) (2021-04-30)
 
 
