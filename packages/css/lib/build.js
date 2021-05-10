@@ -20,6 +20,7 @@ const cssnano = require("cssnano");
  * and saves the output files in `distFolder`.
  *
  * @param {object} obj
+ * @param {string} obj.rootFolder
  * @param {Array} obj.cssFiles
  * @param {Array} obj.customPropertyFiles
  * @param {string} obj.distFolder
@@ -29,7 +30,7 @@ const cssnano = require("cssnano");
  * @returns {Promise} - Gets resolved when building is done
  */
 module.exports = function buildCSS(
-  { cssFiles, customPropertyFiles, distFolder, targets, addHashes },
+  { rootFolder, cssFiles, customPropertyFiles, distFolder, targets, addHashes },
   userConfig
 ) {
   const config = deepMerge(
@@ -78,17 +79,27 @@ module.exports = function buildCSS(
     cssFiles.forEach((file) => {
       promises.push(
         new Promise((resolve, reject) => {
+          const folderRelativeFromRootFolder = path.dirname(
+            file.replace(
+              path.join(
+                rootFolder.replace(path.join(process.cwd(), "/"), ""),
+                "/"
+              ),
+              ""
+            )
+          );
           const fullPath = path.join(process.cwd(), file);
           const basename = path.basename(file);
           const fileName = addHashes
             ? path.join(
                 distFolder,
+                folderRelativeFromRootFolder,
                 `${path.basename(
                   file,
                   path.extname(file)
                 )}.hash-[hash]${path.extname(file)}`
               )
-            : path.join(distFolder, basename);
+            : path.join(distFolder, folderRelativeFromRootFolder, basename);
 
           fs.readFile(fullPath, (err, css) => {
             const hash = getRevisionHash(css);
