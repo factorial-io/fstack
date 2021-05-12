@@ -61,7 +61,7 @@ _**NOTE:** This tasks overwrites your SVG files!_
 yarn factorial sprite
 ```
 
-This task will create a SVG sprite for each of your svg folders. If you e.g. have a svg folder `src/assets/icons`, it will create `src/assets/icons.sprite.svg`.
+This task will create a SVG sprite for each of your svg folders. If you e.g. have a svg folder `src/svgs/icons`, it will create `src/svgs/icons.sprite.svg`.
 
 If you have multiple svg folders, you can also create just a single sprite via:
 
