@@ -45,16 +45,16 @@ module.exports = {
 };
 ```
 
-### If `friendsoftwig/twigcs` is already added to the `composer.json`
+### If `factorial-io/twigcs-extension` is already added to the `composer.json`
 
 ```
 composer install
 ```
 
-### If `friendsoftwig/twigcs` is not added yet to the `composer.json`
+### If `factorial-io/twigcs-extension` is not added yet to the `composer.json`
 
 ```
-composer require --dev friendsoftwig/twigcs
+composer require --dev factorial-io/twigcs-extension
 ```
 
 ## Using `twigcs` with VS Code
