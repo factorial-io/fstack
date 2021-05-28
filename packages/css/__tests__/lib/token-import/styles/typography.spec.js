@@ -60,4 +60,16 @@ describe("css/lib/token-import/styles/typography", () => {
       ).toEqual([]);
     });
   });
+
+  describe("child with no 'style' property", () => {
+    test("returns an empty array", () => {
+      const typography = require("../../../../lib/token-import/styles/typography");
+
+      expect(
+        typography({
+          children: [{ name: 'BTN' }]
+        })
+      ).toEqual([])
+    })
+  })
 });

@@ -5,7 +5,7 @@ module.exports = function getTypography(layer) {
     layer.children.forEach((child) => {
       const stringifiedName = child.name.toString();
 
-      if (!styles.find(({ name }) => name.toString() === stringifiedName)) {
+      if (child.style && !styles.find(({ name }) => name.toString() === stringifiedName)) {
         const { letterSpacing } = child.style;
         const lineHeight = child.style.lineHeightPercent / 100;
 
