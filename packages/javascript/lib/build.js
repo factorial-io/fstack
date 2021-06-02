@@ -165,9 +165,11 @@ module.exports = function buildJS({
     return Promise.all(promises)
       .then(() => {
         console.log(`\nJS: ${chalk.green("Done!")}`);
+        return Promise.resolve();
       })
       .catch(() => {
         console.log(`\nJS: ${chalk.red("Failed!")}`);
+        return Promise.reject();
       });
   }
 
