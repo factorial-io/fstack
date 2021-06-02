@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/factorial-io/fstack/compare/core/v0.2.10...core/v0.2.11) (2021-06-02)
+
+
+### Bug Fixes
+
+* **core:** properly exit the process if a build fails ([af6c061](https://github.com/factorial-io/fstack/commit/af6c06100cca38d5e16127bd0bc72598648e101f))
+
 ### [0.2.10](https://github.com/factorial-io/fstack/compare/core/v0.2.9...core/v0.2.10) (2021-04-30)
 
 ### [0.2.9](https://github.com/factorial-io/fstack/compare/core/v0.2.8...core/v0.2.9) (2021-03-15)
