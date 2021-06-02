@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/factorial-io/fstack/compare/javascript/v0.5.0...javascript/v0.5.1) (2021-06-02)
+
+
+### Bug Fixes
+
+* **javascript:** properly exit the process if a build fails ([0cc13a8](https://github.com/factorial-io/fstack/commit/0cc13a8c28eba8d3c01ba34c0ea6e54d37556bca))
+
 ## [0.5.0](https://github.com/factorial-io/fstack/compare/javascript/v0.4.0...javascript/v0.5.0) (2021-05-10)
 
 
