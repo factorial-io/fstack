@@ -165,9 +165,11 @@ module.exports = function buildCSS(
     return Promise.all(promises)
       .then(() => {
         console.log(`\nCSS: ${chalk.green("Done!")}`);
+        return Promise.resolve();
       })
       .catch(() => {
         console.log(`\nCSS: ${chalk.red("Failed!")}`);
+        return Promise.reject();
       });
   }
 
