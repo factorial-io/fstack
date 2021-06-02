@@ -40,8 +40,14 @@ module.exports = function buildAssets({
     });
 
     return Promise.all(promises)
-      .then(() => console.log(`\nAssets: ${chalk.green("Done!")}`))
-      .catch(() => console.log(`\nAssets: ${chalk.red("Failed!")}`));
+      .then(() => {
+        console.log(`\nAssets: ${chalk.green("Done!")}`);
+        return Promise.resolve();
+      })
+      .catch(() => {
+        console.log(`\nAssets: ${chalk.red("Failed!")}`);
+        return Promise.reject();
+      });
   }
 
   console.log(`\nAssets: ${chalk.yellow("No files found.")}`);
