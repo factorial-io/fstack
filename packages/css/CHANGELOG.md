@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/factorial-io/fstack/compare/css/v0.4.1...css/v0.4.2) (2021-06-02)
+
+
+### Bug Fixes
+
+* **css:** properly exit the process if a build fails ([1ff04fc](https://github.com/factorial-io/fstack/commit/1ff04fc44d17909146326921474327b3d5a10276))
+
 ### [0.4.1](https://github.com/factorial-io/fstack/compare/css/v0.4.0...css/v0.4.1) (2021-05-28)
 
 ## [0.4.0](https://github.com/factorial-io/fstack/compare/css/v0.3.2...css/v0.4.0) (2021-05-10)
