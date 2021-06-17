@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "chalk": "^4.1.1",
-    "chokidar": "^3.4.2",
+    "chokidar": "^3.5.2",
     "deepmerge": "^4.2.2",
     "del": "^6.0.0",
-    "fs-extra": "^9.0.1",
-    "inquirer": "^8.0.0"
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.1"
   }
 }
