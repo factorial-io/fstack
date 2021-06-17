@@ -37,7 +37,10 @@ describe("lib/tasks/watch", () => {
       await watch(config);
 
       expect(build).toHaveBeenCalledTimes(1);
-      expect(build).toHaveBeenCalledWith({ config, fileExtension: undefined });
+      expect(build).toHaveBeenCalledWith(
+        { config, fileExtension: undefined },
+        true
+      );
       expect(lint).toHaveBeenCalledTimes(1);
       expect(lint).toHaveBeenCalledWith({ config });
 
@@ -66,7 +69,10 @@ describe("lib/tasks/watch", () => {
       await watch(config);
 
       expect(build).toHaveBeenCalledTimes(1);
-      expect(build).toHaveBeenCalledWith({ config, fileExtension: undefined });
+      expect(build).toHaveBeenCalledWith(
+        { config, fileExtension: undefined },
+        true
+      );
       expect(childProcess.exec).toHaveBeenCalledTimes(1);
       expect(childProcess.exec).toHaveBeenCalledWith(
         "afterBuildCommand",
