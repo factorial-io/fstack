@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/factorial-io/fstack/compare/javascript/v0.5.2...javascript/v0.5.3) (2021-06-17)
+
+
+### Features
+
+* **javascript:** Allow extending the jest config ([3dddd0f](https://github.com/factorial-io/fstack/commit/3dddd0f5bf7701a64ae70bd16c72ca60adec3963))
+
 ### [0.5.2](https://github.com/factorial-io/fstack/compare/javascript/v0.5.1...javascript/v0.5.2) (2021-06-17)
 
 ### [0.5.1](https://github.com/factorial-io/fstack/compare/javascript/v0.5.0...javascript/v0.5.1) (2021-06-02)
