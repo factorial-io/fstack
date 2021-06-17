@@ -9,17 +9,18 @@
   "author": "Michael Großklaus <michael@factorial.io>",
   "devDependencies": {
     "deepmerge": "^4.2.2",
-    "eslint": "^7.9.0",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.5",
-    "eslint-plugin-jsdoc": "^32.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "jest": "^26.4.2",
-    "prettier": "^2.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsdoc": "^35.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.3.1",
     "regenerator-runtime": "^0.13.7",
-    "standard-version": "^9.0.0"
+    "standard-version": "^9.3.0"
   },
   "dependencies": {
     "@factorial/core": "file:packages/core",
@@ -36,5 +37,9 @@
     "javascript:release": "yarn --cwd packages/javascript release",
     "svg:release": "yarn --cwd packages/svg release",
     "twig:release": "yarn --cwd packages/twig release"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }
