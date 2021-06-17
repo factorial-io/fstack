@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-css",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": "index.js",
   "license": "MIT",
   "private": false,
