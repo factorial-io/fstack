@@ -28,7 +28,7 @@ module.exports = async function core(command) {
  *
  * @param {string} task
  * @returns {string}
- * */
+ */
 function getType(task) {
   const indexTask = process.argv.indexOf(task);
   const [firstParam, type] = process.argv.slice(indexTask + 1);
