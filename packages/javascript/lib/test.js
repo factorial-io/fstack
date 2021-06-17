@@ -1,5 +1,4 @@
 /* eslint no-console: 0 */
-const path = require("path");
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
@@ -11,8 +10,6 @@ const { getAdditionalParams } = require("./_helpers");
  */
 function getArgs(rootFolder) {
   const args = [
-    "--config",
-    path.join(__dirname, "../jest.config.js"),
     "--colors",
     "--passWithNoTests",
     "--collectCoverage",

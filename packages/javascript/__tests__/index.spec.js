@@ -5,6 +5,9 @@ describe("javascript/index", () => {
     jest.mock(path.join(__dirname, "../.eslintrc"), () => {
       return "eslint";
     });
+    jest.mock(path.join(__dirname, "../jest.config.js"), () => {
+      return "jest";
+    });
 
     const js = require("..");
     const build = require("../lib/build");
@@ -13,6 +16,7 @@ describe("javascript/index", () => {
 
     expect(js).toEqual({
       eslint: "eslint",
+      jest: "jest",
       type: "js",
       extensions: ["js"],
       tasks: {

@@ -84,3 +84,16 @@ If you want to exclude files from linting, you can do it by adding a `.eslintign
 ## Tests
 
 The test task uses [jest](https://github.com/facebook/jest), which "_by default it looks for `.js`, `.jsx`, `.ts` and `.tsx` files inside of `__tests__` folders, as well as any files with a suffix of `.test` or `.spec` (e.g. `Component.test.js` or `Component.spec.js`). It will also find files called `test.js` or `spec.js`._" ([Jest documentation](https://jestjs.io/docs/en/configuration.html#testmatch-arraystring))
+
+### Extending the jest config
+
+If you need to extend the jest config, you can do that like this:
+
+```js
+const jestConfig = require("@factorial/stack-javascript").jest;
+const deepMerge = require("deepmerge");
+
+module.exports = deepMerge(jestConfig, {
+  ...
+});
+```
