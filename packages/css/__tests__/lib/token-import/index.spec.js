@@ -93,15 +93,17 @@ describe("tokens/lib/token-import", () => {
           const tokenImport = require("../../../lib/token-import");
           const spy = jest.spyOn(console, "error").mockImplementation();
 
-          await tokenImport({
-            rootFolder,
-            cssTokens: {
-              figma: {
-                id,
-                token,
+          await expect(
+            tokenImport({
+              rootFolder,
+              cssTokens: {
+                figma: {
+                  id,
+                  token,
+                },
               },
-            },
-          }).catch((e) => expect(e).toEqual(undefined));
+            })
+          ).rejects.toEqual(undefined);
 
           expect(spy).toHaveBeenCalledWith(
             `\n${chalk.red.bold("Error:")} Authentication failed.`
@@ -125,15 +127,17 @@ describe("tokens/lib/token-import", () => {
           const tokenImport = require("../../../lib/token-import");
           const spy = jest.spyOn(console, "error").mockImplementation();
 
-          await tokenImport({
-            rootFolder,
-            cssTokens: {
-              figma: {
-                id,
-                token,
+          await expect(
+            tokenImport({
+              rootFolder,
+              cssTokens: {
+                figma: {
+                  id,
+                  token,
+                },
               },
-            },
-          }).catch((e) => expect(e).toEqual(undefined));
+            })
+          ).rejects.toEqual(undefined);
 
           expect(spy).toHaveBeenCalledWith(
             `\n${chalk.red.bold("Error:")} Couldn't find Figma file "${id}".`
@@ -146,21 +150,24 @@ describe("tokens/lib/token-import", () => {
       describe("with invalid page name", () => {
         test("returns a rejected Promise and renders an error messages", async () => {
           mockFetch();
+          jest.fn(() => Promise.reject(new Error()));
 
           const tokenImport = require("../../../lib/token-import");
           const spy = jest.spyOn(console, "error").mockImplementation();
           const page = "invalid page name";
 
-          await tokenImport({
-            rootFolder,
-            cssTokens: {
-              page,
-              figma: {
-                id,
-                token,
+          await expect(
+            tokenImport({
+              rootFolder,
+              cssTokens: {
+                page,
+                figma: {
+                  id,
+                  token,
+                },
               },
-            },
-          }).catch((e) => expect(e).toEqual(undefined));
+            })
+          ).rejects.toEqual(undefined);
 
           expect(spy).toHaveBeenCalledWith(
             `\n${chalk.red.bold(
