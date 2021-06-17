@@ -16,7 +16,7 @@
     "release": "standard-version -t twig/v"
   },
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.1"
   },
   "peerDependencies": {
     "@factorial/stack-core": "^0.2.7",
