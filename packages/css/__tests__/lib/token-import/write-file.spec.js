@@ -72,8 +72,9 @@ jest.mock("../../../lib/token-import/strings/outlines", () => () => "outlines");
 jest.mock("../../../lib/token-import/strings/radii", () => () => "radii");
 jest.mock("../../../lib/token-import/strings/shadows", () => () => "shadows");
 jest.mock("../../../lib/token-import/strings/spacings", () => () => "spacings");
-jest.mock("../../../lib/token-import/strings/typography", () => () =>
-  "typography"
+jest.mock(
+  "../../../lib/token-import/strings/typography",
+  () => () => "typography"
 );
 
 beforeEach(() => {

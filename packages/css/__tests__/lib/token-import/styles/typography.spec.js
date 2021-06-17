@@ -67,9 +67,9 @@ describe("css/lib/token-import/styles/typography", () => {
 
       expect(
         typography({
-          children: [{ name: 'BTN' }]
+          children: [{ name: "BTN" }],
         })
-      ).toEqual([])
-    })
-  })
+      ).toEqual([]);
+    });
+  });
 });
