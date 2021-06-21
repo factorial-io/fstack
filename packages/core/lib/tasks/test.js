@@ -3,10 +3,10 @@ const chalk = require("chalk");
 /**
  * @param {object} obj
  * @param {object} obj.config
- * @param {string} [obj.type] - the type of the test task
+ * @param {string[]} [obj.types] - the types of the test task
  * @returns {Promise} - gets resolved with a boolean, describes if the tests failed or not
  */
-module.exports = function test({ config, type }) {
+module.exports = function test({ config, types }) {
   console.log(chalk.magenta.bold("\nRunning tests…"));
 
   const allTasks = [];
@@ -31,11 +31,13 @@ module.exports = function test({ config, type }) {
 
   // if a task type is passed to the tests,
   // add the corresponding task to the list of tasks to run
-  if (type) {
-    const task = allTasks.find((t) => t.type === type);
+  if (Array.isArray(types) && types.length > 0) {
+    const tasks = allTasks.filter((t) => types.includes(t.type));
 
-    if (task) {
-      tasksToRun.push(task.task(config, task.extensionConfig));
+    if (tasks.length > 0) {
+      tasks.forEach((task) => {
+        tasksToRun.push(task.task(config, task.extensionConfig));
+      });
     } else {
       console.log("\nNo test task found, skipping…");
       tasksToRun.push(Promise.resolve());

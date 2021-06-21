@@ -92,7 +92,7 @@ describe("lib/tasks/build", () => {
           config: {
             use: [js, css],
           },
-          type: "css",
+          types: ["css"],
         });
 
         expect(buildAssets).not.toHaveBeenCalled();

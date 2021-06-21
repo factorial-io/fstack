@@ -26,7 +26,7 @@ describe("lib/tasks/test", () => {
         config: {
           use: [js, css],
         },
-        type: "css",
+        types: ["css"],
       });
 
       expect(js.tasks.test).not.toHaveBeenCalled();

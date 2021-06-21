@@ -26,7 +26,7 @@ describe("lib/tasks/lint", () => {
         config: {
           use: [js, css],
         },
-        type: "css",
+        types: ["css"],
       });
 
       expect(js.tasks.lint).not.toHaveBeenCalled();

@@ -4,15 +4,15 @@ const chalk = require("chalk");
 const buildAssets = require("./build/assets");
 
 /**
- * @param {string} type
+ * @param {string[]} types
  * @param {string} fileExtension
  * @param {Array} allTasks
  * @param {string} distFolder
  */
-async function cleanBuildFolder(type, fileExtension, allTasks, distFolder) {
-  if (type || fileExtension) {
-    if (type) {
-      const task = allTasks.find((t) => t.type === type);
+async function cleanBuildFolder(types, fileExtension, allTasks, distFolder) {
+  if ((Array.isArray(types) && types.length > 0) || fileExtension) {
+    if (types.lenght > 0) {
+      const task = allTasks.find((t) => types.includes(t.type));
       if (task && task.extensions) {
         const paths = [];
 
@@ -34,13 +34,13 @@ async function cleanBuildFolder(type, fileExtension, allTasks, distFolder) {
 /**
  * @param {object} obj
  * @param {object} obj.config
- * @param {string} [obj.type] - the type of the build task
+ * @param {string[]} [obj.types] - the types of the build task
  * @param {string} [obj.fileExtension] - the type of the file that has been changed
  * @param {boolean} [emptyAssets]
  * @returns {Promise} - gets resolved with a boolean, describes if the build failed or not
  */
 module.exports = async function build(
-  { config, type, fileExtension },
+  { config, types, fileExtension },
   emptyAssets
 ) {
   console.log(`\n${chalk.magenta.bold("Creating build")}…`);
@@ -78,16 +78,18 @@ module.exports = async function build(
   // might be assets with hashes in the build folder. to make sure that this
   // doesn't cause problems, we throw away all assets initially.
   if (config.addHashes || emptyAssets) {
-    await cleanBuildFolder(type, fileExtension, allTasks, config.distFolder);
+    await cleanBuildFolder(types, fileExtension, allTasks, config.distFolder);
   }
 
   // if a task type is passed to the build,
   // add the corresponding task to the list of tasks to run
-  if (type) {
-    const task = allTasks.find((t) => t.type === type);
+  if (Array.isArray(types) && types.length > 0) {
+    const tasks = allTasks.filter((t) => types.includes(t.type));
 
-    if (task) {
-      tasksToRun.push(task.task(config, task.config));
+    if (tasks.length > 0) {
+      tasks.forEach((task) => {
+        tasksToRun.push(task.task(config, task.config));
+      });
     } else {
       console.log("\nNo build task found, skipping…");
       tasksToRun.push(Promise.resolve());

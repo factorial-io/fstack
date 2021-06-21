@@ -24,16 +24,16 @@ module.exports = async function core(command) {
 };
 
 /**
- * Returns the type that is passed as a CLI arg via --only
+ * Returns the types that are passed as a CLI arg via --only
  *
  * @param {string} task
- * @returns {string}
+ * @returns {string[]}
  */
-function getType(task) {
+function getTypes(task) {
   const indexTask = process.argv.indexOf(task);
   const [firstParam, type] = process.argv.slice(indexTask + 1);
 
-  return firstParam === "--only" ? type : null;
+  return firstParam === "--only" ? type.split(",") : null;
 }
 
 /**
@@ -104,7 +104,7 @@ async function run(commandArg) {
       case "lint": {
         const successful = await lint({
           config,
-          type: getType("lint"),
+          types: getTypes("lint"),
         });
         process.exit(successful ? 0 : 1);
         break;
@@ -112,20 +112,20 @@ async function run(commandArg) {
       case "test": {
         const successful = await test({
           config,
-          type: getType("test"),
+          types: getTypes("test"),
         });
         process.exit(successful ? 0 : 1);
         break;
       }
       case "build": {
-        const successful = await build({ config, type: getType("build") });
+        const successful = await build({ config, types: getTypes("build") });
         process.exit(successful ? 0 : 1);
         break;
       }
       case "optimize": {
         const successful = await optimize({
           config,
-          type: getType("optimize"),
+          types: getTypes("optimize"),
         });
         process.exit(successful ? 0 : 1);
         break;
@@ -134,7 +134,7 @@ async function run(commandArg) {
         const successful = await custom(
           config,
           commandArg,
-          getType(commandArg)
+          getTypes(commandArg)
         );
         process.exit(successful ? 0 : 1);
       }

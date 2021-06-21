@@ -22,6 +22,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
   - [test](#test)
   - [Custom commands](#custom-commands)
   - [Adding additional params via CLI](#adding-additional-params-via-cli)
+  - [Running a command for specific packages](#running-a-command-for-specific-packages)
 - [Contributing](#contributing)
   - [Creating a release](#creating-a-release)
 
@@ -211,6 +212,14 @@ Every param that comes after the command name (`lint`, `watch`, `test`) is passe
 **NOTE:**: Please note that linting runs all tasks, so additional params would passed through to all of them. This might actually cause an error when one package does not support that param and therefore throws an error. If that is the case, try running a more specific command like `yarn factorial lint --only css --fix`.
 
 Passing additional params to `build` is not supported at the moment.
+
+### Running a command for specific packages
+
+When running a command, you can choose to only run specific packages by using `--only`. Let's say, you only want to lint CSS and JS files, you could run:
+
+```bash
+yarn factorial lint --only css,js
+```
 
 ## Contributing
 

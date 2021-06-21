@@ -60,7 +60,7 @@ describe("core", () => {
           expect(build).toHaveBeenCalledTimes(1);
           expect(build).toHaveBeenCalledWith({
             config: {},
-            type: null,
+            types: null,
           });
         });
       });
@@ -69,7 +69,7 @@ describe("core", () => {
         test("calls build task with the correct params", async () => {
           process.argv[2] = "build";
           process.argv[3] = "--only";
-          process.argv[4] = "css";
+          process.argv[4] = "css,js";
           const build = require("../lib/tasks/build");
           const core = require("..");
 
@@ -78,7 +78,7 @@ describe("core", () => {
           expect(build).toHaveBeenCalledTimes(1);
           expect(build).toHaveBeenCalledWith({
             config: {},
-            type: "css",
+            types: ["css", "js"],
           });
 
           process.argv[3] = null;
@@ -154,7 +154,7 @@ describe("core", () => {
                 },
               ],
             },
-            type: null,
+            types: null,
           });
         });
       });
@@ -163,7 +163,7 @@ describe("core", () => {
         test("calls lint task with the correct params", async () => {
           process.argv[2] = "lint";
           process.argv[3] = "--only";
-          process.argv[4] = "css";
+          process.argv[4] = "css,js";
           const lint = require("../lib/tasks/lint");
           const core = require("..");
 
@@ -180,7 +180,7 @@ describe("core", () => {
                 },
               ],
             },
-            type: "css",
+            types: ["css", "js"],
           });
 
           process.argv[2] = null;
@@ -257,7 +257,7 @@ describe("core", () => {
                 },
               ],
             },
-            type: null,
+            types: null,
           });
         });
       });
@@ -266,7 +266,7 @@ describe("core", () => {
         test("calls test task with the correct params", async () => {
           process.argv[2] = "test";
           process.argv[3] = "--only";
-          process.argv[4] = "css";
+          process.argv[4] = "css,js";
           const test = require("../lib/tasks/test");
           const core = require("..");
 
@@ -283,7 +283,7 @@ describe("core", () => {
                 },
               ],
             },
-            type: "css",
+            types: ["css", "js"],
           });
 
           process.argv[2] = null;
