@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/factorial-io/fstack/compare/core/v0.2.12...core/v0.2.13) (2021-06-21)
+
+
+### Features
+
+* **core:** support comma separated values for "--only" ([bf377c9](https://github.com/factorial-io/fstack/commit/bf377c90a6e93377d799cba66e9dd6396a75e1a4))
+
 ### [0.2.12](https://github.com/factorial-io/fstack/compare/core/v0.2.11...core/v0.2.12) (2021-06-17)
 
 ### [0.2.11](https://github.com/factorial-io/fstack/compare/core/v0.2.10...core/v0.2.11) (2021-06-02)
