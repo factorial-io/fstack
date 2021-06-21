@@ -27,7 +27,7 @@ function getTypographyString(name, values) {
     str += ` var(--typo-${name}-font-style)`;
   }
 
-  str += ` var(--typo-${name}-font-weight) var(--typo-${name}-font-size)/var(--typo-${name}-line-height) var(--typo-${name}-font-family);`;
+  str += ` var(--typo-${name}-font-weight) var(--typo-${name}-font-size) / var(--typo-${name}-line-height) var(--typo-${name}-font-family);`;
 
   return str;
 }
