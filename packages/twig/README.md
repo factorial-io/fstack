@@ -2,7 +2,7 @@
 
 This is the Twig plugin for `@factorial/stack-core`.
 
-It adds a lint task using `twigcs`.
+It adds a lint task using https://github.com/friendsoftwig/twigcs and https://github.com/factorial-io/twigcs-extension.
 
 ## Installation
 
@@ -28,7 +28,21 @@ module.exports = {
 };
 ```
 
-If `twigcs` is not inside `./vendors`, you can point to the executable like this:
+### Installing the twigcs-extension
+
+If `factorial-io/twigcs-extension` is already added to the `composer.json`
+
+```
+composer install
+```
+
+If `factorial-io/twigcs-extension` is not added yet to the `composer.json`
+
+```
+composer require --dev factorial-io/twigcs-extension
+```
+
+If you cannot install it inside `./vendor`, but only somewhere else, you can point to the executable like this:
 
 ```js
 // .factorialrc.js
@@ -43,18 +57,6 @@ module.exports = {
     ],
   ],
 };
-```
-
-### If `factorial-io/twigcs-extension` is already added to the `composer.json`
-
-```
-composer install
-```
-
-### If `factorial-io/twigcs-extension` is not added yet to the `composer.json`
-
-```
-composer require --dev factorial-io/twigcs-extension
 ```
 
 ## Using `twigcs` with VS Code
