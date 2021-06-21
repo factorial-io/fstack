@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.4](https://github.com/factorial-io/fstack/compare/css/v0.4.3...css/v0.4.4) (2021-06-21)
+
+
+### Features
+
+* **css:** Allow both FIGMA_ID and FIGMA_TOKEN to be set as node env vars or via .env file ([4cfe7fa](https://github.com/factorial-io/fstack/commit/4cfe7fa27b895b84aebabe268ce0379e003c8aab))
+
+
+### Bug Fixes
+
+* **css:** use space around / in font shorthand definition ([674f33e](https://github.com/factorial-io/fstack/commit/674f33e7b15d9dfe287d59df442c0589659276ae))
+
 ### [0.4.3](https://github.com/factorial-io/fstack/compare/css/v0.4.2...css/v0.4.3) (2021-06-17)
 
 ### [0.4.2](https://github.com/factorial-io/fstack/compare/css/v0.4.1...css/v0.4.2) (2021-06-02)
