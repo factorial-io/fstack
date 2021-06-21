@@ -1,6 +1,8 @@
 const chalk = require("chalk");
 const deepMerge = require("deepmerge");
+const env = require("node-env-file");
 const fetch = require("node-fetch");
+const path = require("path");
 
 const writeFile = require("./write-file");
 const getColors = require("./styles/colors");
@@ -31,9 +33,24 @@ module.exports = async function createTokens({ rootFolder, cssTokens = {} }) {
     cssTokens
   );
   const styles = {};
+  let envFile;
+
+  try {
+    envFile = env(path.join(process.cwd(), ".env"));
+  } catch (e) {
+    envFile = {};
+  }
 
   if (process.env.FIGMA_TOKEN) {
     config.figma.token = process.env.FIGMA_TOKEN;
+  } else if (envFile && envFile.FIGMA_TOKEN) {
+    config.figma.token = envFile.FIGMA_TOKEN;
+  }
+
+  if (process.env.FIGMA_ID) {
+    config.figma.id = process.env.FIGMA_ID;
+  } else if (envFile && envFile.FIGMA_ID) {
+    config.figma.id = envFile.FIGMA_ID;
   }
 
   if (!config.figma.token || !config.figma.id) {

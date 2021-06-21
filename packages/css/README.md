@@ -107,7 +107,7 @@ cssTokens: {
 }
 ```
 
-If you do not want to add the Figma token to the repository (as the code might be publicly available), you can set the token as a node environment variable (`FIGMA_TOKEN`) when running the task via CLI.
+If you do not want to add the Figma token and ID to the repository (as the code might be publicly available), you can use node environment variables (`FIGMA_TOKEN` and `FIGMA_ID`) or create a `.env` file and add `FIGMA_TOKEN` and `FIGMA_ID` in there.
 
 There are more options available, whose default values can be overwritten like this:
 
