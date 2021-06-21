@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/twig/v0.1.13...twig/v0.2.0) (2021-06-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **twig:** Always use factorial-io/twigcs-extension when linting twig files
+
+### Features
+
+* **twig:** Always use factorial-io/twigcs-extension when linting twig files ([eeb7416](https://github.com/factorial-io/fstack/commit/eeb7416574baf89cb61e357c86722b6a8c86f7de))
+
 ### [0.1.13](https://github.com/factorial-io/fstack/compare/twig/v0.1.12...twig/v0.1.13) (2021-06-17)
 
 ### [0.1.12](https://github.com/factorial-io/fstack/compare/twig/v0.1.10...twig/v0.1.12) (2021-02-27)
