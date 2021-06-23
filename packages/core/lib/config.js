@@ -50,7 +50,7 @@ function getTargets() {
   const pjson = getPackageJsonObject();
 
   if (pjson.targets) return pjson.targets;
-  if (pjson.browserslist) return pjson.browserslist;
+  if (pjson.browserslist) return { browsers: pjson.browserslist };
 
   return {
     browsers: [
