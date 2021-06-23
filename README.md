@@ -4,6 +4,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 `core` is the base package which allows you to install any of the following packages for your project:
 
 - `css`
+- `images`
 - `javascript`
 - `svg`
 - `twig`
@@ -61,11 +62,14 @@ _CSS files, relative from `rootFolder`, which contain custom property definition
 **`distFolder`**, default: `"dist"`<br>
 _The folder where the build files will be put_
 
+**`imageFolders`**, default: `[]`<br>
+_Folders that contain image files._
+
 **`jsFiles`**, default: `[]`<br>
 _The JavaScript entry files, relative from `rootFolder`. These files will be used to create a build._
 
 **`rootFolder`**, default: `"src"`<br>
-_The root folder for `jsFiles`, `cssFiles` and `assetFolders`_
+_The root folder for `jsFiles`, `cssFiles`, `assetFolders`, `imageFolders`, `svgFolders`_
 
 **`svgFolders`**, default: `[]`<br>
 _Folders that contain SVG files._
@@ -94,7 +98,9 @@ module.exports = {
   assetFolders: ["fonts/", "icons/"],
   cssFiles: ["index.css"],
   distFolder: "build",
+  imageFolders: ["images"],
   jsFiles: ["index.js"],
+  svgFolders: ["svgs"],
   rootFolder: "source",
 };
 ```
@@ -244,7 +250,9 @@ To create a release, please run any of:
 ```bash
 yarn core:release
 yarn css:release
+yarn images:release
 yarn javascript:release
+yarn svg:release
 yarn twig:release
 ```
 
