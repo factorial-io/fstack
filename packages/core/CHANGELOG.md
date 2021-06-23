@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.14](https://github.com/factorial-io/fstack/compare/core/v0.2.13...core/v0.2.14) (2021-06-23)
+
+
+### Bug Fixes
+
+* **core:** Fix error when running custom commands, e.g. creating svg sprites ([aaaa959](https://github.com/factorial-io/fstack/commit/aaaa95944e9deecac1397027287c04d16ef9cb6f))
+
 ### [0.2.13](https://github.com/factorial-io/fstack/compare/core/v0.2.12...core/v0.2.13) (2021-06-21)
 
 
