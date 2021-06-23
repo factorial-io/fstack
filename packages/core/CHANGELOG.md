@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/factorial-io/fstack/compare/core/v0.2.14...core/v0.3.0) (2021-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** the default value of targets.browsers is now "last 2 Chrome versions, last 2 Firefox versions, last 2 Safari versions, last 2 ios versions, last 2 ChromeAndroid versions, last 2 Edge versions"
+
+### Bug Fixes
+
+* **core:** Fix using browserslist value if it is defined in the package.json ([6e60ccc](https://github.com/factorial-io/fstack/commit/6e60cccf21f900f810898cc650829fd31413d607))
+
+
+### config
+
+* **core:** changed the default value for targets.browsers ([3a1ede9](https://github.com/factorial-io/fstack/commit/3a1ede92dab33949e20268e086fda6af707f2588))
+
 ### [0.2.14](https://github.com/factorial-io/fstack/compare/core/v0.2.13...core/v0.2.14) (2021-06-23)
 
 
