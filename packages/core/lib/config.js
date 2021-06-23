@@ -53,14 +53,8 @@ function getTargets() {
   if (pjson.browserslist) return { browsers: pjson.browserslist };
 
   return {
-    browsers: [
-      "last 2 versions",
-      ">1%",
-      "not ie 10",
-      "not op_mini all",
-      "not op_mob <= 46",
-      "not ie_mob <= 11",
-    ],
+    browsers:
+      "last 2 Chrome versions, last 2 Firefox versions, last 2 Safari versions, last 2 ios versions, last 2 ChromeAndroid versions, last 2 Edge versions",
   };
 }
 
