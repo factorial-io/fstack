@@ -27,7 +27,6 @@ module.exports = function createSprite({ svgFolders }) {
     const promises = [];
 
     folders.forEach((folder) => {
-      console.log(path.join(__dirname, ".svg-sprite.css"));
       promises.push(
         new Promise((resolve, reject) => {
           const p = spawn("./node_modules/.bin/svg-sprite", [
