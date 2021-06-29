@@ -42,7 +42,11 @@ If `factorial-io/twigcs-extension` is not added yet to the `composer.json`
 composer require --dev factorial-io/twigcs-extension
 ```
 
-If you cannot install it inside `./vendor`, but only somewhere else, you can point to the executable like this:
+## Options
+
+### `executable`
+
+If you cannot install the twigcs-extension inside `./vendor`, but only somewhere else, you can point to the executable like this:
 
 ```js
 // .factorialrc.js
@@ -53,6 +57,25 @@ module.exports = {
       require("@factorial/stack-twig"),
       {
         executable: "path/to/the/executable",
+      },
+    ],
+  ],
+};
+```
+
+### `folder`
+
+By default, `twigcs` will lint all twig files in your `rootFolder`. If you do not want that, you can pass `folder` to this package:
+
+```js
+// .factorialrc.js
+
+module.exports = {
+  use: [
+    [
+      require("@factorial/stack-twig"),
+      {
+        folder: "path/to/templates",
       },
     ],
   ],

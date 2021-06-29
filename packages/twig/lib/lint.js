@@ -40,7 +40,7 @@ function getArgs(rootFolder) {
  * @returns {Promise} - gets resolved/rejected based on if twig linting failed or not
  */
 module.exports = function lint({ rootFolder }, config) {
-  const args = getArgs(rootFolder);
+  const args = getArgs(config?.folder || rootFolder);
 
   return new Promise((resolve, reject) => {
     const process = spawn(
