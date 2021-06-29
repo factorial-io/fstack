@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/factorial-io/fstack/compare/twig/v0.2.0...twig/v0.2.1) (2021-06-29)
+
+
+### Features
+
+* **twig:** "folder" option to use specific folder for twig linting instead of using "rootFolder" ([1bd8a3c](https://github.com/factorial-io/fstack/commit/1bd8a3ca1fb6cf2e2906907d7d677f7cab5cb8ee))
+
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/twig/v0.1.13...twig/v0.2.0) (2021-06-21)
 
 
