@@ -4,6 +4,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 `core` is the base package which allows you to install any of the following packages for your project:
 
 - `css`
+- `e2e`
 - `images`
 - `javascript`
 - `svg`
@@ -243,6 +244,7 @@ To create a release, please run any of:
 ```bash
 yarn core:release
 yarn css:release
+yarn e2e:release
 yarn images:release
 yarn javascript:release
 yarn svg:release
