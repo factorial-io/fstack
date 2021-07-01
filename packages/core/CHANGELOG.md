@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/factorial-io/fstack/compare/core/v0.3.0...core/v0.3.1) (2021-07-01)
+
+
+### Features
+
+* **core:** Added e2e package ([d7fe369](https://github.com/factorial-io/fstack/commit/d7fe369a3295d36eb98b12f1faba08d0640f4412))
+
 ## [0.3.0](https://github.com/factorial-io/fstack/compare/core/v0.2.14...core/v0.3.0) (2021-06-23)
 
 
