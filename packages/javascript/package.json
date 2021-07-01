@@ -41,6 +41,6 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.2.7"
+    "@factorial/stack-core": "^0.2.13"
   }
 }
