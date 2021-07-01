@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/factorial-io/fstack/compare/svg/v0.1.8...svg/v0.1.9) (2021-07-01)
+
 ### [0.1.8](https://github.com/factorial-io/fstack/compare/svg/v0.1.7...svg/v0.1.8) (2021-06-23)
 
 ### [0.1.7](https://github.com/factorial-io/fstack/compare/svg/v0.1.6...svg/v0.1.7) (2021-06-17)
