@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.6](https://github.com/factorial-io/fstack/compare/css/v0.4.5...css/v0.4.6) (2021-07-06)
+
+
+### Bug Fixes
+
+* **css:** pass config to cssnano plugins when creating a build ([d652768](https://github.com/factorial-io/fstack/commit/d6527686f31c075623d00994b0d7eed9c8c7c5c6))
+
 ### [0.4.5](https://github.com/factorial-io/fstack/compare/css/v0.4.4...css/v0.4.5) (2021-07-01)
 
 ### [0.4.4](https://github.com/factorial-io/fstack/compare/css/v0.4.3...css/v0.4.4) (2021-06-21)
