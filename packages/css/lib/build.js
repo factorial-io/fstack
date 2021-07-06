@@ -73,7 +73,7 @@ module.exports = function buildCSS(
     }
 
     if (process.env.NODE_ENV === "production") {
-      plugins.push(cssnano);
+      plugins.push(cssnano(config.plugins.cssnano));
     }
 
     cssFiles.forEach((file) => {
