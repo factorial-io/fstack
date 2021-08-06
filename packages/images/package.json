@@ -16,11 +16,8 @@
     "release": "standard-version -t image/v"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
-    "imagemin": "^7.0.1",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-webp": "^6.0.0"
+    "@squoosh/lib": "^0.4.0",
+    "chalk": "^4.1.1"
   },
   "peerDependencies": {
     "@factorial/stack-core": "^0.2.13"

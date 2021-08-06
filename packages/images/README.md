@@ -1,13 +1,14 @@
 # @factorial/stack-svg
 
-This is the Image plugin for `@factorial/stack-core`.
+This is the Image plugin for `@factorial/stack-core`. It uses [@squoosh/lib](https://github.com/GoogleChromeLabs/squoosh/tree/dev/libsquoosh) under the hood.
 
-It adds an optimization task which compresses JPG and PNG files and convers them to webp images. It uses
+It adds three tasks:
 
-- [imagemin](https://www.npmjs.com/package/imagemin)
-- [imagemin-jpegtran](https://www.npmjs.com/package/imagemin-jpegtran)
-- [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant)
-- [imagemin-webp](https://www.npmjs.com/package/imagemin-webp)
+- `optimize`, which optimizes `jpg`, `jpeg` and `png` files
+- `webp`, which converts `jpg`, `jpeg` and `png` files to `webp` files
+- `avif`, which converts `jpg`, `jpeg` and `png` files to `avif` files
+
+_**NOTE:** These tasks overwrite existing files!_
 
 ## Installation
 
@@ -45,12 +46,20 @@ module.exports = {
 };
 ```
 
-### optimize
+Then run
 
 ```bash
-yarn factorial optimize
+yarn factorial optimize // to optimize jpg and png files
 ```
 
-This task will go over all JPG and PNG files found in your image folders, optimize them and then convert them to webp.
+or
 
-_**NOTE:** This tasks overwrites your JPG and PNG files!_
+```bash
+yarn factorial webp // to create webp files
+```
+
+or
+
+```bash
+yarn factorial avif // to create avif files
+```
