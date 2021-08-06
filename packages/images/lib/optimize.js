@@ -1,10 +1,9 @@
 const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs");
-const imagemin = require("imagemin");
-const imageminJpegtran = require("imagemin-jpegtran");
-const imageminPngquant = require("imagemin-pngquant");
-const imageminWebp = require("imagemin-webp");
+const { ImagePool } = require("@squoosh/lib");
+
+const imagePool = new ImagePool();
 
 /**
  * @param {Array} lists
@@ -37,31 +36,105 @@ function getDirectoriesRecursive(srcPath) {
 }
 
 /**
+ * @param {Function} resolve
+ * @param {Function} reject
+ * @param {string} imagePath
+ * @param {string} [type]
+ */
+async function handleImage(resolve, reject, imagePath, type) {
+  try {
+    const image = await imagePool.ingestImage(imagePath);
+    const squooshOptions = {};
+    const defaultCodecSettings = {};
+
+    if (type) {
+      squooshOptions[type] = defaultCodecSettings;
+    } else {
+      squooshOptions[
+        imagePath.endsWith("jpg") || imagePath.endsWith("jpeg")
+          ? "mozjpeg"
+          : "oxipng"
+      ] = defaultCodecSettings;
+    }
+
+    await image.decoded;
+    await image.encode(squooshOptions);
+    Object.values(image.encodedWith).forEach(async (encodedImage) => {
+      const finalImage = await encodedImage;
+
+      fs.writeFile(
+        imagePath.replace(path.extname(imagePath), `.${finalImage.extension}`),
+        finalImage.binary,
+        (err) => {
+          if (err) {
+            console.error(err);
+            reject();
+          } else {
+            resolve();
+          }
+        }
+      );
+    });
+  } catch (err) {
+    console.error(err);
+    reject();
+  }
+}
+
+/**
  * @param {object} obj
  * @param {Array} obj.imageFolders
- * @returns {Promise} - gets resolved/rejected based on if SVG optimization failed or not
+ * @param {string} type
+ * @returns {Promise}
  */
-module.exports = function optimizeImages({ imageFolders }) {
+function optimizeImages({ imageFolders }, type) {
   const promises = [];
+  const images = [];
 
   imageFolders.forEach((folder) => {
-    getDirectoriesRecursive(folder).forEach((f) => {
-      promises.push(
-        new Promise((resolve, reject) => {
-          imagemin([`${f}/*.{jpg,png}`], {
-            destination: f,
-            plugins: [imageminJpegtran(), imageminPngquant(), imageminWebp()],
-          })
-            .then(() => resolve())
-            .catch(() => reject());
-        })
-      );
+    getDirectoriesRecursive(folder).forEach(async (f) => {
+      fs.readdirSync(f).forEach((file) => {
+        if (
+          path.extname(file) === ".jpg" ||
+          path.extname(file) === ".jpeg" ||
+          path.extname(file) === ".png"
+        ) {
+          images.push(path.join(f, file));
+        }
+      });
     });
   });
 
-  return Promise.all(promises)
-    .then(() => console.log(`\nimagemin: ${chalk.green("Optimization done!")}`))
-    .catch(() =>
-      console.log(`\nimagemin: ${chalk.red("Optimization failed!")}`)
+  images.forEach((imagePath) => {
+    promises.push(
+      new Promise((resolve, reject) =>
+        handleImage(resolve, reject, imagePath, type)
+      )
     );
+  });
+
+  return Promise.all(promises)
+    .then(async () => {
+      console.log(
+        `\nsquoosh: ${chalk.green(
+          `${type ? `Creating ${type} images` : "Optimization"} done!`
+        )}`
+      );
+    })
+    .catch(() =>
+      console.log(
+        `\nsquoosh: ${chalk.red(
+          `${type ? `Creating ${type} images` : "Optimization"} failed!`
+        )}`
+      )
+    )
+    .finally(() => {
+      imagePool.close();
+    });
+}
+
+module.exports = {
+  optimize: (opts) => optimizeImages(opts),
+  webp: (opts) => optimizeImages(opts, "webp"),
+  avif: (opts) => optimizeImages(opts, "avif"),
 };
