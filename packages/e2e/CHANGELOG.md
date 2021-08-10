@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/factorial-io/fstack/compare/e2e/v0.1.0...e2e/v0.1.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* **e2e:** cypress configuration can now be overwritten completely ([0879140](https://github.com/factorial-io/fstack/commit/087914008b1ea90ee54998a28e39532ca347dc32))
+
 ## 0.1.0 (2021-07-01)
 
 
