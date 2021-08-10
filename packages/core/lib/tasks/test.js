@@ -36,7 +36,7 @@ module.exports = function test({ config, types }) {
 
     if (tasks.length > 0) {
       tasks.forEach((task) => {
-        tasksToRun.push(task.task(config, task.extensionConfig));
+        tasksToRun.push(task.task(config, task.config));
       });
     } else {
       console.log("\nNo test task found, skipping…");
@@ -44,9 +44,7 @@ module.exports = function test({ config, types }) {
     }
     // else simply run all tasks
   } else {
-    allTasks.forEach((task) =>
-      tasksToRun.push(task.task(config, task.extensionConfig))
-    );
+    allTasks.forEach((task) => tasksToRun.push(task.task(config, task.config)));
   }
 
   return Promise.all(tasksToRun)

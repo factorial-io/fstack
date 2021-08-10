@@ -2,20 +2,13 @@
 const chalk = require("chalk");
 const cypress = require("cypress");
 const deepMerge = require("deepmerge");
-const path = require("path");
-
-let userConfig;
-
-try {
-  userConfig = require(path.join(process.cwd(), "cypress.json")); // eslint-disable-line
-} catch (e) {
-  userConfig = {};
-}
 
 /**
+ * @param {object} config - the stack configuration
+ * @param {object} extensionConfig - the extension configuration
  * @returns {Promise} gets resolved/rejected based on if the tests failed or not
  */
-module.exports = function testE2E() {
+module.exports = function testE2E(config, extensionConfig) {
   return new Promise((resolve, reject) => {
     cypress
       .run(
@@ -26,7 +19,7 @@ module.exports = function testE2E() {
             headless: true,
             quiet: true,
           },
-          userConfig
+          extensionConfig
         )
       )
       .then(({ totalFailed }) => {
