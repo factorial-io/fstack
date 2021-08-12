@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/factorial-io/fstack/compare/core/v0.3.2...core/v0.3.3) (2021-08-12)
+
+
+### Bug Fixes
+
+* **core:** Fixes error when no extension config is passed to e2e package ([10c22ef](https://github.com/factorial-io/fstack/commit/10c22ef5a093e7c7bf76dd66fb6b597ff8bac4a0))
+
 ### [0.3.2](https://github.com/factorial-io/fstack/compare/core/v0.3.1...core/v0.3.2) (2021-08-10)
 
 
