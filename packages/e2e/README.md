@@ -64,9 +64,12 @@ If you want to overwrite this, you can do that in the `.factorialrc.js`:
 // .factorialrc.js
 
 module.exports = {
-  use: [require("@factorial/stack-e2e"), {
-    … // config object
-  }],
+  use: [
+    [
+      require("@factorial/stack-e2e"),
+      { … } // config object
+    ]
+  ],
 };
 ```
 
