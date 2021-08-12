@@ -58,7 +58,7 @@ module.exports = async function build(
   if (config.use) {
     config.use.forEach((ext) => {
       const extension = Array.isArray(ext) ? ext[0] : ext;
-      const extensionConfig = Array.isArray(ext) ? ext[1] : null;
+      const extensionConfig = Array.isArray(ext) ? ext[1] : {};
 
       if (extension.tasks && extension.tasks.build) {
         allTasks.push({

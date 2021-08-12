@@ -16,7 +16,7 @@ module.exports = function test({ config, types }) {
   if (config.use) {
     config.use.forEach((ext) => {
       const extension = Array.isArray(ext) ? ext[0] : ext;
-      const extensionConfig = Array.isArray(ext) ? ext[1] : null;
+      const extensionConfig = Array.isArray(ext) ? ext[1] : {};
 
       if (extension.tasks && extension.tasks.test) {
         allTasks.push({
