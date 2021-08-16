@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const { spawn } = require("child_process");
 
 const configPath = path.join(process.cwd(), ".factorialrc.js");
-const packages = ["css", "e2e", "images", "javascript", "svg", "twig"];
+const packages = ["css", "e2e", "html", "images", "javascript", "svg", "twig"];
 
 /**
  * @param {string} name
