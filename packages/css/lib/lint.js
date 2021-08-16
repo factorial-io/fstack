@@ -11,10 +11,13 @@ function getAdditionalParams(command) {
 
   if (indexCommand >= 0) {
     const args = process.argv.slice(indexCommand + 1);
+    const indexOfOnly = args.indexOf("--only");
+    const indexOfSkip = args.indexOf("--skip");
 
-    if (args.includes("--only")) {
-      const indexOnly = args.indexOf("--only");
-      args.splice(indexOnly, 2);
+    if (indexOfOnly >= 0 || indexOfSkip >= 0) {
+      const index = indexOfOnly >= 0 ? indexOfOnly : indexOfSkip;
+
+      args.splice(index, 2);
     }
 
     return args;
