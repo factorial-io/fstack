@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/factorial-io/fstack/compare/core/v0.3.3...core/v0.3.5) (2021-08-16)
+
+
+### Features
+
+* **core:** added --skip option to exclude types from linting, building etc (similar to --only) ([714c5fc](https://github.com/factorial-io/fstack/commit/714c5fc78dee2689432274f163ce6a9061f7a496))
+* **core:** added HTML package ([71a157f](https://github.com/factorial-io/fstack/commit/71a157f4f6b6b50c9b19dff3f5a2c130ffccbb13))
+* **core:** enable core to create package config files when running "factorial init" ([aa16c28](https://github.com/factorial-io/fstack/commit/aa16c2828aa4e021a0f38f614dbd1fd1a1f34878))
+
 ### [0.3.4](https://github.com/factorial-io/fstack/compare/core/v0.3.3...core/v0.3.4) (2021-08-16)
 
 
