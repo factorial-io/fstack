@@ -5,6 +5,7 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 
 - `css`
 - `e2e`
+- `html`
 - `images`
 - `javascript`
 - `svg`
@@ -245,6 +246,7 @@ To create a release, please run any of:
 yarn core:release
 yarn css:release
 yarn e2e:release
+yarn html:release
 yarn images:release
 yarn javascript:release
 yarn svg:release
