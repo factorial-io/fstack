@@ -1,0 +1,26 @@
+{
+  "name": "@factorial/stack-html",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factorial-io/fstack.git"
+  },
+  "author": "Michael Großklaus <michael@factorial.io>",
+  "scripts": {
+    "release": "standard-version -t html/v"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "glob": "^7.1.7",
+    "html-validate": "^5.2.1"
+  },
+  "peerDependencies": {
+    "@factorial/stack-core": "^0.3.3"
+  }
+}
