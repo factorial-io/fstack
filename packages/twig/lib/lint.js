@@ -2,28 +2,42 @@ const chalk = require("chalk");
 const { spawn } = require("child_process");
 
 /**
+ * @param {string} command
+ * @returns {Array}
+ */
+function getAdditionalParams(command) {
+  const indexCommand = process.argv.indexOf(command);
+
+  if (indexCommand >= 0) {
+    const args = process.argv.slice(indexCommand + 1);
+    const indexOfOnly = args.indexOf("--only");
+    const indexOfSkip = args.indexOf("--skip");
+
+    if (indexOfOnly >= 0 || indexOfSkip >= 0) {
+      const index = indexOfOnly >= 0 ? indexOfOnly : indexOfSkip;
+
+      args.splice(index, 2);
+    }
+
+    return args;
+  }
+
+  return [];
+}
+
+/**
  * Returns an array with all cli params after "lint --only twig"
  *
  * @param {string} rootFolder
  * @returns {Array}
  */
 function getArgs(rootFolder) {
-  const indexOfOnly = process.argv.indexOf("--only");
-  const indexOfLint = process.argv.indexOf("lint");
-  let args;
-
-  if (indexOfOnly >= 0) {
-    args = process.argv.slice(indexOfOnly + 2);
-  } else if (indexOfLint >= 0) {
-    args = process.argv.slice(indexOfLint + 1);
-  }
-
-  args = [
+  const args = [
     "--severity",
     "error",
     "--ruleset",
     "Factorial\\twigcs\\TwigCsRuleset",
-    ...(args || []),
+    ...getAdditionalParams("lint"),
   ];
 
   return args ? [rootFolder, ...args] : [rootFolder];
