@@ -8,6 +8,15 @@ const eslintConfig = require(path.join(__dirname, ".eslintrc")); // eslint-disab
 const jestConfig = require(path.join(__dirname, "jest.config.js")); // eslint-disable-line
 
 module.exports = {
+  configFiles: [
+    {
+      name: ".eslintrc.js",
+      content: `const eslintConfig = require("@factorial/stack-javascript").eslint;
+
+module.exports = eslintConfig;
+`,
+    },
+  ],
   type: "js",
   extensions: ["js"],
   eslint: eslintConfig,
