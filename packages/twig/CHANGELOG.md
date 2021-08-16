@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/twig/v0.2.1...twig/v0.2.2) (2021-08-16)
+
+
+### Features
+
+* **twig:** enable --skip option for twig package ([b739fe8](https://github.com/factorial-io/fstack/commit/b739fe8c5276da21b9b4c28378eaadb6de845156))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/twig/v0.2.0...twig/v0.2.1) (2021-06-29)
 
 
