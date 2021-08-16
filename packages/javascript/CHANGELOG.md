@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.6](https://github.com/factorial-io/fstack/compare/javascript/v0.5.4...javascript/v0.5.6) (2021-08-16)
+
+
+### Features
+
+* **javascript:** create .eslintrc.js when adding package via "factorial init" ([4348770](https://github.com/factorial-io/fstack/commit/4348770c4f654b7fae35c236be533f47411d65f5))
+* **javascript:** enable --skip option for javascript package ([1de13ba](https://github.com/factorial-io/fstack/commit/1de13baf3da4a492d2e7a281357f029b5fdf3432))
+
 ### [0.5.5](https://github.com/factorial-io/fstack/compare/javascript/v0.5.4...javascript/v0.5.5) (2021-08-16)
 
 
