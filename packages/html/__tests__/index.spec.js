@@ -10,6 +10,15 @@ describe("html/index", () => {
     const lint = require("../lib/lint");
 
     expect(html).toEqual({
+      configFiles: [
+        {
+          name: ".htmlvalidate.js",
+          content: `const htmlValidateConfig = require("@factorial/stack-html").htmlValidate;
+
+module.exports = htmlValidateConfig;
+`,
+        },
+      ],
       htmlValidate: "htmlvalidate",
       type: "html",
       extensions: ["html"],
