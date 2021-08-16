@@ -15,6 +15,15 @@ describe("javascript/index", () => {
     const test = require("../lib/test");
 
     expect(js).toEqual({
+      configFiles: [
+        {
+          name: ".eslintrc.js",
+          content: `const eslintConfig = require("@factorial/stack-javascript").eslint;
+
+module.exports = eslintConfig;
+`,
+        },
+      ],
       eslint: "eslint",
       jest: "jest",
       type: "js",
