@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.8](https://github.com/factorial-io/fstack/compare/css/v0.4.7...css/v0.4.8) (2021-08-16)
+
+
+### Features
+
+* **css:** create .stylelintrc.js when adding package via "factorial init" ([ebd1869](https://github.com/factorial-io/fstack/commit/ebd1869c65364c13c47bbdbc092f48abdc2ee7b0))
+
 ### [0.4.7](https://github.com/factorial-io/fstack/compare/css/v0.4.6...css/v0.4.7) (2021-08-16)
 
 ### [0.4.6](https://github.com/factorial-io/fstack/compare/css/v0.4.5...css/v0.4.6) (2021-07-06)
