@@ -4,6 +4,8 @@ describe("lib/tasks/watch", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     jest.resetModules();
+
+    console.log = jest.fn();
   });
 
   describe("without --build", () => {
