@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/factorial-io/fstack/compare/core/v0.3.3...core/v0.3.4) (2021-08-16)
+
+
+### Features
+
+* **core:** added HTML package ([71a157f](https://github.com/factorial-io/fstack/commit/71a157f4f6b6b50c9b19dff3f5a2c130ffccbb13))
+* **core:** enable core to create package config files when running "factorial init" ([fca61ca](https://github.com/factorial-io/fstack/commit/fca61ca495689319040d7670aa5d4a7271c1f054))
+
 ### [0.3.3](https://github.com/factorial-io/fstack/compare/core/v0.3.2...core/v0.3.3) (2021-08-12)
 
 
