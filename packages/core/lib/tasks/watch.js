@@ -5,30 +5,36 @@ const { exec } = require("child_process");
 
 const lint = require("./lint");
 const build = require("./build");
+const allTypes = require("../types");
 
 let inProgress = false;
 
 /**
  * @param {object} obj
  * @param {object} obj.config
- * @param {string} obj.param - the param passed via cli
+ * @param {boolean} obj.shouldCreateBuild
  * @param {string} obj.fileExtension - the type of the file that has been changed
+ * @param {string} obj.skipParam
  * @param {string} obj.afterBuildCmd
  * @param {boolean} [emptyAssets]
  */
 async function lintAndBuild(
-  { config, param, fileExtension, afterBuildCmd },
+  { config, shouldCreateBuild, fileExtension, skipParam, afterBuildCmd },
   emptyAssets
 ) {
   if (!inProgress) {
     inProgress = true;
 
-    if (param === "--build") {
-      await build({ config, fileExtension }, emptyAssets);
+    const types = skipParam
+      ? allTypes.filter((entry) => !skipParam.split(",").includes(entry))
+      : allTypes;
+
+    if (shouldCreateBuild) {
+      await build({ config, types, fileExtension }, emptyAssets);
       await executeAfterBuild(afterBuildCmd);
     }
 
-    await lint({ config });
+    await lint({ config, types });
 
     inProgress = false;
   }
@@ -92,10 +98,15 @@ module.exports = async function watch(config) {
   console.clear();
 
   const args = process.argv.slice(2);
-  const param = args[1];
+  const indexOfSkip = args.indexOf("--skip");
+  const skipParam = indexOfSkip >= 0 ? args[indexOfSkip + 1] : null;
+  const shouldCreateBuild = args.indexOf("--build") >= 0;
   const afterBuildCmd = getAfterBuildCommand(args);
 
-  await lintAndBuild({ config, param, afterBuildCmd }, true);
+  await lintAndBuild(
+    { config, shouldCreateBuild, afterBuildCmd, skipParam },
+    true
+  );
 
   chokidar
     .watch(config.rootFolder, {
@@ -106,8 +117,9 @@ module.exports = async function watch(config) {
       console.clear();
       lintAndBuild({
         config,
-        param,
+        shouldCreateBuild,
         afterBuildCmd,
+        skipParam,
         fileExtension: path.extname(changedPath).slice(1),
       });
     });

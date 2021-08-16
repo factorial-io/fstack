@@ -60,7 +60,7 @@ describe("core", () => {
           expect(build).toHaveBeenCalledTimes(1);
           expect(build).toHaveBeenCalledWith({
             config: {},
-            types: null,
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
           });
         });
       });
@@ -154,7 +154,7 @@ describe("core", () => {
                 },
               ],
             },
-            types: null,
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
           });
         });
       });
@@ -257,7 +257,7 @@ describe("core", () => {
                 },
               ],
             },
-            types: null,
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
           });
         });
       });

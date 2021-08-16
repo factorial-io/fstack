@@ -20,7 +20,10 @@ describe("lib/tasks/watch", () => {
       watch(config);
 
       expect(lint).toHaveBeenCalledTimes(1);
-      expect(lint).toHaveBeenCalledWith({ config });
+      expect(lint).toHaveBeenCalledWith({
+        config,
+        types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+      });
       expect(build).not.toHaveBeenCalled();
     });
   });
@@ -40,11 +43,18 @@ describe("lib/tasks/watch", () => {
 
       expect(build).toHaveBeenCalledTimes(1);
       expect(build).toHaveBeenCalledWith(
-        { config, fileExtension: undefined },
+        {
+          config,
+          fileExtension: undefined,
+          types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+        },
         true
       );
       expect(lint).toHaveBeenCalledTimes(1);
-      expect(lint).toHaveBeenCalledWith({ config });
+      expect(lint).toHaveBeenCalledWith({
+        config,
+        types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+      });
 
       process.argv[3] = null;
     });
@@ -72,7 +82,11 @@ describe("lib/tasks/watch", () => {
 
       expect(build).toHaveBeenCalledTimes(1);
       expect(build).toHaveBeenCalledWith(
-        { config, fileExtension: undefined },
+        {
+          config,
+          fileExtension: undefined,
+          types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+        },
         true
       );
       expect(childProcess.exec).toHaveBeenCalledTimes(1);
@@ -81,7 +95,10 @@ describe("lib/tasks/watch", () => {
         expect.anything()
       );
       expect(lint).toHaveBeenCalledTimes(1);
-      expect(lint).toHaveBeenCalledWith({ config });
+      expect(lint).toHaveBeenCalledWith({
+        config,
+        types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+      });
 
       process.argv[3] = null;
       process.argv[4] = null;

@@ -182,6 +182,12 @@ If a specific command should be run every time the build has finished, you can p
 yarn factorial watch --build --afterBuild yarn run someCommand
 ```
 
+If you want to exclude certain types from watching, you can do so by setting the `--skip` option:
+
+```bash
+yarn factorial watch --skip html
+```
+
 ### test
 
 You can run tests based on your installed packages with
@@ -220,6 +226,12 @@ When running a command, you can choose to only run specific packages by using `-
 
 ```bash
 yarn factorial lint --only css,js
+```
+
+Alternatively you can also skip packages using the `--skip` option:
+
+```bash
+yarn factorial lint --skip css,js
 ```
 
 ## Contributing

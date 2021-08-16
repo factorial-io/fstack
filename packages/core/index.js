@@ -8,6 +8,7 @@ const watch = require("./lib/tasks/watch");
 const optimize = require("./lib/tasks/optimize");
 const test = require("./lib/tasks/test");
 const getConfig = require("./lib/config");
+const allTypes = require("./lib/types");
 
 module.exports = async function core(command) {
   await run(command);
@@ -33,7 +34,15 @@ function getTypes(task) {
   const indexTask = process.argv.indexOf(task);
   const [firstParam, type] = process.argv.slice(indexTask + 1);
 
-  return firstParam === "--only" ? type.split(",") : null;
+  if (firstParam === "--only") {
+    return type.split(",");
+  }
+
+  if (firstParam === "--skip") {
+    return allTypes.filter((entry) => !type.split(",").includes(entry));
+  }
+
+  return allTypes;
 }
 
 /**
