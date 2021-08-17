@@ -25,16 +25,19 @@ async function lintAndBuild(
   if (!inProgress) {
     inProgress = true;
 
-    const types = skipParam
-      ? allTypes.filter((entry) => !skipParam.split(",").includes(entry))
-      : allTypes;
+    const types = {
+      types: skipParam
+        ? allTypes.filter((entry) => !skipParam.split(",").includes(entry))
+        : allTypes,
+      all: true,
+    };
 
     if (shouldCreateBuild) {
       await build({ config, types, fileExtension }, emptyAssets);
       await executeAfterBuild(afterBuildCmd);
     }
 
-    await lint({ config, types });
+    await lint({ config, types: types.types });
 
     inProgress = false;
   }

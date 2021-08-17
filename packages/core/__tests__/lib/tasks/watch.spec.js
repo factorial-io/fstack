@@ -46,7 +46,10 @@ describe("lib/tasks/watch", () => {
         {
           config,
           fileExtension: undefined,
-          types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+          types: {
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+            all: true,
+          },
         },
         true
       );
@@ -85,7 +88,10 @@ describe("lib/tasks/watch", () => {
         {
           config,
           fileExtension: undefined,
-          types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+          types: {
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+            all: true,
+          },
         },
         true
       );

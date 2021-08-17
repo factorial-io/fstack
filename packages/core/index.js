@@ -35,14 +35,25 @@ function getTypes(task) {
   const [firstParam, type] = process.argv.slice(indexTask + 1);
 
   if (firstParam === "--only") {
-    return type.split(",");
+    const types = type.split(",");
+    return {
+      types,
+      all: false,
+    };
   }
 
   if (firstParam === "--skip") {
-    return allTypes.filter((entry) => !type.split(",").includes(entry));
+    const types = allTypes.filter((entry) => !type.split(",").includes(entry));
+    return {
+      types,
+      all: true,
+    };
   }
 
-  return allTypes;
+  return {
+    types: allTypes,
+    all: true,
+  };
 }
 
 /**
@@ -113,7 +124,7 @@ async function run(commandArg) {
       case "lint": {
         const successful = await lint({
           config,
-          types: getTypes("lint"),
+          types: getTypes("lint").types,
         });
         process.exit(successful ? 0 : 1);
         break;
@@ -121,7 +132,7 @@ async function run(commandArg) {
       case "test": {
         const successful = await test({
           config,
-          types: getTypes("test"),
+          types: getTypes("test").types,
         });
         process.exit(successful ? 0 : 1);
         break;
@@ -134,7 +145,7 @@ async function run(commandArg) {
       case "optimize": {
         const successful = await optimize({
           config,
-          types: getTypes("optimize"),
+          types: getTypes("optimize").types,
         });
         process.exit(successful ? 0 : 1);
         break;
@@ -143,7 +154,7 @@ async function run(commandArg) {
         const successful = await custom(
           config,
           commandArg,
-          getTypes(commandArg)
+          getTypes(commandArg).types
         );
         process.exit(successful ? 0 : 1);
       }

@@ -60,7 +60,10 @@ describe("core", () => {
           expect(build).toHaveBeenCalledTimes(1);
           expect(build).toHaveBeenCalledWith({
             config: {},
-            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+            types: {
+              types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+              all: true,
+            },
           });
         });
       });
@@ -78,7 +81,10 @@ describe("core", () => {
           expect(build).toHaveBeenCalledTimes(1);
           expect(build).toHaveBeenCalledWith({
             config: {},
-            types: ["css", "js"],
+            types: {
+              types: ["css", "js"],
+              all: false,
+            },
           });
 
           process.argv[3] = null;

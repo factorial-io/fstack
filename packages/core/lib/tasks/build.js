@@ -10,31 +10,34 @@ const buildAssets = require("./build/assets");
  * @param {string} distFolder
  */
 async function cleanBuildFolder(types, fileExtension, allTasks, distFolder) {
-  if ((Array.isArray(types) && types.length > 0) || fileExtension) {
-    if (types.lenght > 0) {
-      const task = allTasks.find((t) => types.includes(t.type));
-      if (task && task.extensions) {
+  if (types.all) {
+    await del([`${distFolder}/**/*`]);
+  } else if (Array.isArray(types.types) && types.types.length > 0) {
+    const tasks = allTasks.filter((t) => types.types.includes(t.type));
+
+    tasks.forEach(async (task) => {
+      if (task.extensions) {
         const paths = [];
 
         task.extensions.forEach((extension) => {
           paths.push(`${distFolder}/**/*.${extension}`);
           paths.push(`${distFolder}/**/*.${extension}.map`);
         });
+
         await del(paths);
       }
-    } else {
-      const path = `${distFolder}/**/*.${fileExtension}`;
-      await del([path, `${path}.map`]);
-    }
-  } else {
-    await del([`${distFolder}/**/*`]);
+    });
+  } else if (fileExtension) {
+    const path = `${distFolder}/**/*.${fileExtension}`;
+
+    await del([path, `${path}.map`]);
   }
 }
 
 /**
  * @param {object} obj
  * @param {object} obj.config
- * @param {string[]} [obj.types] - the types of the build task
+ * @param {object} obj.types - the types of the build task
  * @param {string} [obj.fileExtension] - the type of the file that has been changed
  * @param {boolean} [emptyAssets]
  * @returns {Promise} - gets resolved with a boolean, describes if the build failed or not
@@ -81,23 +84,11 @@ module.exports = async function build(
     await cleanBuildFolder(types, fileExtension, allTasks, config.distFolder);
   }
 
-  // if a task type is passed to the build,
-  // add the corresponding task to the list of tasks to run
-  if (Array.isArray(types) && types.length > 0) {
-    const tasks = allTasks.filter((t) => types.includes(t.type));
+  // otherwise if the build task is triggered by the watcher
+  // add the task which is connected to the given file type
+  // to the list of tasks to run
 
-    if (tasks.length > 0) {
-      tasks.forEach((task) => {
-        tasksToRun.push(task.task(config, task.config));
-      });
-    } else {
-      console.log("\nNo build task found, skipping…");
-      tasksToRun.push(Promise.resolve());
-    }
-    // otherwise if the build task is triggered by the watcher
-    // add the task which is connected to the given file type
-    // to the list of tasks to run
-  } else if (fileExtension) {
+  if (fileExtension) {
     const task = allTasks.find(
       (t) => t.extensions && t.extensions.includes(fileExtension)
     );
@@ -108,9 +99,21 @@ module.exports = async function build(
       console.log("\nNo build task found, skipping…");
       tasksToRun.push(Promise.resolve());
     }
-    // else simply run all tasks
   } else {
-    allTasks.forEach((task) => tasksToRun.push(task.task(config, task.config)));
+    const tasks = allTasks.filter((t) => types.types.includes(t.type));
+
+    if (types.all) {
+      tasks.push(allTasks[0]);
+    }
+
+    if (tasks.length > 0) {
+      tasks.forEach((task) => {
+        tasksToRun.push(task.task(config, task.config));
+      });
+    } else {
+      console.log("\nNo build task found, skipping…");
+      tasksToRun.push(Promise.resolve());
+    }
   }
 
   return Promise.all(tasksToRun)

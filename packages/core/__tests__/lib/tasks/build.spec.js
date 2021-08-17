@@ -23,6 +23,10 @@ describe("lib/tasks/build", () => {
           assetFolders: [],
           addHashes: true,
         },
+        types: {
+          types: [],
+          all: true,
+        },
       });
 
       expect(del).toHaveBeenCalledTimes(1);
@@ -48,6 +52,9 @@ describe("lib/tasks/build", () => {
           distFolder,
           assetFolders: [],
         },
+        types: {
+          types: ["css"],
+        },
       });
 
       expect(del).not.toHaveBeenCalled();
@@ -64,7 +71,14 @@ describe("lib/tasks/build", () => {
         const buildAssets = require("../../../lib/tasks/build/assets");
         const build = require("../../../lib/tasks/build");
 
-        await build({ config: {}, type: "assets" });
+        await build({
+          config: {},
+          types: {
+            types: [],
+            all: true,
+          },
+          type: "assets",
+        });
 
         expect(buildAssets).toHaveBeenCalledTimes(1);
       });
@@ -92,7 +106,9 @@ describe("lib/tasks/build", () => {
           config: {
             use: [js, css],
           },
-          types: ["css"],
+          types: {
+            types: ["css"],
+          },
         });
 
         expect(buildAssets).not.toHaveBeenCalled();
@@ -131,6 +147,10 @@ describe("lib/tasks/build", () => {
         config: {
           use: [js, css],
         },
+        types: {
+          types: ["css", "javascript"],
+          all: true,
+        },
       });
 
       expect(buildAssets).toHaveBeenCalledTimes(1);
@@ -159,6 +179,9 @@ describe("lib/tasks/build", () => {
         config: {
           use: [css],
         },
+        types: {
+          types: ["css"],
+        },
         fileExtension: "css",
       });
 
@@ -177,6 +200,10 @@ describe("lib/tasks/build", () => {
 
       const valid = await build({
         config: {},
+        types: {
+          types: [],
+          all: true,
+        },
       });
 
       expect(valid).toBe(false);
@@ -193,6 +220,9 @@ describe("lib/tasks/build", () => {
 
       const valid = await build({
         config: {},
+        types: {
+          types: ["css"],
+        },
       });
 
       expect(valid).toBe(true);
