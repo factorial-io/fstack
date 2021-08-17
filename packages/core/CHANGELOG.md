@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/factorial-io/fstack/compare/core/v0.3.5...core/v0.3.6) (2021-08-17)
+
+
+### Bug Fixes
+
+* **core:** Fixes missing folders in build folder ([8640c35](https://github.com/factorial-io/fstack/commit/8640c35a83823f07dffa20c2259b090dadcf2c76))
+
 ### [0.3.5](https://github.com/factorial-io/fstack/compare/core/v0.3.3...core/v0.3.5) (2021-08-16)
 
 
