@@ -6,7 +6,7 @@ describe("lib/tasks/build", () => {
     console.log = jest.fn();
   });
 
-  describe("with addHashes=true", () => {
+  describe("when starting 'watch'", () => {
     test("deletes all files in the dist folder", async () => {
       jest.mock("del");
 
@@ -17,22 +17,142 @@ describe("lib/tasks/build", () => {
 
       process.env.NODE_ENV = "production";
 
-      await build({
-        config: {
-          distFolder,
-          assetFolders: [],
-          addHashes: true,
+      await build(
+        {
+          config: {
+            distFolder,
+            assetFolders: [],
+            addHashes: false,
+          },
+          types: {
+            types: [],
+            all: true,
+          },
         },
-        types: {
-          types: [],
-          all: true,
-        },
-      });
+        true
+      );
 
       expect(del).toHaveBeenCalledTimes(1);
       expect(del).toHaveBeenCalledWith([`${distFolder}/**/*`]);
 
       process.env.NODE_ENV = origNodeEnv;
+    });
+  });
+
+  describe("with addHashes=true", () => {
+    describe("when a file changed during 'watch'", () => {
+      test("deletes only files of that filetype", async () => {
+        jest.mock("del");
+
+        const del = require("del");
+        const build = require("../../../lib/tasks/build");
+        const distFolder = "distFolder";
+        const origNodeEnv = process.env.NODE_ENV;
+
+        process.env.NODE_ENV = "production";
+
+        await build({
+          config: {
+            distFolder,
+            assetFolders: [],
+            addHashes: true,
+          },
+          types: {
+            types: [],
+            all: true,
+          },
+          fileExtension: "css",
+        });
+
+        expect(del).toHaveBeenCalledTimes(1);
+        expect(del).toHaveBeenCalledWith([
+          `${distFolder}/**/*.css`,
+          `${distFolder}/**/*.css.map`,
+        ]);
+
+        process.env.NODE_ENV = origNodeEnv;
+      });
+    });
+
+    describe("when manually triggering", () => {
+      describe("without --skip or --only", () => {
+        test("deletes all files in the dist folder", async () => {
+          jest.mock("del");
+
+          const del = require("del");
+          const build = require("../../../lib/tasks/build");
+          const distFolder = "distFolder";
+          const origNodeEnv = process.env.NODE_ENV;
+
+          process.env.NODE_ENV = "production";
+
+          await build({
+            config: {
+              distFolder,
+              assetFolders: [],
+              addHashes: true,
+            },
+            types: {
+              types: [],
+              all: true,
+            },
+          });
+
+          expect(del).toHaveBeenCalledTimes(1);
+          expect(del).toHaveBeenCalledWith([`${distFolder}/**/*`]);
+
+          process.env.NODE_ENV = origNodeEnv;
+        });
+      });
+
+      describe("with --skip or --only", () => {
+        test("deletes only files of that filetype", async () => {
+          jest.mock("del");
+
+          const del = require("del");
+          const build = require("../../../lib/tasks/build");
+          const distFolder = "distFolder";
+          const origNodeEnv = process.env.NODE_ENV;
+
+          process.env.NODE_ENV = "production";
+
+          await build({
+            config: {
+              distFolder,
+              assetFolders: [],
+              addHashes: true,
+              use: [
+                {
+                  type: "css",
+                  extensions: ["css"],
+                  tasks: {
+                    build: () => {},
+                  },
+                },
+                {
+                  type: "js",
+                  extensions: ["js"],
+                  tasks: {
+                    build: () => {},
+                  },
+                },
+              ],
+            },
+            types: {
+              types: ["css"],
+              all: false,
+            },
+          });
+
+          expect(del).toHaveBeenCalledTimes(1);
+          expect(del).toHaveBeenCalledWith([
+            `${distFolder}/**/*.css`,
+            `${distFolder}/**/*.css.map`,
+          ]);
+
+          process.env.NODE_ENV = origNodeEnv;
+        });
+      });
     });
   });
 
@@ -51,9 +171,11 @@ describe("lib/tasks/build", () => {
         config: {
           distFolder,
           assetFolders: [],
+          addHashes: false,
         },
         types: {
-          types: ["css"],
+          types: [],
+          all: true,
         },
       });
 

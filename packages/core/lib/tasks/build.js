@@ -10,7 +10,10 @@ const buildAssets = require("./build/assets");
  * @param {string} distFolder
  */
 async function cleanBuildFolder(types, fileExtension, allTasks, distFolder) {
-  if (types.all) {
+  if (fileExtension) {
+    const path = `${distFolder}/**/*.${fileExtension}`;
+    await del([path, `${path}.map`]);
+  } else if (types.all) {
     await del([`${distFolder}/**/*`]);
   } else if (Array.isArray(types.types) && types.types.length > 0) {
     const tasks = allTasks.filter((t) => types.types.includes(t.type));
@@ -27,10 +30,6 @@ async function cleanBuildFolder(types, fileExtension, allTasks, distFolder) {
         await del(paths);
       }
     });
-  } else if (fileExtension) {
-    const path = `${distFolder}/**/*.${fileExtension}`;
-
-    await del([path, `${path}.map`]);
   }
 }
 
