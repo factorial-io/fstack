@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.7](https://github.com/factorial-io/fstack/compare/core/v0.3.6...core/v0.3.7) (2021-08-18)
+
+
+### Bug Fixes
+
+* **core:** Fixes deleting the correct files before creating a build ([bf2aa3e](https://github.com/factorial-io/fstack/commit/bf2aa3e59c48260fd53d15a7c7a5dbf35e569d3c))
+
 ### [0.3.6](https://github.com/factorial-io/fstack/compare/core/v0.3.5...core/v0.3.6) (2021-08-17)
 
 
