@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.9](https://github.com/factorial-io/fstack/compare/core/v0.3.8...core/v0.3.9) (2021-08-24)
+
+
+### Bug Fixes
+
+* **core:** fix "init" command ([671ac7e](https://github.com/factorial-io/fstack/commit/671ac7e22e976a65faf5a6afee481b2d66d42e1d))
+
 ### [0.3.8](https://github.com/factorial-io/fstack/compare/core/v0.3.7...core/v0.3.8) (2021-08-24)
 
 ### [0.3.7](https://github.com/factorial-io/fstack/compare/core/v0.3.6...core/v0.3.7) (2021-08-18)
