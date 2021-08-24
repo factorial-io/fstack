@@ -2,38 +2,9 @@ const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs");
 const { ImagePool } = require("@squoosh/lib");
+const { getAllFilesFromFolders } = require("../../core/lib/helpers");
 
 const imagePool = new ImagePool();
-
-/**
- * @param {Array} lists
- * @returns {Array}
- */
-function flatten(lists) {
-  return lists.reduce((a, b) => a.concat(b), []);
-}
-
-/**
- * @param {string} srcPath
- * @returns {Array}
- */
-function getDirectories(srcPath) {
-  return fs
-    .readdirSync(srcPath)
-    .map((file) => path.join(srcPath, file))
-    .filter((p) => fs.statSync(p).isDirectory());
-}
-
-/**
- * @param {string} srcPath
- * @returns {Array}
- */
-function getDirectoriesRecursive(srcPath) {
-  return [
-    srcPath,
-    ...flatten(getDirectories(srcPath).map(getDirectoriesRecursive)),
-  ];
-}
 
 /**
  * @param {Function} resolve
@@ -89,21 +60,7 @@ async function handleImage(resolve, reject, imagePath, type) {
  */
 function optimizeImages({ imageFolders }, type) {
   const promises = [];
-  const images = [];
-
-  imageFolders.forEach((folder) => {
-    getDirectoriesRecursive(folder).forEach(async (f) => {
-      fs.readdirSync(f).forEach((file) => {
-        if (
-          path.extname(file) === ".jpg" ||
-          path.extname(file) === ".jpeg" ||
-          path.extname(file) === ".png"
-        ) {
-          images.push(path.join(f, file));
-        }
-      });
-    });
-  });
+  const images = getAllFilesFromFolders(imageFolders, ["jpg", "jpeg", "png"]);
 
   images.forEach((imagePath) => {
     promises.push(
