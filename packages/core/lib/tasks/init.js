@@ -6,12 +6,15 @@ const { spawn } = require("child_process");
 const configPath = ".factorialrc.js";
 const packages = ["css", "e2e", "html", "images", "javascript", "svg", "twig"];
 
+const scopeName = "@factorial";
+const packagePrefix = "stack";
+
 /**
  * @param {string} name
  * @returns {string}
  */
 function getNodeModuleName(name) {
-  return `@factorial/stack-${name}`;
+  return `${scopeName}/${packagePrefix}-${name}`;
 }
 
 /**
@@ -82,7 +85,7 @@ async function createConfig(selectedPackages) {
 async function createPackageConfigs(selectedPackages) {
   /* eslint-disable no-restricted-syntax */
   for (const pkg of selectedPackages) {
-    const { configFiles } = require(`../../../${pkg}`); // eslint-disable-line global-require, import/no-dynamic-require
+    const { configFiles } = require(`../../../${packagePrefix}-${pkg}`); // eslint-disable-line global-require, import/no-dynamic-require
 
     if (Array.isArray(configFiles)) {
       for (const { name, content = "" } of configFiles) {
