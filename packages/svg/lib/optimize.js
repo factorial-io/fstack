@@ -1,6 +1,8 @@
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
+const { getAllFilesFromFolders } = require("../../core/lib/helpers");
+
 /**
  * @param {object} obj
  * @param {Array} obj.svgFolders
@@ -8,12 +10,7 @@ const { spawn } = require("child_process");
  */
 module.exports = function optimizeSvg({ svgFolders }) {
   return new Promise((resolve, reject) => {
-    const args = [];
-
-    svgFolders.forEach((folder) => {
-      args.push(folder);
-    });
-
+    const args = [...getAllFilesFromFolders(svgFolders, ["svg"])];
     const p = spawn("./node_modules/.bin/svgo", args);
 
     p.stdout.on("data", (data) => {
