@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/factorial-io/fstack/compare/svg/v0.1.10...svg/v0.1.11) (2021-08-24)
+
+
+### Features
+
+* **svg:** better error handling if svgFolder cant be found ([197b6d2](https://github.com/factorial-io/fstack/commit/197b6d2a3b35549d560bad6b87b1a3d3461cd18b))
+
 ### [0.1.10](https://github.com/factorial-io/fstack/compare/svg/v0.1.9...svg/v0.1.10) (2021-08-16)
 
 ### [0.1.9](https://github.com/factorial-io/fstack/compare/svg/v0.1.8...svg/v0.1.9) (2021-07-01)
