@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/factorial-io/fstack/compare/core/v0.3.7...core/v0.3.8) (2021-08-24)
+
 ### [0.3.7](https://github.com/factorial-io/fstack/compare/core/v0.3.6...core/v0.3.7) (2021-08-18)
 
 
