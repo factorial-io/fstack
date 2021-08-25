@@ -2,7 +2,7 @@ const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs");
 const { ImagePool } = require("@squoosh/lib");
-const { getAllFilesFromFolders } = require("../../core/lib/helpers");
+const { getAllFilesFromFolders } = require("../../stack-core/lib/helpers");
 
 const imagePool = new ImagePool();
 
