@@ -1,5 +1,5 @@
 const deepMerge = require("deepmerge");
-const jestConfig = require("./packages/javascript/jest.config.js");
+const jestConfig = require("./packages/stack-javascript/jest.config");
 
 module.exports = deepMerge(jestConfig, {
   rootDir: "packages",

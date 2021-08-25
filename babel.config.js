@@ -1,3 +1,3 @@
-const babelConfig = require("./packages/javascript/babel.config.js");
+const babelConfig = require("./packages/stack-javascript/babel.config");
 
 module.exports = babelConfig;
