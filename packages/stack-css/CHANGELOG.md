@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/factorial-io/fstack/compare/css/v0.5.2...css/v0.5.3) (2021-08-25)
+
+
+### Bug Fixes
+
+* **css:** fixes browserslist was not respected by postcss-preset-env ([18d0ea6](https://github.com/factorial-io/fstack/commit/18d0ea68d374061d3f5d5fbc63044503fc16752e))
+
 ### [0.5.2](https://github.com/factorial-io/fstack/compare/css/v0.5.1...css/v0.5.2) (2021-08-25)
 
 ### [0.5.1](https://github.com/factorial-io/fstack/compare/css/v0.5.0...css/v0.5.1) (2021-08-25)
