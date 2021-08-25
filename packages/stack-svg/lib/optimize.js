@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
-const { getAllFilesFromFolders } = require("../../core/lib/helpers");
+const { getAllFilesFromFolders } = require("../../stack-core/lib/helpers");
 
 /**
  * @param {object} obj
