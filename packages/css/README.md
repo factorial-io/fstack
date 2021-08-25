@@ -6,12 +6,9 @@ It adds
 
 - a build task using
   - [postcss](https://www.npmjs.com/package/postcss)
-  - [postcss-color-function](https://www.npmjs.com/package/postcss-color-function)
-  - [postcss-custom-media](https://www.npmjs.com/package/postcss-custom-media)
-  - [postcss-custom-properties](https://www.npmjs.com/package/postcss-custom-properties)
+  - [postcss-preset-env](https://www.npmjs.com/package/postcss-preset-env)
   - [postcss-import](https://www.npmjs.com/package/postcss-import)
   - [postcss-url](https://www.npmjs.com/package/postcss-url)
-  - [autoprefixer](https://www.npmjs.com/package/autoprefixer)
   - [cssnano](https://www.npmjs.com/package/cssnano)
 - a lint task using
   - [stylelint](https://www.npmjs.com/package/stylelint)
@@ -23,6 +20,9 @@ It adds
 ## Content
 
 - [Installation](#installation)
+- [Passing options to PostCSS plugins](#passing-options-to-postcss-plugins)
+- [Adding plugins to PostCSS](#adding-plugins-to-postcss)
+- [Extending or overwriting linting rules](#extending-or-overwriting-linting-rules)
 - [Exclude files from linting](#exclude-files-from-linting)
 - [Design token import](#design-token-import)
 
@@ -50,6 +50,18 @@ module.exports = {
 };
 ```
 
+And add a `.stylelintrc.js`:
+
+```js
+// .stylelintrc.js
+
+const stylelintConfig = require("@factorial/stack-css").stylelint;
+
+module.exports = stylelintConfig;
+```
+
+## Passing options to PostCSS plugins
+
 If you need to pass options to one of the plugins, you can do that like this:
 
 ```js
@@ -65,14 +77,16 @@ module.exports = {
 };
 ```
 
-And add a `.stylelintrc.js`:
+## Adding plugins to PostCSS
+
+If you want to add another plugin to PostCSS, install it via `yarn add -D plugin-name` and then add it to the list of plugins the same way as in the previous step:
 
 ```js
-// .stylelintrc.js
+// .factorialrc.js
 
-const stylelintConfig = require("@factorial/stack-css").stylelint;
-
-module.exports = stylelintConfig;
+module.exports = {
+  use: [[require("@factorial/stack-css"), { plugins: { "plugin-name": {} } }]],
+};
 ```
 
 ## Extending or overwriting linting rules

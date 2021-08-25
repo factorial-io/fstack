@@ -1,19 +1,19 @@
-const browserslist = require("browserslist");
 const chalk = require("chalk");
-const caniuse = require("caniuse-api");
 const deepMerge = require("deepmerge");
 const getRevisionHash = require("rev-hash");
 const fs = require("fs");
 const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
-const postcssAutoprefixer = require("autoprefixer");
-const postcssColorFunction = require("postcss-color-function");
-const postcssCustomMedia = require("postcss-custom-media");
-const postcssCustomProperties = require("postcss-custom-properties");
-const postcssImport = require("postcss-import");
-const postcssUrl = require("postcss-url");
-const cssnano = require("cssnano");
+
+const postcssPlugins = {
+  /* eslint-disable global-require */
+  cssnano: require("cssnano"),
+  "postcss-preset-env": require("postcss-preset-env"),
+  "postcss-import": require("postcss-import"),
+  "postcss-url": require("postcss-url"),
+  /* eslint-enable global-require */
+};
 
 /**
  * Compiles the CSS entry files with PostCSS
@@ -24,13 +24,12 @@ const cssnano = require("cssnano");
  * @param {Array} obj.cssFiles
  * @param {Array} obj.customPropertyFiles
  * @param {string} obj.distFolder
- * @param {object} obj.targets
  * @param {boolean} obj.addHashes
  * @param {object} [userConfig]
  * @returns {Promise} - Gets resolved when building is done
  */
 module.exports = function buildCSS(
-  { rootFolder, cssFiles, customPropertyFiles, distFolder, targets, addHashes },
+  { rootFolder, cssFiles, customPropertyFiles, distFolder, addHashes },
   userConfig
 ) {
   const config = deepMerge(
@@ -39,7 +38,8 @@ module.exports = function buildCSS(
         "postcss-url": {
           url: "copy",
         },
-        "postcss-custom-properties": {
+        "postcss-preset-env": {
+          stage: 1,
           importFrom: customPropertyFiles,
           preserve: false,
         },
@@ -50,30 +50,26 @@ module.exports = function buildCSS(
 
   if (cssFiles.length > 0) {
     const plugins = [
-      postcssImport(config.plugins["postcss-import"]),
-      postcssUrl(config.plugins["postcss-url"]),
-      postcssColorFunction(config.plugins["postcss-color-function"]),
-      postcssCustomMedia(config.plugins["postcss-custom-media"]),
-      postcssAutoprefixer(
-        deepMerge(config.plugins.autoprefixer, {
-          overrideBrowserslist: targets.browsers || targets.browserslist,
-        })
+      postcssPlugins["postcss-import"](config.plugins["postcss-import"]),
+      postcssPlugins["postcss-url"](config.plugins["postcss-url"]),
+      postcssPlugins["postcss-preset-env"](
+        config.plugins["postcss-preset-env"]
       ),
     ];
-    const promises = [];
-    const customPropertiesSupported = caniuse.isSupported(
-      "css-variables",
-      browserslist(targets.browsers || targets.browserslist || null)
-    );
 
-    if (!customPropertiesSupported) {
-      plugins.push(
-        postcssCustomProperties(config.plugins["postcss-custom-properties"])
-      );
-    }
+    const pluginNames = Object.keys(postcssPlugins);
+
+    Object.keys(config.plugins)
+      .filter((plugin) => !pluginNames.includes(plugin))
+      .forEach((plugin) => {
+        /* eslint-disable-next-line import/no-dynamic-require, global-require */
+        plugins.push(require(plugin)(config.plugins[plugin]));
+      });
+
+    const promises = [];
 
     if (process.env.NODE_ENV === "production") {
-      plugins.push(cssnano(config.plugins.cssnano));
+      plugins.push(postcssPlugins.cssnano(config.plugins.cssnano));
     }
 
     cssFiles.forEach((file) => {
