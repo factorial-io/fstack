@@ -20,6 +20,6 @@
     "chalk": "^4.1.1"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.2.13"
+    "@factorial/stack-core": "^0.3.11"
   }
 }
