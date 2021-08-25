@@ -209,8 +209,8 @@ describe("lib/tasks/build", () => {
     describe("given type is an external task of the another package", () => {
       test("runs the related task", async () => {
         jest.mock("../../../lib/tasks/build/assets");
-        jest.mock("../../../../../packages/javascript");
-        jest.mock("../../../../../packages/css", () => {
+        jest.mock("../../../../../packages/stack-javascript");
+        jest.mock("../../../../../packages/stack-css", () => {
           return {
             type: "css",
             tasks: {
@@ -220,8 +220,8 @@ describe("lib/tasks/build", () => {
         });
 
         const buildAssets = require("../../../lib/tasks/build/assets");
-        const js = require("../../../../javascript");
-        const css = require("../../../../css");
+        const js = require("../../../../stack-javascript");
+        const css = require("../../../../stack-css");
         const build = require("../../../lib/tasks/build");
 
         await build({
@@ -243,7 +243,7 @@ describe("lib/tasks/build", () => {
   describe("without a given type", () => {
     test("build runs all tasks", async () => {
       jest.mock("../../../lib/tasks/build/assets");
-      jest.mock("../../../../../packages/javascript", () => {
+      jest.mock("../../../../../packages/stack-javascript", () => {
         return {
           type: "javascript",
           tasks: {
@@ -251,7 +251,7 @@ describe("lib/tasks/build", () => {
           },
         };
       });
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           type: "css",
           tasks: {
@@ -261,8 +261,8 @@ describe("lib/tasks/build", () => {
       });
 
       const buildAssets = require("../../../lib/tasks/build/assets");
-      const js = require("../../../../javascript");
-      const css = require("../../../../css");
+      const js = require("../../../../stack-javascript");
+      const css = require("../../../../stack-css");
       const build = require("../../../lib/tasks/build");
 
       await build({
@@ -284,7 +284,7 @@ describe("lib/tasks/build", () => {
   describe("with a given file extension", () => {
     test("runs the related task", async () => {
       jest.mock("../../../lib/tasks/build/assets");
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           extensions: ["css"],
           tasks: {
@@ -295,7 +295,7 @@ describe("lib/tasks/build", () => {
 
       const buildAssets = require("../../../lib/tasks/build/assets");
       const build = require("../../../lib/tasks/build");
-      const css = require("../../../../css");
+      const css = require("../../../../stack-css");
 
       await build({
         config: {

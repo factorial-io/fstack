@@ -8,8 +8,8 @@ describe("lib/tasks/lint", () => {
 
   describe("with a given type", () => {
     test("runs the related task", async () => {
-      jest.mock("../../../../../packages/javascript");
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-javascript");
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           type: "css",
           tasks: {
@@ -18,8 +18,8 @@ describe("lib/tasks/lint", () => {
         };
       });
 
-      const js = require("../../../../javascript");
-      const css = require("../../../../css");
+      const js = require("../../../../stack-javascript");
+      const css = require("../../../../stack-css");
       const lint = require("../../../lib/tasks/lint");
 
       await lint({
@@ -36,7 +36,7 @@ describe("lib/tasks/lint", () => {
 
   describe("without a given type", () => {
     test("lint runs all tasks", async () => {
-      jest.mock("../../../../../packages/javascript", () => {
+      jest.mock("../../../../../packages/stack-javascript", () => {
         return {
           type: "javascript",
           tasks: {
@@ -44,7 +44,7 @@ describe("lib/tasks/lint", () => {
           },
         };
       });
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           type: "css",
           tasks: {
@@ -53,8 +53,8 @@ describe("lib/tasks/lint", () => {
         };
       });
 
-      const js = require("../../../../javascript");
-      const css = require("../../../../css");
+      const js = require("../../../../stack-javascript");
+      const css = require("../../../../stack-css");
       const lint = require("../../../lib/tasks/lint");
 
       await lint({
@@ -70,7 +70,7 @@ describe("lib/tasks/lint", () => {
 
   describe("with a given file extension", () => {
     test("runs the related task", async () => {
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           extensions: ["css"],
           tasks: {
@@ -80,7 +80,7 @@ describe("lib/tasks/lint", () => {
       });
 
       const lint = require("../../../lib/tasks/lint");
-      const css = require("../../../../css");
+      const css = require("../../../../stack-css");
 
       await lint({
         config: {
@@ -95,7 +95,7 @@ describe("lib/tasks/lint", () => {
 
   describe("with a failing lint task", () => {
     test("lint returns false", async () => {
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           tasks: {
             lint: () => Promise.reject(),
@@ -104,7 +104,7 @@ describe("lib/tasks/lint", () => {
       });
 
       const lint = require("../../../lib/tasks/lint");
-      const css = require("../../../../css");
+      const css = require("../../../../stack-css");
 
       const valid = await lint({
         config: {
@@ -118,7 +118,7 @@ describe("lib/tasks/lint", () => {
 
   describe("with only succeeding lint tasks", () => {
     test("lint returns false", async () => {
-      jest.mock("../../../../../packages/css", () => {
+      jest.mock("../../../../../packages/stack-css", () => {
         return {
           tasks: {
             lint: () => Promise.resolve(),
@@ -127,7 +127,7 @@ describe("lib/tasks/lint", () => {
       });
 
       const lint = require("../../../lib/tasks/lint");
-      const css = require("../../../../css");
+      const css = require("../../../../stack-css");
 
       const valid = await lint({
         config: {
