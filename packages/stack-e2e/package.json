@@ -20,6 +20,6 @@
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.2.13"
+    "@factorial/stack-core": "^0.3.11"
   }
 }
