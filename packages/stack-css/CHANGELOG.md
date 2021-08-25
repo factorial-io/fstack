@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/factorial-io/fstack/compare/css/v0.5.0...css/v0.5.1) (2021-08-25)
+
 ## [0.5.0](https://github.com/factorial-io/fstack/compare/css/v0.4.9...css/v0.5.0) (2021-08-25)
 
 
