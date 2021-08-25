@@ -21,6 +21,6 @@
     "svgo": "^2.4.0"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.2.13"
+    "@factorial/stack-core": "^0.3.11"
   }
 }
