@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/factorial-io/fstack/compare/css/v0.4.9...css/v0.5.0) (2021-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** use postcss-preset-env instead of single postcss plugins
+
+### Features
+
+* **css:** use postcss-preset-env instead of single postcss plugins ([8091d3b](https://github.com/factorial-io/fstack/commit/8091d3b4e1f1782e8848b99953f48cd14c307464))
+
 ### [0.4.9](https://github.com/factorial-io/fstack/compare/css/v0.4.7...css/v0.4.9) (2021-08-16)
 
 
