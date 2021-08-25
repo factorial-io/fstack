@@ -24,12 +24,13 @@ const postcssPlugins = {
  * @param {Array} obj.cssFiles
  * @param {Array} obj.customPropertyFiles
  * @param {string} obj.distFolder
+ * @param {object} obj.targets
  * @param {boolean} obj.addHashes
  * @param {object} [userConfig]
  * @returns {Promise} - Gets resolved when building is done
  */
 module.exports = function buildCSS(
-  { rootFolder, cssFiles, customPropertyFiles, distFolder, addHashes },
+  { rootFolder, cssFiles, customPropertyFiles, distFolder, targets, addHashes },
   userConfig
 ) {
   const config = deepMerge(
@@ -40,8 +41,13 @@ module.exports = function buildCSS(
         },
         "postcss-preset-env": {
           stage: 1,
-          importFrom: customPropertyFiles,
-          preserve: false,
+          features: {
+            "custom-properties": {
+              importFrom: customPropertyFiles,
+              preserve: false,
+            },
+          },
+          browsers: targets.browsers || targets.browserslist,
         },
       },
     },
