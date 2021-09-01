@@ -61,7 +61,16 @@ describe("core", () => {
           expect(build).toHaveBeenCalledWith({
             config: {},
             types: {
-              types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+              types: [
+                "css",
+                "e2e",
+                "html",
+                "images",
+                "js",
+                "svg",
+                "twig",
+                "vue",
+              ],
               all: true,
             },
           });
@@ -160,7 +169,7 @@ describe("core", () => {
                 },
               ],
             },
-            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig", "vue"],
           });
         });
       });
@@ -263,7 +272,7 @@ describe("core", () => {
                 },
               ],
             },
-            types: ["css", "e2e", "html", "images", "js", "svg", "twig"],
+            types: ["css", "e2e", "html", "images", "js", "svg", "twig", "vue"],
           });
         });
       });

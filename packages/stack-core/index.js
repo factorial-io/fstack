@@ -12,16 +12,6 @@ const allTypes = require("./lib/types");
 
 module.exports = async function core(command) {
   await run(command);
-  // } else {
-  //   config.use.forEach((extension) => {
-  //     if (extension.eslint && extension.eslint.config) {
-  //       eslintConfig = deepMerge(eslintConfig, extension.eslint.config);
-  //     }
-
-  //     if (extension.stylelint && extension.stylelint.config) {
-  //       stylelintConfig = deepMerge(stylelintConfig, extension.stylelint.config);
-  //     }
-  //   });
 };
 
 /**
@@ -72,11 +62,13 @@ function getAvailableCommands(packages = []) {
   packages.forEach((ext) => {
     const extension = Array.isArray(ext) ? ext[0] : ext;
 
-    Object.keys(extension.tasks).forEach((command) => {
-      if (!commands.includes(command)) {
-        commands.push(command);
-      }
-    });
+    if (extension.tasks) {
+      Object.keys(extension.tasks).forEach((command) => {
+        if (!commands.includes(command)) {
+          commands.push(command);
+        }
+      });
+    }
   });
 
   return commands;

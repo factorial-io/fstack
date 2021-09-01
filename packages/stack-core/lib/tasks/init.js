@@ -4,7 +4,16 @@ const inquirer = require("inquirer");
 const { spawn } = require("child_process");
 
 const configPath = ".factorialrc.js";
-const packages = ["css", "e2e", "html", "images", "javascript", "svg", "twig"];
+const packages = [
+  "css",
+  "e2e",
+  "html",
+  "images",
+  "javascript",
+  "svg",
+  "twig",
+  "vue",
+];
 
 const scopeName = "@factorial";
 const packagePrefix = "stack";
