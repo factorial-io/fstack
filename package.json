@@ -30,7 +30,8 @@
     "@factorial/images": "file:packages/stack-images",
     "@factorial/javascript": "file:packages/stack-javascript",
     "@factorial/svg": "file:packages/stack-svg",
-    "@factorial/twig": "file:packages/stack-twig"
+    "@factorial/twig": "file:packages/stack-twig",
+    "@factorial/vue": "file:packages/stack-vue"
   },
   "scripts": {
     "lint": "eslint packages",
@@ -42,7 +43,8 @@
     "images:release": "yarn --cwd packages/stack-images release",
     "javascript:release": "yarn --cwd packages/stack-javascript release",
     "svg:release": "yarn --cwd packages/stack-svg release",
-    "twig:release": "yarn --cwd packages/stack-twig release"
+    "twig:release": "yarn --cwd packages/stack-twig release",
+    "vue:release": "yarn --cwd packages/stack-vue release"
   },
   "pre-commit": [
     "lint",
