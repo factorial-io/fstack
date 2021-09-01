@@ -15,6 +15,18 @@ describe("javascript/index", () => {
     const test = require("../lib/test");
 
     expect(js).toEqual({
+      babel: {
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              targets: {
+                node: true,
+              },
+            },
+          ],
+        ],
+      },
       configFiles: [
         {
           name: ".eslintrc.js",

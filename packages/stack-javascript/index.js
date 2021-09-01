@@ -6,6 +6,7 @@ const test = require("./lib/test");
 
 const eslintConfig = require(path.join(__dirname, ".eslintrc")); // eslint-disable-line
 const jestConfig = require(path.join(__dirname, "jest.config.js")); // eslint-disable-line
+const babelConfig = require(path.join(__dirname, "babel.config.js")); // eslint-disable-line
 
 module.exports = {
   configFiles: [
@@ -21,6 +22,7 @@ module.exports = eslintConfig;
   extensions: ["js"],
   eslint: eslintConfig,
   jest: jestConfig,
+  babel: babelConfig,
   tasks: {
     build,
     lint,
