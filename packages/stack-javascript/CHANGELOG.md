@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.9](https://github.com/factorial-io/fstack/compare/javascript/v0.5.8...javascript/v0.5.9) (2021-09-01)
+
+
+### Features
+
+* **javascript:** export babel config from javascript package ([65885ce](https://github.com/factorial-io/fstack/commit/65885ce20a778ced6280e82c9373a424d9f1da49))
+
+
+### Bug Fixes
+
+* **javascript:** only run lint tasks based on given type, not always all of them ([42f071e](https://github.com/factorial-io/fstack/commit/42f071e41c64b9f83884db6bd4989de86fc9f4e8))
+
 ### [0.5.8](https://github.com/factorial-io/fstack/compare/javascript/v0.5.7...javascript/v0.5.8) (2021-08-25)
 
 ### [0.5.7](https://github.com/factorial-io/fstack/compare/javascript/v0.5.6...javascript/v0.5.7) (2021-08-25)
