@@ -1,0 +1,25 @@
+{
+  "name": "@factorial/stack-vue",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factorial-io/fstack.git"
+  },
+  "scripts": {
+    "release": "standard-version -t vue/v"
+  },
+  "dependencies": {
+    "@factorial/stack-javascript": "^0.5.8",
+    "eslint-plugin-prettier-vue": "^3.1.0",
+    "eslint-plugin-vue": "^7.17.0"
+  },
+  "peerDependencies": {
+    "@factorial/stack-core": "^0.3.12"
+  }
+}
