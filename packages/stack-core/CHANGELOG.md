@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.12](https://github.com/factorial-io/fstack/compare/core/v0.3.11...core/v0.3.12) (2021-09-01)
+
+
+### Features
+
+* **core:** Added vue package to core ([b754a70](https://github.com/factorial-io/fstack/commit/b754a70efbe9836f3b22d4b0919090136e5d079d))
+
 ### [0.3.11](https://github.com/factorial-io/fstack/compare/core/v0.3.10...core/v0.3.11) (2021-08-25)
 
 ### [0.3.10](https://github.com/factorial-io/fstack/compare/core/v0.3.9...core/v0.3.10) (2021-08-25)
