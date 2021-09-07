@@ -28,7 +28,7 @@ module.exports = function lint({ config, types }) {
       }
     });
   }
-  console.log(types);
+
   if (Array.isArray(types) && types.length > 0) {
     const tasks = allTasks.filter((t) => types.includes(t.type));
 
