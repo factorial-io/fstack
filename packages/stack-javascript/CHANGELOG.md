@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.10](https://github.com/factorial-io/fstack/compare/javascript/v0.5.9...javascript/v0.5.10) (2021-09-07)
+
 ### [0.5.9](https://github.com/factorial-io/fstack/compare/javascript/v0.5.8...javascript/v0.5.9) (2021-09-01)
 
 
