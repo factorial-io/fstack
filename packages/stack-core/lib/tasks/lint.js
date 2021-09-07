@@ -4,10 +4,9 @@ const chalk = require("chalk");
  * @param {object} obj
  * @param {object} obj.config
  * @param {string[]} [obj.types] - the types of the lint task
- * @param {string} [obj.fileExtension] - the type of the file that has been changed
  * @returns {Promise} - gets resolved with a boolean, describes if linting failed or not
  */
-module.exports = function lint({ config, types, fileExtension }) {
+module.exports = function lint({ config, types }) {
   console.log(chalk.magenta.bold("\nLinting files…"));
 
   const allTasks = [];
@@ -29,39 +28,24 @@ module.exports = function lint({ config, types, fileExtension }) {
       }
     });
   }
-
-  // if a task type is passed to the linter,
-  // add the corresponding task to the list of tasks to run
+  console.log(types);
   if (Array.isArray(types) && types.length > 0) {
     const tasks = allTasks.filter((t) => types.includes(t.type));
 
     if (tasks.length > 0) {
       tasks.forEach((task) => {
-        tasksToRun.push(task.task(config, task.config, types));
+        tasksToRun.push(task.task(config, task.config, task.extensions));
       });
     } else {
       console.log("\nNo lint task found, skipping…");
       tasksToRun.push(Promise.resolve());
     }
-  } else if (fileExtension) {
-    const task = allTasks.find(
-      (t) => t.extensions && t.extensions.includes(fileExtension)
-    );
-
-    if (task) {
-      tasksToRun.push(task.task(config, task.config, types));
-    } else {
-      console.log("\nNo lint task found, skipping…");
-      tasksToRun.push(Promise.resolve());
-    }
-    // else simply run all tasks
   } else {
-    allTasks.forEach((task) =>
-      tasksToRun.push(task.task(config, task.config, types))
-    );
+    console.log("\nNo lint task found, skipping…");
+    tasksToRun.push(Promise.resolve());
   }
 
-  return Promise.all(tasksToRun)
-    .then(() => true)
-    .catch(() => false);
+  return Promise.allSettled(tasksToRun).then((results) =>
+    results.every(({ status }) => status === "fulfilled")
+  );
 };
