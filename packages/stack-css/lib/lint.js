@@ -28,19 +28,10 @@ function getAdditionalParams(command) {
 
 /**
  * @param {string} rootFolder
+ * @param {Array} fileExtensions
  * @returns {Array}
  */
-function getArgs(rootFolder) {
-  const fileExtensions = ["css"];
-
-  // use.forEach((extension) => {
-  //   if (extension.stylelint && extension.stylelint.extensions) {
-  //     extension.stylelint.extensions.forEach((ext) => {
-  //       fileExtensions.push(ext);
-  //     });
-  //   }
-  // });
-
+function getArgs(rootFolder, fileExtensions) {
   return [
     path.join(rootFolder, `**/*.(${fileExtensions.join("|")})`),
     "--color",
@@ -56,10 +47,16 @@ function getArgs(rootFolder) {
  *
  * @param {object} obj
  * @param {string} obj.rootFolder
+ * @param {object} extensionConfig - the config passed to the extension in .factorialrc.js
+ * @param {Array} fileExtensions
  * @returns {Promise} - gets resolved/rejected based on if linting failed or not
  */
-module.exports = function lintCSS({ rootFolder }) {
-  const args = getArgs(rootFolder);
+module.exports = function lintCSS(
+  { rootFolder },
+  extensionConfig,
+  fileExtensions
+) {
+  const args = getArgs(rootFolder, fileExtensions);
 
   return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/stylelint", args);
