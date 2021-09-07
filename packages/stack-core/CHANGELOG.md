@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.13](https://github.com/factorial-io/fstack/compare/core/v0.3.12...core/v0.3.13) (2021-09-07)
+
+
+### Bug Fixes
+
+* **core:** fix eslint linting other file types ([db2c212](https://github.com/factorial-io/fstack/commit/db2c212f1e3971fb474a531a85e5ecd8ba59fc85))
+
 ### [0.3.12](https://github.com/factorial-io/fstack/compare/core/v0.3.11...core/v0.3.12) (2021-09-01)
 
 
