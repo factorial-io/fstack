@@ -5,13 +5,12 @@ const { spawn } = require("child_process");
 const { getAdditionalParams } = require("./_helpers");
 
 /**
- * @param {Array} use
  * @param {string} rootFolder
  * @param {string} testsFolder
- * @param {Array} types
+ * @param {Array} fileExtensions
  * @returns {Array}
  */
-function getArgs(use, rootFolder, testsFolder, types) {
+function getArgs(rootFolder, testsFolder, fileExtensions) {
   const args = [
     rootFolder,
     testsFolder,
@@ -20,15 +19,9 @@ function getArgs(use, rootFolder, testsFolder, types) {
     ...getAdditionalParams("lint"),
   ];
 
-  use.forEach((pkg) => {
-    const exportedPackage = Array.isArray(pkg) ? [pkg] : pkg;
-
-    if (types.includes(exportedPackage.type) && exportedPackage.extensions) {
-      exportedPackage.extensions.forEach((extension) => {
-        args.push("--ext");
-        args.push(`.${extension}`);
-      });
-    }
+  fileExtensions.forEach((extension) => {
+    args.push("--ext");
+    args.push(`.${extension}`);
   });
 
   return args;
@@ -42,17 +35,16 @@ function getArgs(use, rootFolder, testsFolder, types) {
  * @param {object} obj
  * @param {string} obj.rootFolder
  * @param {string} obj.testsFolder
- * @param {Array} obj.use
  * @param {object} extensionConfig - the config passed to the extension in .factorialrc.js
- * @param {object} types
+ * @param {Array} fileExtensions
  * @returns {Promise} - gets resolved/rejected based on if JS linting failed or not
  */
 module.exports = function lintJS(
-  { rootFolder, testsFolder, use },
+  { rootFolder, testsFolder },
   extensionConfig,
-  types
+  fileExtensions
 ) {
-  const args = getArgs(use, rootFolder, testsFolder, types);
+  const args = getArgs(rootFolder, testsFolder, fileExtensions);
 
   return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/eslint", args);

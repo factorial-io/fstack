@@ -925,10 +925,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@factorial/stack-core@^0.3.11":
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/@factorial/stack-core/-/stack-core-0.3.11.tgz#3ead7efcb02d94fd0b5dd7242a0701b87fe39c14"
-  integrity sha512-tx8ZkZYM/KZqAFRl7IF1JbVHYiUbpyyLyOMmWFfcnldS1eM8PTiLVGiNl8jw10GW8K4LeKRlZ6GUJj3V8ZMLPQ==
+"@factorial/stack-core@^0.3.13":
+  version "0.3.13"
+  resolved "https://registry.yarnpkg.com/@factorial/stack-core/-/stack-core-0.3.13.tgz#2eca051b763989ac0ec3b47045f57e52b821fafe"
+  integrity sha512-O5usHW307L6C0ArG6LtJu0FUmNwrJnGqcILcDGAc48yMPLgCuErDb2biyRkJtKsnFqpO9oP3BmnZffuNdFejSw==
   dependencies:
     chalk "^4.1.2"
     chokidar "^3.5.2"
