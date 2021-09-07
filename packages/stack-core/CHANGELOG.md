@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.14](https://github.com/factorial-io/fstack/compare/core/v0.3.13...core/v0.3.14) (2021-09-07)
+
+
+### Bug Fixes
+
+* **core:** removed console.log ([2133bcf](https://github.com/factorial-io/fstack/commit/2133bcf94ffa844d1e7b59f4ea6607902fc96780))
+
 ### [0.3.13](https://github.com/factorial-io/fstack/compare/core/v0.3.12...core/v0.3.13) (2021-09-07)
 
 
