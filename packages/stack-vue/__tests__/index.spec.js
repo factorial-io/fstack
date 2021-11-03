@@ -21,7 +21,7 @@ module.exports = eslintConfig;
       ],
       eslint: "eslint",
       type: "vue",
-      extensions: ["vue"],
+      extensions: ["vue", "js", "mjs", "cjs"],
       tasks: {
         lint,
       },

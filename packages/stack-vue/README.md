@@ -4,7 +4,7 @@ This is the Vue plugin for `@factorial/stack-core`.
 
 It provides a linting task. The configuration for that can be found in [.eslintrc.js](.eslintrc.js), which also uses the `.eslintrc.js` from `@factorial/stack-javascript`.
 
-Please be aware that this package only lints `.vue` files. If you also want to lint `.js` files, please add the `@factorial/stack-javascript` package to your project as well.
+Please be aware that this package not only lints `.vue`, but also `.js`, `.mjs` and `.cjs` files. This means that you do not need the `@factorial/stack-javascript` package.
 
 ## Installation
 
