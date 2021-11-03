@@ -21,7 +21,9 @@ module.exports = function lint({ config, types }) {
       if (extension.tasks && extension.tasks.lint) {
         allTasks.push({
           type: extension.type,
-          extensions: extension.extensions,
+          extensions: extensionConfig.extensions
+            ? [...extension.extensions, ...extensionConfig.extensions]
+            : extension.extensions,
           task: extension.tasks.lint,
           config: extensionConfig,
         });
