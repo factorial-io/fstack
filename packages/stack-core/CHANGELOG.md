@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.15](https://github.com/factorial-io/fstack/compare/core/v0.3.14...core/v0.3.15) (2021-11-03)
+
+
+### Features
+
+* **core:** allowing package configs in .factorialrc.js to pass custom file extensions to linters ([f993ec3](https://github.com/factorial-io/fstack/commit/f993ec3f2112e805be96f8c25a88f06602283e72))
+
 ### [0.3.14](https://github.com/factorial-io/fstack/compare/core/v0.3.13...core/v0.3.14) (2021-09-07)
 
 
