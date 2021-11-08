@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/factorial-io/fstack/compare/javascript/v0.5.10...javascript/v0.6.0) (2021-11-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** Updated node modules
+
+* **javascript:** Updated node modules ([7663a5b](https://github.com/factorial-io/fstack/commit/7663a5b019cc5af28f69120e91676ae2ca07c25f))
+
 ### [0.5.10](https://github.com/factorial-io/fstack/compare/javascript/v0.5.9...javascript/v0.5.10) (2021-09-07)
 
 ### [0.5.9](https://github.com/factorial-io/fstack/compare/javascript/v0.5.8...javascript/v0.5.9) (2021-09-01)
