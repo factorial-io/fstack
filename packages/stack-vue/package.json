@@ -15,11 +15,11 @@
     "release": "standard-version -t vue/v"
   },
   "dependencies": {
-    "@factorial/stack-javascript": "^0.5.8",
+    "@factorial/stack-javascript": "^0.6.0",
     "eslint-plugin-prettier-vue": "^3.1.0",
-    "eslint-plugin-vue": "^7.17.0"
+    "eslint-plugin-vue": "^8.0.3"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.3.12"
+    "@factorial/stack-core": "^0.3.16"
   }
 }
