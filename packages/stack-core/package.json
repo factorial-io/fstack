@@ -27,6 +27,6 @@
     "deepmerge": "^4.2.2",
     "del": "^6.0.0",
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.2"
+    "inquirer": "^8.2.0"
   }
 }
