@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/factorial-io/fstack/compare/e2e/v0.1.5...e2e/v0.1.6) (2021-11-08)
+
 ### [0.1.5](https://github.com/factorial-io/fstack/compare/e2e/v0.1.4...e2e/v0.1.5) (2021-08-25)
 
 ### [0.1.4](https://github.com/factorial-io/fstack/compare/e2e/v0.1.3...e2e/v0.1.4) (2021-08-25)
