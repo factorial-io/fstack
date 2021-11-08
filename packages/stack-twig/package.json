@@ -19,7 +19,6 @@
     "chalk": "^4.1.1"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.3.11",
-    "twig-testing-library": "^1.1.1"
+    "@factorial/stack-core": "^0.3.16"
   }
 }
