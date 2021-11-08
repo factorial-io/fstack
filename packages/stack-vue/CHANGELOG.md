@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/vue/v0.1.1...vue/v0.2.0) (2021-11-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **vue:** Updated node modules
+
+* **vue:** Updated node modules ([d7e6478](https://github.com/factorial-io/fstack/commit/d7e64788e2d3610b8671980cbece83ee1ed923c9))
+
 ### [0.1.1](https://github.com/factorial-io/fstack/compare/vue/v0.1.0...vue/v0.1.1) (2021-11-03)
 
 
