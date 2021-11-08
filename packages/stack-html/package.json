@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "chalk": "^4.1.1",
-    "glob": "^7.1.7",
-    "html-validate": "^5.2.1"
+    "glob": "^7.2.0",
+    "html-validate": "^6.1.0"
   },
   "peerDependencies": {
-    "@factorial/stack-core": "^0.3.11"
+    "@factorial/stack-core": "^0.3.16"
   }
 }
