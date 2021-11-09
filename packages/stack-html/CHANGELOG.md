@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/factorial-io/fstack/compare/html/v0.1.4...html/v0.1.5) (2021-11-09)
+
+
+### Bug Fixes
+
+* **html:** fix .htmlvalidate.json not being used after node modules update ([c1e6d83](https://github.com/factorial-io/fstack/commit/c1e6d83d44b563da7caced9c780a86a27592ce84))
+
 ### [0.1.4](https://github.com/factorial-io/fstack/compare/html/v0.1.3...html/v0.1.4) (2021-11-08)
 
 ### [0.1.3](https://github.com/factorial-io/fstack/compare/html/v0.1.2...html/v0.1.3) (2021-08-25)
