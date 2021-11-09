@@ -1,6 +1,11 @@
 const chalk = require("chalk");
 const getFiles = require("glob");
-const { HtmlValidate, Reporter, formatterFactory } = require("html-validate");
+const {
+  HtmlValidate,
+  Reporter,
+  FileSystemConfigLoader,
+  formatterFactory,
+} = require("html-validate");
 
 /**
  * Lints all html files based on the given glob, logs the result,
@@ -14,7 +19,7 @@ const { HtmlValidate, Reporter, formatterFactory } = require("html-validate");
  * @returns {Promise} - gets resolved/rejected based on if html linting failed or not
  */
 module.exports = function lint({ rootFolder }, { files }) {
-  const htmlvalidate = new HtmlValidate();
+  const htmlvalidate = new HtmlValidate(new FileSystemConfigLoader());
   const glob = files || `${rootFolder}/**/*.html`;
 
   return new Promise((resolve, reject) => {
