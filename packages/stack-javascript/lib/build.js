@@ -101,25 +101,23 @@ function getFileName(addHashes, compiled) {
  * Compiles the JS entry files with Babel and rollup
  * and saves the output files in `distFolder`.
  *
- * @param {object} obj
- * @param {Array} obj.use
- * @param {string} obj.rootFolder
- * @param {Array} obj.jsFiles
- * @param {string} obj.distFolder
- * @param {object} obj.targets
- * @param {boolean} obj.addHashes
+ * @param {object} config
+ * @param {Array} config.use
+ * @param {string} config.rootFolder
+ * @param {Array} config.jsFiles
+ * @param {string} config.distFolder
+ * @param {object} config.targets
+ * @param {boolean} config.addHashes
+ * @param {object} userConfig
+ * @param {string} userConfig.outputFormat
  * @returns {Promise}
  */
-module.exports = function buildJS({
-  use,
-  rootFolder,
-  jsFiles,
-  distFolder,
-  targets,
-  addHashes,
-}) {
+module.exports = function buildJS(
+  { use, rootFolder, jsFiles, distFolder, targets, addHashes },
+  { outputFormat }
+) {
   if (jsFiles.length > 0) {
-    const format = getFormat(targets);
+    const format = outputFormat || getFormat(targets);
     const promises = [];
 
     jsFiles.forEach((file) => {

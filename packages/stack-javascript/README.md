@@ -62,6 +62,20 @@ const eslintConfig = require("@factorial/stack-javascript").eslint;
 module.exports = eslintConfig;
 ```
 
+## Defining the output format
+
+By default the output format of the build files is determined by the defined targets (see main README).
+
+If you want to explicitely define it (for example to make sure the build files are ES modules), you can do that by passing a configuration object:
+
+```js
+// .factorialrc.js
+
+module.exports = {
+  use: [[require("@factorial/stack-javascript"), { outputFormat: "esm" }]],
+};
+```
+
 ## Extending or overwriting linting rules
 
 If you need to extend or overwrite the linting rules, you can do that like this:
