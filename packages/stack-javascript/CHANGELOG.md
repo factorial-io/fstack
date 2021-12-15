@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/factorial-io/fstack/compare/javascript/v0.6.0...javascript/v0.6.1) (2021-12-15)
+
+
+### Features
+
+* **javascript:** added possibility to explicitely define output format of JS build files ([d771345](https://github.com/factorial-io/fstack/commit/d771345eea9389b96757e01ef6a7b349ba1452df))
+
 ## [0.6.0](https://github.com/factorial-io/fstack/compare/javascript/v0.5.10...javascript/v0.6.0) (2021-11-08)
 
 
