@@ -27,6 +27,7 @@
     "deepmerge": "^4.2.2",
     "del": "^6.0.0",
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "staged-git-files": "git+ssh://git@github.com/factorial-io/staged-git-files.git"
   }
 }
