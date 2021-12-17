@@ -2,41 +2,34 @@ const chalk = require("chalk");
 const path = require("path");
 const { spawn } = require("child_process");
 
-/**
- * @param {string} command
- * @returns {Array}
- */
-function getAdditionalParams(command) {
-  const indexCommand = process.argv.indexOf(command);
-
-  if (indexCommand >= 0) {
-    const args = process.argv.slice(indexCommand + 1);
-    const indexOfOnly = args.indexOf("--only");
-    const indexOfSkip = args.indexOf("--skip");
-
-    if (indexOfOnly >= 0 || indexOfSkip >= 0) {
-      const index = indexOfOnly >= 0 ? indexOfOnly : indexOfSkip;
-
-      args.splice(index, 2);
-    }
-
-    return args;
-  }
-
-  return [];
-}
+const {
+  getAdditionalParams,
+  getStagedFiles,
+} = require("@factorial/stack-core/helpers");
 
 /**
  * @param {string} rootFolder
  * @param {Array} fileExtensions
  * @returns {Array}
  */
-function getArgs(rootFolder, fileExtensions) {
+async function getArgs(rootFolder, fileExtensions) {
+  const defaultParams = ["--color", "--allow-empty-input"];
+  const additionalParams = getAdditionalParams("lint");
+  const hasStagedParam = additionalParams.includes("--staged");
+  const directories = hasStagedParam
+    ? await getStagedFiles(fileExtensions)
+    : [path.join(rootFolder, `**/*.(${fileExtensions.join("|")})`)];
+
+  if (directories.length === 0) {
+    return null;
+  }
+
   return [
-    path.join(rootFolder, `**/*.(${fileExtensions.join("|")})`),
-    "--color",
-    "--allow-empty-input",
-    ...getAdditionalParams("lint"),
+    ...directories,
+    ...defaultParams,
+    ...(hasStagedParam
+      ? additionalParams.filter((entry) => entry !== "--staged")
+      : additionalParams),
   ];
 }
 
@@ -51,12 +44,17 @@ function getArgs(rootFolder, fileExtensions) {
  * @param {Array} fileExtensions
  * @returns {Promise} - gets resolved/rejected based on if linting failed or not
  */
-module.exports = function lintCSS(
+module.exports = async function lintCSS(
   { rootFolder },
   extensionConfig,
   fileExtensions
 ) {
-  const args = getArgs(rootFolder, fileExtensions);
+  const args = await getArgs(rootFolder, fileExtensions);
+
+  if (!args) {
+    console.log(`\nstylelint: ${chalk.green("0 errors!")}`);
+    return Promise.resolve();
+  }
 
   return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/stylelint", args);
