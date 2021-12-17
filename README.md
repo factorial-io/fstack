@@ -130,6 +130,22 @@ You can also lint a specific type via e.g.:
 yarn factorial lint --only css
 ```
 
+Vice versa, if you want to lint all but one type, you can use `--skip`:
+
+```bash
+yarn factorial lint --skip css
+```
+
+Both params (`--only` and `--skip`) accept a comma separated list.
+
+If you want to lint only staged files, you can do that by adding `--staged`:
+
+```bash
+yarn factorial lint --staged
+```
+
+Please note, that this is only supported by the `css`, `javascript` and `vue` packages.
+
 ### optimize
 
 ```bash
