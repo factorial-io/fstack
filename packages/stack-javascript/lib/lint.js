@@ -2,7 +2,10 @@
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
-const { getAdditionalParams } = require("./_helpers");
+const {
+  getAdditionalParams,
+  getStagedFiles,
+} = require("@factorial/stack-core/helpers");
 
 /**
  * @param {string} rootFolder
@@ -10,13 +13,19 @@ const { getAdditionalParams } = require("./_helpers");
  * @param {Array} fileExtensions
  * @returns {Array}
  */
-function getArgs(rootFolder, testsFolder, fileExtensions) {
+async function getArgs(rootFolder, testsFolder, fileExtensions) {
+  const defaultParams = ["--color", "--no-error-on-unmatched-pattern"];
+  const additionalParams = getAdditionalParams("lint");
+  const hasStagedParam = additionalParams.includes("--staged");
+
   const args = [
-    rootFolder,
-    testsFolder,
-    "--color",
-    "--no-error-on-unmatched-pattern",
-    ...getAdditionalParams("lint"),
+    ...(hasStagedParam
+      ? await getStagedFiles(fileExtensions)
+      : [rootFolder, testsFolder]),
+    ...defaultParams,
+    ...(hasStagedParam
+      ? additionalParams.filter((entry) => entry !== "--staged")
+      : additionalParams),
   ];
 
   fileExtensions.forEach((extension) => {
@@ -39,12 +48,12 @@ function getArgs(rootFolder, testsFolder, fileExtensions) {
  * @param {Array} fileExtensions
  * @returns {Promise} - gets resolved/rejected based on if JS linting failed or not
  */
-module.exports = function lintJS(
+module.exports = async function lintJS(
   { rootFolder, testsFolder },
   extensionConfig,
   fileExtensions
 ) {
-  const args = getArgs(rootFolder, testsFolder, fileExtensions);
+  const args = await getArgs(rootFolder, testsFolder, fileExtensions);
 
   return new Promise((resolve, reject) => {
     const process = spawn("./node_modules/.bin/eslint", args);

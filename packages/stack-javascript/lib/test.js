@@ -2,7 +2,7 @@
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
-const { getAdditionalParams } = require("./_helpers");
+const { getAdditionalParams } = require("@factorial/stack-core/helpers");
 
 /**
  * @param {string} rootFolder
