@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.7](https://github.com/factorial-io/fstack/compare/css/v0.5.6...css/v0.5.7) (2021-12-17)
+
+
+### Features
+
+* **css:** possibility to lint only staged files by passing --staged ([c2c108c](https://github.com/factorial-io/fstack/commit/c2c108c5c16f85f9bcfb4130cc77876df3d8b3d5))
+
 ### [0.5.6](https://github.com/factorial-io/fstack/compare/css/v0.5.5...css/v0.5.6) (2021-11-08)
 
 ### [0.5.5](https://github.com/factorial-io/fstack/compare/css/v0.5.4...css/v0.5.5) (2021-11-03)
