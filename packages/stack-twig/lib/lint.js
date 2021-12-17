@@ -1,29 +1,10 @@
 const chalk = require("chalk");
 const { spawn } = require("child_process");
 
-/**
- * @param {string} command
- * @returns {Array}
- */
-function getAdditionalParams(command) {
-  const indexCommand = process.argv.indexOf(command);
-
-  if (indexCommand >= 0) {
-    const args = process.argv.slice(indexCommand + 1);
-    const indexOfOnly = args.indexOf("--only");
-    const indexOfSkip = args.indexOf("--skip");
-
-    if (indexOfOnly >= 0 || indexOfSkip >= 0) {
-      const index = indexOfOnly >= 0 ? indexOfOnly : indexOfSkip;
-
-      args.splice(index, 2);
-    }
-
-    return args;
-  }
-
-  return [];
-}
+const {
+  getAdditionalParams,
+  getStagedFiles,
+} = require("@factorial/stack-core/helpers");
 
 /**
  * Returns an array with all cli params after "lint --only twig"
@@ -31,16 +12,30 @@ function getAdditionalParams(command) {
  * @param {string} rootFolder
  * @returns {Array}
  */
-function getArgs(rootFolder) {
-  const args = [
+async function getArgs(rootFolder) {
+  const defaultParams = [
     "--severity",
     "error",
     "--ruleset",
     "Factorial\\twigcs\\TwigCsRuleset",
-    ...getAdditionalParams("lint"),
   ];
+  const additionalParams = getAdditionalParams("lint");
+  const hasStagedParam = additionalParams.includes("--staged");
+  const directories = hasStagedParam
+    ? await getStagedFiles(["twig"])
+    : [rootFolder];
 
-  return args ? [rootFolder, ...args] : [rootFolder];
+  if (directories.length === 0) {
+    return null;
+  }
+
+  return [
+    ...directories,
+    ...defaultParams,
+    ...(hasStagedParam
+      ? additionalParams.filter((entry) => entry !== "--staged")
+      : additionalParams),
+  ];
 }
 
 /**
@@ -53,8 +48,13 @@ function getArgs(rootFolder) {
  * @param {object} config
  * @returns {Promise} - gets resolved/rejected based on if twig linting failed or not
  */
-module.exports = function lint({ rootFolder }, config) {
-  const args = getArgs(config?.folder || rootFolder);
+module.exports = async function lint({ rootFolder }, config) {
+  const args = await getArgs(config?.folder || rootFolder);
+
+  if (!args) {
+    console.log(`\ntwigcs: ${chalk.green("0 errors!")}`);
+    return Promise.resolve();
+  }
 
   return new Promise((resolve, reject) => {
     const process = spawn(
