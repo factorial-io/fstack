@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.2](https://github.com/factorial-io/fstack/compare/javascript/v0.6.1...javascript/v0.6.2) (2021-12-17)
+
+
+### Features
+
+* **javascript:** possibility to lint only staged files by passing --staged ([7e73cd2](https://github.com/factorial-io/fstack/commit/7e73cd2f3998b2434c7b786ecd549a53db5b3fa9))
+
 ### [0.6.1](https://github.com/factorial-io/fstack/compare/javascript/v0.6.0...javascript/v0.6.1) (2021-12-15)
 
 
