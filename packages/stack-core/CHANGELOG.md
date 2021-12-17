@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.17](https://github.com/factorial-io/fstack/compare/core/v0.3.16...core/v0.3.17) (2021-12-17)
+
+
+### Features
+
+* **core:** offer core funcationality to lint only staged files ([258c607](https://github.com/factorial-io/fstack/commit/258c6072465ad7386f51dd916f68eb156223cfce))
+
 ### [0.3.16](https://github.com/factorial-io/fstack/compare/core/v0.3.15...core/v0.3.16) (2021-11-08)
 
 ### [0.3.15](https://github.com/factorial-io/fstack/compare/core/v0.3.14...core/v0.3.15) (2021-11-03)
