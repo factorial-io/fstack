@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.18](https://github.com/factorial-io/fstack/compare/core/v0.3.17...core/v0.3.18) (2021-12-22)
+
+
+### Bug Fixes
+
+* **core:** use https instead of ssh for requiring staged-git-files dependency ([4029b41](https://github.com/factorial-io/fstack/commit/4029b41504986f0c724912b69d641a50503aee9b))
+
 ### [0.3.17](https://github.com/factorial-io/fstack/compare/core/v0.3.16...core/v0.3.17) (2021-12-17)
 
 
