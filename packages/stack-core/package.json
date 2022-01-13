@@ -16,7 +16,7 @@
     "factorial": "./bin/index.js"
   },
   "engines": {
-    "node": "^10 || ^12 || >=14"
+    "node": "^10 || ^12 || >=14 || ^16"
   },
   "scripts": {
     "release": "standard-version -t core/v"
