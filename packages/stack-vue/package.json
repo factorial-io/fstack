@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@factorial/stack-javascript": "^0.6.2",
-    "eslint-plugin-prettier-vue": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0"
   },
   "peerDependencies": {
