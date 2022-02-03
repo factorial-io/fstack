@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/vue/v0.2.1...vue/v0.2.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* **vue:** use only eslint-plugin-vue to fix prettier integration ([2e2fdbf](https://github.com/factorial-io/fstack/commit/2e2fdbffb9585c871eaccb40efe21812fee0304c))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/vue/v0.2.0...vue/v0.2.1) (2021-12-20)
 
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/vue/v0.1.1...vue/v0.2.0) (2021-11-08)
