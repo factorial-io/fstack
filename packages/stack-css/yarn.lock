@@ -1180,6 +1180,13 @@ postcss-colormin@^5.2.4:
     colord "^2.9.1"
     postcss-value-parser "^4.2.0"
 
+postcss-combine-media-query@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-combine-media-query/-/postcss-combine-media-query-1.0.1.tgz#99a8c4477c31b5e20061c6509bb18165c0f8066e"
+  integrity sha512-DFSXuYy3ltDkC2esIF0ORoS9DCjlyfWhtoQkG9brZMuJY1ABOER95sm3dvccR6IEgSrYX4RgqiHD4Lq3JGrxyw==
+  dependencies:
+    postcss "^7.0.21"
+
 postcss-convert-values@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/postcss-convert-values/-/postcss-convert-values-5.0.3.tgz#492db08a28af84d57651f10edc8f6c8fb2f6df40"
@@ -1595,7 +1602,7 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^7.0.14:
+postcss@^7.0.14, postcss@^7.0.21:
   version "7.0.39"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.39.tgz#9624375d965630e2e1f2c02a935c82a59cb48309"
   integrity sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==

@@ -9,6 +9,7 @@ It adds
   - [postcss-preset-env](https://www.npmjs.com/package/postcss-preset-env)
   - [postcss-import](https://www.npmjs.com/package/postcss-import)
   - [postcss-url](https://www.npmjs.com/package/postcss-url)
+  - [postcss-combine-media-query](https://www.npmjs.com/package/postcss-combine-media-query)
   - [cssnano](https://www.npmjs.com/package/cssnano)
 - a lint task using
   - [stylelint](https://www.npmjs.com/package/stylelint)
@@ -47,7 +48,7 @@ Make sure it is added to your `.factorialrc.js` like this:
 
 module.exports = {
   use: [require("@factorial/stack-css")],
-};
+}
 ```
 
 And add a `.stylelintrc.js`:
@@ -55,9 +56,9 @@ And add a `.stylelintrc.js`:
 ```js
 // .stylelintrc.js
 
-const stylelintConfig = require("@factorial/stack-css").stylelint;
+const stylelintConfig = require("@factorial/stack-css").stylelint
 
-module.exports = stylelintConfig;
+module.exports = stylelintConfig
 ```
 
 ## Passing options to PostCSS plugins
@@ -74,7 +75,7 @@ module.exports = {
       { plugins: { "postcss-url": { url: "copy" } } },
     ],
   ],
-};
+}
 ```
 
 ## Adding plugins to PostCSS
@@ -86,7 +87,7 @@ If you want to add another plugin to PostCSS, install it via `yarn add -D plugin
 
 module.exports = {
   use: [[require("@factorial/stack-css"), { plugins: { "plugin-name": {} } }]],
-};
+}
 ```
 
 ## Extending or overwriting linting rules
@@ -94,14 +95,14 @@ module.exports = {
 If you need to extend or overwrite the linting rules, you can do that like this:
 
 ```js
-const stylelintConfig = require("@factorial/stack-css").stylelint;
-const deepMerge = require("deepmerge");
+const stylelintConfig = require("@factorial/stack-css").stylelint
+const deepMerge = require("deepmerge")
 
 module.exports = deepMerge(stylelintConfig, {
   rules: {
     "number-leading-zero": "never",
   },
-});
+})
 ```
 
 ## Exclude files from linting

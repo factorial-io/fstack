@@ -12,6 +12,7 @@ const postcssPlugins = {
   "postcss-preset-env": require("postcss-preset-env"),
   "postcss-import": require("postcss-import"),
   "postcss-url": require("postcss-url"),
+  "postcss-combine-media-query": require("postcss-combine-media-query"),
   /* eslint-enable global-require */
 };
 
@@ -56,6 +57,9 @@ module.exports = function buildCSS(
       postcssPlugins["postcss-url"](config.plugins["postcss-url"]),
       postcssPlugins["postcss-preset-env"](
         config.plugins["postcss-preset-env"]
+      ),
+      postcssPlugins["postcss-combine-media-query"](
+        config.plugins["postcss-combine-media-query"]
       ),
     ];
 
