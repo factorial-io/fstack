@@ -65,6 +65,7 @@ function optimizeImages({ imageFolders }, type) {
   images.forEach((imagePath) => {
     promises.push(
       new Promise((resolve, reject) =>
+        // eslint-disable-next-line no-promise-executor-return
         handleImage(resolve, reject, imagePath, type)
       )
     );

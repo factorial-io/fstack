@@ -143,6 +143,7 @@ module.exports = async function createTokens({ rootFolder, cssTokens = {} }) {
   );
 
   return new Promise((resolve, reject) =>
+    // eslint-disable-next-line no-promise-executor-return
     writeFile(rootFolder, config.file, styles).then(resolve).catch(reject)
   );
 };
