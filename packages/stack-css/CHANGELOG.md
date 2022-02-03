@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/factorial-io/fstack/compare/css/v0.5.7...css/v0.6.0) (2022-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** added postcss-custom-media-query plugin
+* **css:** disable postcss-custom-properties plugin
+
+### Features
+
+* **css:** added postcss-custom-media-query plugin ([f4f9212](https://github.com/factorial-io/fstack/commit/f4f921234a5bdda0c213d2a217fa630c3de8b999))
+* **css:** disable postcss-custom-properties plugin ([5430357](https://github.com/factorial-io/fstack/commit/54303579e5bac42bea1d3beb63d9948117f5853e))
+
 ### [0.5.7](https://github.com/factorial-io/fstack/compare/css/v0.5.6...css/v0.5.7) (2021-12-17)
 
 
