@@ -29,7 +29,6 @@ describe("core/lib/config", () => {
         rootFolder: path.join(process.cwd(), "src"),
         svgFolders: [],
         imageFolders: [],
-        customPropertyFiles: [],
         testsFolder: "tests",
         targets,
       });
@@ -68,7 +67,6 @@ describe("core/lib/config", () => {
         rootFolder: path.join(process.cwd(), "src"),
         svgFolders: [],
         imageFolders: [],
-        customPropertyFiles: [],
         testsFolder: "tests",
         targets,
       });
@@ -108,7 +106,6 @@ describe("core/lib/config", () => {
         testsFolder: "tests",
         svgFolders: [path.join(process.cwd(), "src", "icons")],
         imageFolders: [],
-        customPropertyFiles: [],
         targets,
       });
     });
@@ -153,7 +150,6 @@ describe("core/lib/config", () => {
           rootFolder: path.join(process.cwd(), "src"),
           svgFolders: [],
           imageFolders: [],
-          customPropertyFiles: [],
           testsFolder: "tests",
           targets: {
             browsers:
@@ -191,7 +187,6 @@ describe("core/lib/config", () => {
           rootFolder: path.join(process.cwd(), "src"),
           svgFolders: [],
           imageFolders: [],
-          customPropertyFiles: [],
           testsFolder: "tests",
           targets: {
             browsers:

@@ -58,9 +58,6 @@ _The CSS entry files, relative from `rootFolder`. These files will be used to cr
 **`cssTokens`**<br>
 _Please refer to [packages/css/README.md](packages/css/README.md) for more information._
 
-**`customPropertyFiles`**, default: `[]`<br>
-_CSS files, relative from `rootFolder`, which contain custom property definitions. This might be necessary when (based on the browserslist) custom properties should be replaced with its original values and you do not import the CSS files (containing the custom property definitions) into each css file._
-
 **`distFolder`**, default: `"dist"`<br>
 _The folder where the build files will be put_
 
