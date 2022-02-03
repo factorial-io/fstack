@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/factorial-io/fstack/compare/core/v0.3.19...core/v0.4.0) (2022-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** remove customPropertyFiles option
+
+### Features
+
+* **core:** remove customPropertyFiles option ([67ddf2b](https://github.com/factorial-io/fstack/commit/67ddf2be588d387671726b2582e20f7f5fe9a920))
+
 ### [0.3.19](https://github.com/factorial-io/fstack/compare/core/v0.3.18...core/v0.3.19) (2022-01-13)
 
 ### [0.3.18](https://github.com/factorial-io/fstack/compare/core/v0.3.17...core/v0.3.18) (2021-12-22)
