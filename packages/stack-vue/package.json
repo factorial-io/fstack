@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@factorial/stack-javascript": "^0.6.2",
-    "eslint-plugin-vue": "^8.2.0"
+    "eslint-plugin-vue": "^8.4.0"
   },
   "peerDependencies": {
     "@factorial/stack-core": "^0.3.17"
