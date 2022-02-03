@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/e2e/v0.1.6...e2e/v0.2.0) (2022-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **e2e:** Updated dependencies
+
+* **e2e:** Updated dependencies ([5887e6a](https://github.com/factorial-io/fstack/commit/5887e6afe63f7b6f2c7c48963af7f31aefd69022))
+
 ### [0.1.6](https://github.com/factorial-io/fstack/compare/e2e/v0.1.5...e2e/v0.1.6) (2021-11-08)
 
 ### [0.1.5](https://github.com/factorial-io/fstack/compare/e2e/v0.1.4...e2e/v0.1.5) (2021-08-25)
