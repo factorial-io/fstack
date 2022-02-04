@@ -53,15 +53,23 @@ module.exports = function buildCSS(
 
   if (cssFiles.length > 0) {
     const plugins = [
-      postcssPlugins["postcss-import"](config.plugins["postcss-import"]),
-      postcssPlugins["postcss-url"](config.plugins["postcss-url"]),
-      postcssPlugins["postcss-preset-env"](
-        config.plugins["postcss-preset-env"]
-      ),
-      postcssPlugins["postcss-combine-media-query"](
-        config.plugins["postcss-combine-media-query"]
-      ),
-    ];
+      config.plugins["postcss-import"] !== null
+        ? postcssPlugins["postcss-import"](config.plugins["postcss-import"])
+        : null,
+      config.plugins["postcss-url"] !== null
+        ? postcssPlugins["postcss-url"](config.plugins["postcss-url"])
+        : null,
+      config.plugins["postcss-preset-env"] !== null
+        ? postcssPlugins["postcss-preset-env"](
+            config.plugins["postcss-preset-env"]
+          )
+        : null,
+      config.plugins["postcss-combine-media-query"] !== null
+        ? postcssPlugins["postcss-combine-media-query"](
+            config.plugins["postcss-combine-media-query"]
+          )
+        : null,
+    ].filter((plugin) => plugin !== null);
 
     const pluginNames = Object.keys(postcssPlugins);
 
