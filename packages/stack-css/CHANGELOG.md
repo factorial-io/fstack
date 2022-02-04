@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/factorial-io/fstack/compare/css/v0.6.0...css/v0.6.1) (2022-02-04)
+
+
+### Features
+
+* **css:** Allow disabling of plugins by setting it to null ([1a64bb8](https://github.com/factorial-io/fstack/commit/1a64bb8d2f6c24e5278d3f6b1c5ec8aa0807a31c))
+
 ## [0.6.0](https://github.com/factorial-io/fstack/compare/css/v0.5.7...css/v0.6.0) (2022-02-03)
 
 
