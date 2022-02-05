@@ -19,8 +19,5 @@
     "chalk": "^4.1.2",
     "svg-sprite": "^1.5.4",
     "svgo": "^2.8.0"
-  },
-  "peerDependencies": {
-    "@factorial/stack-core": "^0.3.16"
   }
 }
