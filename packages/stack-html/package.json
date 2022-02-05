@@ -19,8 +19,5 @@
     "chalk": "^4.1.2",
     "glob": "^7.2.0",
     "html-validate": "^6.3.0"
-  },
-  "peerDependencies": {
-    "@factorial/stack-core": "^0.3.16"
   }
 }
