@@ -76,6 +76,54 @@ module.exports = {
 };
 ```
 
+## Changing plugin configuration
+
+If you want to change the configuration of any of the used `rollup` plugins, you can do that like this:
+
+```js
+// .factorialrc.js
+
+module.exports = {
+  use: [
+    [
+      require("@factorial/stack-javascript"),
+      {
+        plugins: {
+          "@rollup/plugin-commonjs": { … }
+        }
+      }
+    ]
+  ],
+};
+```
+
+## Adding a `rollup` plugin
+
+## Changing plugin configuration
+
+If you want to add an additional `rollup` plugin, you can do that like this:
+
+```js
+// .factorialrc.js
+
+const myPlugin = require("myRollupPlugin");
+
+module.exports = {
+  use: [
+    [
+      require("@factorial/stack-javascript"),
+      {
+        plugins: {
+          "myRollupPlugin": { … }
+        }
+      }
+    ]
+  ],
+};
+```
+
+Make sure you added it to your `devDependencies` in the `package.json`.
+
 ## Extending or overwriting linting rules
 
 If you need to extend or overwrite the linting rules, you can do that like this:

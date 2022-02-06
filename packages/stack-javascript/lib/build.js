@@ -13,10 +13,20 @@ const path = require("path");
  * @param {Array} use
  * @param {string} rootFolder
  * @param {object} targets
- * @param {boolean} [compiled]
+ * @param {boolean} compiled
+ * @param {object} userPlugins
  * @returns {Array}
  */
-function getPlugins(use, rootFolder, targets, compiled) {
+function getPlugins(use, rootFolder, targets, compiled, userPlugins) {
+  const pluginOptions = {
+    "@rollup/plugin-babel": userPlugins["@rollup/plugin-babel"] || {},
+    "@rollup/plugin-node-resolve":
+      userPlugins["@rollup/plugin-node-resolve"] || {},
+    "@rollup/plugin-commonjs": userPlugins["@rollup/plugin-commonjs"] || {},
+    "@rollup/plugin-url": userPlugins["@rollup/plugin-url"] || {},
+    "@rollup/plugin-replace": userPlugins["@rollup/plugin-replace"] || {},
+    "rollup-plugin-terser": userPlugins["rollup-plugin-terser"] || {},
+  };
   const additionalPlugins = [];
   let plugins = [];
 
@@ -27,6 +37,14 @@ function getPlugins(use, rootFolder, targets, compiled) {
       });
     }
   });
+
+  const pluginNames = Object.keys(pluginOptions);
+  Object.keys(userPlugins)
+    .filter((plugin) => !pluginNames.includes(plugin))
+    .forEach((plugin) => {
+      /* eslint-disable-next-line import/no-dynamic-require, global-require */
+      additionalPlugins.push(require(plugin)(userPlugins[plugin]));
+    });
 
   if (compiled) {
     plugins = [
@@ -47,6 +65,7 @@ function getPlugins(use, rootFolder, targets, compiled) {
             },
           ],
         ],
+        ...pluginOptions["@rollup/plugin-babel"],
       }),
     ];
   }
@@ -57,20 +76,22 @@ function getPlugins(use, rootFolder, targets, compiled) {
       limit: 0,
       fileName: "[dirname][name][extname]",
       sourceDir: rootFolder.replace(`${process.cwd()}/`, ""),
+      ...pluginOptions["@rollup/plugin-url"],
     }),
-    nodeResolve(),
-    commonjs(),
+    nodeResolve(pluginOptions["@rollup/plugin-node-resolve"]),
+    commonjs(pluginOptions["@rollup/plugin-commonjs"]),
     replace({
       values: {
         "process.env.NODE_ENV": JSON.stringify("production"),
       },
       preventAssignment: true,
+      ...pluginOptions["@rollup/plugin-replace"],
     }),
     ...additionalPlugins,
   ];
 
   if (process.env.NODE_ENV === "production") {
-    plugins.push(terser.terser());
+    plugins.push(terser.terser(pluginOptions["rollup-plugin-terser"]));
   }
 
   return plugins;
@@ -109,15 +130,14 @@ function getFileName(addHashes, compiled) {
  * @param {object} config.targets
  * @param {boolean} config.addHashes
  * @param {object} userConfig
- * @param {string} userConfig.outputFormat
  * @returns {Promise}
  */
 module.exports = function buildJS(
   { use, rootFolder, jsFiles, distFolder, targets, addHashes },
-  { outputFormat }
+  userConfig = {}
 ) {
   if (jsFiles.length > 0) {
-    const format = outputFormat || getFormat(targets);
+    const format = userConfig.outputFormat || getFormat(targets);
     const promises = [];
 
     jsFiles.forEach((file) => {
@@ -129,7 +149,13 @@ module.exports = function buildJS(
       );
 
       [false, true].forEach((compiled) => {
-        const plugins = getPlugins(use, rootFolder, targets, compiled);
+        const plugins = getPlugins(
+          use,
+          rootFolder,
+          targets,
+          compiled,
+          userConfig.plugins
+        );
 
         promises.push(
           new Promise((resolve, reject) => {
