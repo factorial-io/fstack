@@ -17,7 +17,7 @@ const path = require("path");
  * @param {object} userPlugins
  * @returns {Array}
  */
-function getPlugins(use, rootFolder, targets, compiled, userPlugins) {
+function getPlugins(use, rootFolder, targets, compiled, userPlugins = {}) {
   const pluginOptions = {
     "@rollup/plugin-babel": userPlugins["@rollup/plugin-babel"] || {},
     "@rollup/plugin-node-resolve":
