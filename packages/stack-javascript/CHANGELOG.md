@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.5](https://github.com/factorial-io/fstack/compare/javascript/v0.6.4...javascript/v0.6.5) (2022-02-07)
+
+
+### Bug Fixes
+
+* **javascript:** fix build when no config is passed ([bada523](https://github.com/factorial-io/fstack/commit/bada523bfa8e2601867edef90f804503391b57cb))
+
 ### [0.6.4](https://github.com/factorial-io/fstack/compare/javascript/v0.6.3...javascript/v0.6.4) (2022-02-06)
 
 
