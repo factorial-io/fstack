@@ -112,7 +112,7 @@ async function createPackageConfigs(selectedPackages) {
  */
 async function checkIfFileExists(pathToConfigFile, content) {
   try {
-    fs.readFileSync(pathToConfigFile, "utf-8");
+    fs.readFileSync(pathToConfigFile, { encoding: "utf8" });
     const { overwriteConfig } = await inquirer.prompt([
       {
         type: "confirm",
@@ -167,5 +167,6 @@ module.exports = function init() {
       await installPackages(answers.packages);
       await createPackageConfigs(answers.packages);
       process.exit(0);
-    });
+    })
+    .catch(() => process.exit(1));
 };

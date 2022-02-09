@@ -21,7 +21,7 @@ beforeEach(() => {
 
 describe("core", () => {
   describe("without a command", () => {
-    test("logs an error message", async () => {
+    it("logs an error message", async () => {
       const spy = jest.spyOn(console, "error").mockImplementation();
       const core = require("..");
 
@@ -33,7 +33,7 @@ describe("core", () => {
 
   describe("with a command", () => {
     describe("invalid command", () => {
-      test("logs an error message", async () => {
+      it("logs an error message", async () => {
         const spy = jest.spyOn(console, "error").mockImplementation();
         const core = require("..");
 
@@ -51,7 +51,7 @@ describe("core", () => {
       });
 
       describe("without --only", () => {
-        test("calls build task with the correct params", async () => {
+        it("calls build task with the correct params", async () => {
           const build = require("../lib/tasks/build");
           const core = require("..");
 
@@ -78,7 +78,7 @@ describe("core", () => {
       });
 
       describe("with --only", () => {
-        test("calls build task with the correct params", async () => {
+        it("calls build task with the correct params", async () => {
           process.argv[2] = "build";
           process.argv[3] = "--only";
           process.argv[4] = "css,js";
@@ -102,7 +102,7 @@ describe("core", () => {
       });
 
       describe("is sucessful", () => {
-        test("calls process.exit with 0", async () => {
+        it("calls process.exit with 0", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/build", () => {
             return () => Promise.resolve(true);
@@ -119,7 +119,7 @@ describe("core", () => {
       });
 
       describe("is not sucessful", () => {
-        test("calls process.exit with 1", async () => {
+        it("calls process.exit with 1", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/build", () => {
             return () => Promise.resolve(false);
@@ -152,7 +152,7 @@ describe("core", () => {
       });
 
       describe("without --only", () => {
-        test("calls lint task with the correct params", async () => {
+        it("calls lint task with the correct params", async () => {
           const lint = require("../lib/tasks/lint");
           const core = require("..");
 
@@ -175,7 +175,7 @@ describe("core", () => {
       });
 
       describe("with --only", () => {
-        test("calls lint task with the correct params", async () => {
+        it("calls lint task with the correct params", async () => {
           process.argv[2] = "lint";
           process.argv[3] = "--only";
           process.argv[4] = "css,js";
@@ -205,7 +205,7 @@ describe("core", () => {
       });
 
       describe("is sucessful", () => {
-        test("calls process.exit with 0", async () => {
+        it("calls process.exit with 0", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/lint", () => {
             return () => Promise.resolve(true);
@@ -222,7 +222,7 @@ describe("core", () => {
       });
 
       describe("is not sucessful", () => {
-        test("calls process.exit with 1", async () => {
+        it("calls process.exit with 1", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/lint", () => {
             return () => Promise.resolve(false);
@@ -255,7 +255,7 @@ describe("core", () => {
       });
 
       describe("without --only", () => {
-        test("calls test task with the correct params", async () => {
+        it("calls test task with the correct params", async () => {
           const test = require("../lib/tasks/test");
           const core = require("..");
 
@@ -278,7 +278,7 @@ describe("core", () => {
       });
 
       describe("with --only", () => {
-        test("calls test task with the correct params", async () => {
+        it("calls test task with the correct params", async () => {
           process.argv[2] = "test";
           process.argv[3] = "--only";
           process.argv[4] = "css,js";
@@ -308,7 +308,7 @@ describe("core", () => {
       });
 
       describe("is sucessful", () => {
-        test("calls process.exit with 0", async () => {
+        it("calls process.exit with 0", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/test", () => {
             return () => Promise.resolve(true);
@@ -325,7 +325,7 @@ describe("core", () => {
       });
 
       describe("is not sucessful", () => {
-        test("calls process.exit with 1", async () => {
+        it("calls process.exit with 1", async () => {
           const spy = jest.spyOn(process, "exit").mockImplementation();
           jest.mock("../lib/tasks/test", () => {
             return () => Promise.resolve(false);
@@ -343,7 +343,7 @@ describe("core", () => {
     });
 
     describe("watch", () => {
-      test("calls watch task", async () => {
+      it("calls watch task", async () => {
         jest.mock("../lib/config", () => {
           return () => ({});
         });
@@ -359,7 +359,7 @@ describe("core", () => {
     });
 
     describe("init", () => {
-      test("calls init task", async () => {
+      it("calls init task", async () => {
         const init = require("../lib/tasks/init");
         const core = require("..");
 

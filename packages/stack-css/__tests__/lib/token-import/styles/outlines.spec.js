@@ -100,9 +100,12 @@ describe("css/lib/token-import/styles/outlines", () => {
       const outlines = require("../../../../lib/token-import/styles/outlines");
 
       expect(
-        outlines({
-          children: [],
-        })
+        outlines(
+          {
+            children: [],
+          },
+          {}
+        )
       ).toEqual([]);
     });
   });

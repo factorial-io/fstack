@@ -1,7 +1,7 @@
 const path = require("path");
 
 describe("javascript/index", () => {
-  test("exports the correct data", () => {
+  it("exports the correct data", () => {
     jest.mock(path.join(__dirname, "../.eslintrc"), () => {
       return "eslint";
     });
