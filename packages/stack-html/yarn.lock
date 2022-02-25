@@ -31,7 +31,7 @@
     kleur "^4.0.0"
     text-table "^0.2.0"
 
-"@sidvind/better-ajv-errors@^1.1.0":
+"@sidvind/better-ajv-errors@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-1.1.1.tgz#310d4f38fb0bb631b464bebf036fa5b5ff50b400"
   integrity sha512-CXnmMcV4QoyWuFA0zlDk0AWMHftaMFAIFWz68AH4EXOO2iUEq0gsonJEhY3OjM08xHYobqqDeCAPPEsL5E+8QA==
@@ -193,14 +193,14 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-html-validate@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.3.0.tgz#ee0dc5604da2275e4645f296ba7e50f79a8e6e8e"
-  integrity sha512-jVdLaktiW9wQxWVzzqatQDN1f+pAAGmO6lkgUNer65B1adTEz6L60dvx5oyHVGVeqQXZjutX+IlhoVDfrjHqow==
+html-validate@^6.3.1:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.4.0.tgz#4b0cae2f7f5d46d3e1353df7b1b5c6e189f6b9cb"
+  integrity sha512-04MMFRzTg+6EOqrr9gspdIQA0z4IeHjZ0EJHI9VFQXjlGMoA3L0ik3YTkn8VT6wDl0Dfbl8wDxawg9fYuLKBOw==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^2.0.0"
-    "@sidvind/better-ajv-errors" "^1.1.0"
+    "@sidvind/better-ajv-errors" "^1.1.1"
     acorn-walk "^8.0.0"
     ajv "^8.0.0"
     deepmerge "^4.2.0"
