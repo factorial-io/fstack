@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@factorial/stack-javascript": "^0.6.2",
-    "eslint-plugin-vue": "^8.4.0"
+    "eslint-plugin-vue": "^8.4.1"
   }
 }
