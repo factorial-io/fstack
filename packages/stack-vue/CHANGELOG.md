@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/factorial-io/fstack/compare/vue/v0.2.3...vue/v0.2.4) (2022-03-07)
+
+
+### Features
+
+* **vue:** integrate html-validate ([f5692fc](https://github.com/factorial-io/fstack/commit/f5692fce4232ec3c198acab959ffa4e4637a62f7))
+
+
+### Bug Fixes
+
+* upgrade @factorial/stack-javascript from 0.6.2 to 0.6.3 ([dac3c0c](https://github.com/factorial-io/fstack/commit/dac3c0c4de84c5568f0b6d891bb1ac5143d564d6))
+* upgrade eslint-plugin-vue from 8.4.0 to 8.4.1 ([c94aa6a](https://github.com/factorial-io/fstack/commit/c94aa6a9f3d4b43bf4edea3e740f55002d9d4ec7))
+
 ### [0.2.3](https://github.com/factorial-io/fstack/compare/vue/v0.2.2...vue/v0.2.3) (2022-02-05)
 
 ### [0.2.2](https://github.com/factorial-io/fstack/compare/vue/v0.2.1...vue/v0.2.2) (2022-02-03)
