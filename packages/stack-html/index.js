@@ -2,7 +2,7 @@ const path = require("path");
 
 const lint = require("./lib/lint");
 
-const htmlValidateConfig = require(path.join(__dirname, ".htmlvalidate.json")); // eslint-disable-line
+const htmlValidateConfig = require(path.join(__dirname, ".htmlvalidate")); // eslint-disable-line
 
 module.exports = {
   configFiles: [
@@ -16,7 +16,7 @@ module.exports = htmlValidateConfig;
   ],
   htmlValidate: htmlValidateConfig,
   type: "html",
-  extensions: ["html"],
+  extensions: ["html", "vue"],
   tasks: {
     lint,
   },

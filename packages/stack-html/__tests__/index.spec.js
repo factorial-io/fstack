@@ -21,7 +21,7 @@ module.exports = htmlValidateConfig;
       ],
       htmlValidate: "htmlvalidate",
       type: "html",
-      extensions: ["html"],
+      extensions: ["html", "vue"],
       tasks: {
         lint,
       },
