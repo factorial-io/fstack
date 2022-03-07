@@ -1,5 +1,5 @@
-const eslintConfig = require("@factorial/stack-javascript").eslint
-const deepMerge = require("deepmerge")
+const eslintConfig = require("@factorial/stack-javascript").eslint;
+const deepMerge = require("deepmerge");
 
 module.exports = deepMerge(eslintConfig, {
   extends: ["plugin:vue/essential"],
@@ -9,4 +9,4 @@ module.exports = deepMerge(eslintConfig, {
   env: {
     node: true,
   },
-})
+});

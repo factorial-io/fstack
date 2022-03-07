@@ -5,6 +5,9 @@ describe("vue/index", () => {
     jest.mock(path.join(__dirname, "../.eslintrc"), () => {
       return "eslint";
     });
+    jest.mock(path.join(__dirname, "../.htmlvalidate"), () => {
+      return "htmlvalidate";
+    });
 
     const vue = require("..");
     const lint = require("../lib/lint");
@@ -18,8 +21,16 @@ describe("vue/index", () => {
 module.exports = eslintConfig;
 `,
         },
+        {
+          name: ".htmlvalidate.js",
+          content: `const htmlValidateConfig = require("@factorial/stack-vue").htmlValidate;
+
+module.exports = htmlValidateConfig;
+`,
+        },
       ],
       eslint: "eslint",
+      htmlValidate: "htmlvalidate",
       type: "vue",
       extensions: ["vue", "js", "mjs", "cjs"],
       tasks: {
