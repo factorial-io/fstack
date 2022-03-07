@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/factorial-io/fstack/compare/html/v0.1.7...html/v0.1.8) (2022-03-07)
+
+
+### Features
+
+* **html:** prepare package for html-validate support in vue package ([f3edb15](https://github.com/factorial-io/fstack/commit/f3edb15cc2baf1aeddd552c4a1189a9a87ff522c))
+
+
+### Bug Fixes
+
+* upgrade html-validate from 6.3.0 to 6.3.1 ([52b2326](https://github.com/factorial-io/fstack/commit/52b2326d1974052e4d7fbbda2ad637cab95e8b66))
+
 ### [0.1.7](https://github.com/factorial-io/fstack/compare/html/v0.1.6...html/v0.1.7) (2022-02-05)
 
 ### [0.1.6](https://github.com/factorial-io/fstack/compare/html/v0.1.5...html/v0.1.6) (2022-02-03)
