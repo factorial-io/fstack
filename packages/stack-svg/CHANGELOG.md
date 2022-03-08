@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/factorial-io/fstack/compare/svg/v0.1.16...svg/v0.1.17) (2022-03-08)
+
+
+### Features
+
+* **svg:** Optimized cli output ([4c0a86a](https://github.com/factorial-io/fstack/commit/4c0a86a50ed9915054e6852ac784fbf1ce86cfe1))
+
 ### [0.1.16](https://github.com/factorial-io/fstack/compare/svg/v0.1.15...svg/v0.1.16) (2022-02-05)
 
 ### [0.1.15](https://github.com/factorial-io/fstack/compare/svg/v0.1.14...svg/v0.1.15) (2022-02-03)
