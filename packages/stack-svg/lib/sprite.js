@@ -72,10 +72,10 @@ module.exports = function createSprite({ svgFolders }) {
 
     return Promise.all(promises)
       .then(() => {
-        console.log(chalk.green("\nDone!"));
+        console.log(`svg-sprite: ${chalk.green("Done!")}`);
       })
       .catch(() => {
-        console.log(chalk.red("\nFailed!"));
+        console.log(`svg-sprite: ${chalk.red("Failed!")}`);
       });
   }
 
