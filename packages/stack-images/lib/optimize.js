@@ -59,6 +59,8 @@ async function handleImage(resolve, reject, imagePath, type) {
  * @returns {Promise}
  */
 function optimizeImages({ imageFolders }, type) {
+  console.log(`\n${chalk.magenta.bold("Optimizing images")}…`);
+
   const promises = [];
   const images = getAllFilesFromFolders(imageFolders, ["jpg", "jpeg", "png"]);
 
