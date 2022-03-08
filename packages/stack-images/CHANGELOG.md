@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/factorial-io/fstack/compare/image/v0.2.5...image/v0.2.6) (2022-03-08)
+
+
+### Features
+
+* **images:** Optimized cli output ([fb356ab](https://github.com/factorial-io/fstack/commit/fb356abde9b5c114b2093d4fab2fc94da8f659a1))
+
 ### [0.2.5](https://github.com/factorial-io/fstack/compare/image/v0.2.4...image/v0.2.5) (2022-02-05)
 
 ### [0.2.4](https://github.com/factorial-io/fstack/compare/image/v0.2.3...image/v0.2.4) (2021-11-08)
