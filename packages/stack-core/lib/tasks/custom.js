@@ -13,7 +13,9 @@ module.exports = function custom(config, command, types) {
     if (extension.tasks[command]) {
       if (Array.isArray(types)) {
         types.forEach((type) => {
-          tasksToRun.push(extension.tasks[command](config, type));
+          if (extension.type === type) {
+            tasksToRun.push(extension.tasks[command](config, type));
+          }
         });
       } else {
         tasksToRun.push(extension.tasks[command](config));
