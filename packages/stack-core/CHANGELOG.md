@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/factorial-io/fstack/compare/core/v0.4.0...core/v0.4.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* **core:** Fixes custom command (e.g. sprite) being logged multiple times ([6570dac](https://github.com/factorial-io/fstack/commit/6570dac9dcc7de7eecd77e2d1adbbe64adaec23c))
+* upgrade chokidar from 3.5.2 to 3.5.3 ([43d41ca](https://github.com/factorial-io/fstack/commit/43d41ca53af334e26027ab0f672e578eeea35bf6))
+* upgrade staged-git-files from 1.2.0 to 1.3.0 ([b5c58ae](https://github.com/factorial-io/fstack/commit/b5c58aeb5915e4bba70022d88a362d58544ba2c8))
+
 ## [0.4.0](https://github.com/factorial-io/fstack/compare/core/v0.3.19...core/v0.4.0) (2022-02-03)
 
 
