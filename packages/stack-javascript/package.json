@@ -15,8 +15,8 @@
     "release": "standard-version -t javascript/v"
   },
   "dependencies": {
-    "@babel/core": "^7.17.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
+    "@babel/core": "^7.17.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.16.11",
     "@factorial/stack-core": "^0.4.0",
