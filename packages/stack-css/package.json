@@ -23,7 +23,7 @@
     "mkdirp": "^1.0.4",
     "node-env-file": "^0.1.8",
     "node-fetch": "^2.6.7",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.7",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^7.3.2",
