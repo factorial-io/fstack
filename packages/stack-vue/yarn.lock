@@ -958,14 +958,14 @@
     inquirer "^8.2.0"
     staged-git-files "git+https://github.com/factorial-io/staged-git-files.git"
 
-"@factorial/stack-html@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.7.tgz#b301bccff16c9f61fa72d703942aecd3f5e242cb"
-  integrity sha512-PQQvUfbqz5u5rDBF+qdT3fYC/CvrfwYyFpd/XaEBf/vIth8GoHWhv4BRcQckRHMwDBeLVYUVn2PNQF7RoPG6NQ==
+"@factorial/stack-html@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.8.tgz#a7da315a86332f97b17c71765073ea57d7ee2d2f"
+  integrity sha512-sBm7kcbRVlfR6M2ZK5DJUoPEMdc9+Thqmi0Cov9/lFPpQ3HxnJBNyjnD7kxL4X2mfWVAAyDZViWuzZl2RRVrNQ==
   dependencies:
     chalk "^4.1.2"
     glob "^7.2.0"
-    html-validate "^6.3.0"
+    html-validate "^6.5.0"
 
 "@factorial/stack-javascript@^0.6.6":
   version "0.6.6"
@@ -2828,10 +2828,10 @@ html-validate-vue@^4.2.0:
   resolved "https://registry.yarnpkg.com/html-validate-vue/-/html-validate-vue-4.2.0.tgz#8480e119cb2c0fbe62491ae9e69361bcabaa2f79"
   integrity sha512-/FuGzTB66icfPnJRT7qk8xP+kAOyi+cvZU8jghA5dPYV2XHVU3AAqREqVWkAljcEy+hIzHxo4i6Gq8dlCDFWTA==
 
-html-validate@^6.3.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.5.0.tgz#0088eb9c099d25dd56b85f03cfd72823976c06cb"
-  integrity sha512-IPzkJUoT+2hJEwHQH2gSY5naQFEUOCjp/gSYoV6v3S2XegD5aQ6Kp35tnvTh7eB19lWD427cOUiCy0LSyFdncQ==
+html-validate@^6.5.0:
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.6.1.tgz#b14c236105b10ab6e8d8d19b7eb59a172b768dc1"
+  integrity sha512-8XG1GeLJoWARdq7wASWb3ZGnWHjo1EnLEdthDvr8aPsQQPICkNfaMqyBVflTm0hvp0y6GLpPegarOQLxEQWg9g==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^2.0.0"
