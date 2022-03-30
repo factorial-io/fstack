@@ -82,18 +82,18 @@
   dependencies:
     postcss-value-parser "^4.2.0"
 
-"@factorial/stack-core@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@factorial/stack-core/-/stack-core-0.4.0.tgz#7bc978444eb0a31ebf54cf727ea2906c56fc7055"
-  integrity sha512-/TT36UWK2u5Btn+bbhRPDiovgplCeV0mfloKkkGE4BMdG9Yo8juI3051qcACjUrbNpUp9j8KiwXwXm8Jpi2zpQ==
+"@factorial/stack-core@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@factorial/stack-core/-/stack-core-0.4.1.tgz#e0d129fe9bd1f3c497b037afa5b467dac7644723"
+  integrity sha512-Xdz/f+FwuV0jKs+8nfyAj23c3XK/L1oHLOT0XLSqkWdoy1WHTvhrHFraTQhRg0fPcfAxPubVtn7rg/H6HlHiZg==
   dependencies:
     chalk "^4.1.2"
-    chokidar "^3.5.2"
+    chokidar "^3.5.3"
     deepmerge "^4.2.2"
     del "^6.0.0"
     fs-extra "^10.0.0"
     inquirer "^8.2.0"
-    staged-git-files "git+https://github.com/factorial-io/staged-git-files.git"
+    staged-git-files "1.3.0"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -355,7 +355,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chokidar@^3.5.2:
+chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -2205,9 +2205,10 @@ stable@^0.1.8:
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
-"staged-git-files@git+https://github.com/factorial-io/staged-git-files.git":
-  version "1.2.0"
-  resolved "git+https://github.com/factorial-io/staged-git-files.git#c3a54446e874c7a302c4c2696287973064629da9"
+staged-git-files@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/staged-git-files/-/staged-git-files-1.3.0.tgz#a6e3e96d88c6573d982f59154dfe66488039ec14"
+  integrity sha512-38Kd8VBVMVqtuavWAzwV9uWvbIhTQh0hNWMWzj2FAOjdMHgLJOArE3eYBSbLgV28j4F3AXieOMekFqM9UX6wxw==
 
 string-width@^4.1.0, string-width@^4.2.3:
   version "4.2.3"
