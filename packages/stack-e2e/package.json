@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "cypress": "^9.5.0",
+    "cypress": "^9.5.2",
     "deepmerge": "^4.2.2"
   }
 }
