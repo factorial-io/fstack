@@ -2823,10 +2823,10 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
-html-validate-vue@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/html-validate-vue/-/html-validate-vue-4.2.0.tgz#8480e119cb2c0fbe62491ae9e69361bcabaa2f79"
-  integrity sha512-/FuGzTB66icfPnJRT7qk8xP+kAOyi+cvZU8jghA5dPYV2XHVU3AAqREqVWkAljcEy+hIzHxo4i6Gq8dlCDFWTA==
+html-validate-vue@^4.2.1:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/html-validate-vue/-/html-validate-vue-4.2.2.tgz#e27b0e5b99297afc45bb77259453dd829dfc81f7"
+  integrity sha512-60whaOHeR1LZPVt/TJNyONF/gYViZZxdTOSXW28xnjApqqIunqBHdGYis5+H3FC3FfgiHyJh05WXaaTJHrvqJw==
 
 html-validate@^6.5.0:
   version "6.6.1"
@@ -3829,6 +3829,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+lru-cache@^7.4.0:
+  version "7.8.1"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.8.1.tgz#68ee3f4807a57d2ba185b7fd90827d5c21ce82bb"
+  integrity sha512-E1v547OCgJvbvevfjgK9sNKIVXO96NnsTsFPBlg4ZxjhsJSODoH9lk8Bm0OxvHNm6Vm5Yqkl/1fErDxhYL8Skg==
+
 magic-string@^0.25.7:
   version "0.25.9"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
@@ -4455,6 +4460,13 @@ semver@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.0.0.tgz#5f3ca35761e47e05b206c6daff2cf814f0316b8e"
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
+
+semver@7.3.6:
+  version "7.3.6"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.6.tgz#5d73886fb9c0c6602e79440b97165c29581cbb2b"
+  integrity sha512-HZWqcgwLsjaX1HBD31msI/rXktuIhS+lWvdE4kN9z+8IVT4Itc7vqU2WvYsyD6/sjYCt4dEKH/m1M3dwI9CC5w==
+  dependencies:
+    lru-cache "^7.4.0"
 
 semver@^6.0.0, semver@^6.1.1, semver@^6.1.2, semver@^6.3.0:
   version "6.3.0"
