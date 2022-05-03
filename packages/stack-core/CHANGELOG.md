@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/factorial-io/fstack/compare/core/v0.4.1...core/v0.4.2) (2022-05-03)
+
+
+### Bug Fixes
+
+* upgrade fs-extra from 10.0.0 to 10.0.1 ([92227df](https://github.com/factorial-io/fstack/commit/92227dfb98188fa4f30d1af7e72f89f1035cb5aa))
+* upgrade inquirer from 8.2.0 to 8.2.1 ([93daa1c](https://github.com/factorial-io/fstack/commit/93daa1cd8b316f034e2930561575591d7d2a635e))
+
 ### [0.4.1](https://github.com/factorial-io/fstack/compare/core/v0.4.0...core/v0.4.1) (2022-03-08)
 
 
