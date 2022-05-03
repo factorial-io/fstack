@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/factorial-io/fstack/compare/html/v0.1.8...html/v0.1.9) (2022-05-03)
+
+
+### Bug Fixes
+
+* upgrade html-validate from 6.5.0 to 6.6.0 ([875ee6f](https://github.com/factorial-io/fstack/commit/875ee6f675642f8194e51afb8c18c3de7c5122e1))
+
 ### [0.1.8](https://github.com/factorial-io/fstack/compare/html/v0.1.7...html/v0.1.8) (2022-03-07)
 
 
