@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.7](https://github.com/factorial-io/fstack/compare/javascript/v0.6.6...javascript/v0.6.7) (2022-05-03)
+
+
+### Bug Fixes
+
+* upgrade @babel/core from 7.17.5 to 7.17.7 ([458786b](https://github.com/factorial-io/fstack/commit/458786b4714af75473b6e317abd0fb5f6b6dcfa1))
+* upgrade @babel/core from 7.17.8 to 7.17.9 ([b70afe1](https://github.com/factorial-io/fstack/commit/b70afe125de8bbdba650f7461ede2d7629c61dcf))
+* upgrade @factorial/stack-core from 0.4.0 to 0.4.1 ([a3f57eb](https://github.com/factorial-io/fstack/commit/a3f57ebe8da348f733d67df7f4a83774deea100c))
+* upgrade @rollup/plugin-babel from 5.3.0 to 5.3.1 ([5565d2d](https://github.com/factorial-io/fstack/commit/5565d2d182f9d634b591bff4b23807566978c968))
+* upgrade @rollup/plugin-commonjs from 21.0.1 to 21.0.2 ([1a0b1b3](https://github.com/factorial-io/fstack/commit/1a0b1b35dd3640d96887d1c61ce1937854934bb7))
+* upgrade @rollup/plugin-commonjs from 21.0.2 to 21.0.3 ([447210a](https://github.com/factorial-io/fstack/commit/447210ad1a05557c207d296c088b3e37bdf3087c))
+* upgrade @rollup/plugin-replace from 3.0.1 to 3.1.0 ([54e6da5](https://github.com/factorial-io/fstack/commit/54e6da5d49e3f1971e62bc1b57977197838ee323))
+* upgrade @types/jest from 27.4.0 to 27.4.1 ([78487d0](https://github.com/factorial-io/fstack/commit/78487d01a2b424f5038b0edd448553e6c8dbb237))
+* upgrade eslint from 8.10.0 to 8.11.0 ([84ec310](https://github.com/factorial-io/fstack/commit/84ec3105917b1283ff8d52765b5147e928d91181))
+* upgrade eslint from 8.8.0 to 8.9.0 ([b9f3536](https://github.com/factorial-io/fstack/commit/b9f35368122899e5720240c76a6f24f89c527024))
+* upgrade eslint-config-prettier from 8.3.0 to 8.4.0 ([a983276](https://github.com/factorial-io/fstack/commit/a9832764e27d66db4f04437193090ab7100e25af))
+* upgrade eslint-plugin-import from 2.25.4 to 2.26.0 ([afd59a6](https://github.com/factorial-io/fstack/commit/afd59a673a5bdc67dc4af4709f50dec4d4ba34af))
+* upgrade eslint-plugin-jest from 26.1.0 to 26.1.1 ([f7561db](https://github.com/factorial-io/fstack/commit/f7561dbb41165e82b8c842d21048a904eb88bee6))
+* upgrade eslint-plugin-jest from 26.1.1 to 26.1.2 ([4a6554a](https://github.com/factorial-io/fstack/commit/4a6554a2db3712a543b11e6203ccfb1148b24cb9))
+* upgrade eslint-plugin-jsdoc from 37.8.2 to 37.9.0 ([c524daf](https://github.com/factorial-io/fstack/commit/c524daf1735012e086f0927092953baa5f63d645))
+* upgrade eslint-plugin-jsdoc from 37.9.6 to 37.9.7 ([1250532](https://github.com/factorial-io/fstack/commit/1250532f334827680c7280a225ab38a4ecc25520))
+* upgrade multiple dependencies with Snyk ([c49317f](https://github.com/factorial-io/fstack/commit/c49317fbefb226328079d37a08a4b3c4ddd0e17c))
+* upgrade prettier from 2.5.1 to 2.6.0 ([3092720](https://github.com/factorial-io/fstack/commit/3092720d6cef735c0fd2cf70499289f9c1f6b293))
+* upgrade rollup from 2.67.1 to 2.67.2 ([772ef09](https://github.com/factorial-io/fstack/commit/772ef09120cfbac8a9d33e3c349f60fc1cdde781))
+* upgrade rollup from 2.69.0 to 2.69.1 ([a7bfc1b](https://github.com/factorial-io/fstack/commit/a7bfc1b82f92e297376b24522a9cade2d8c476cd))
+
 ### [0.6.6](https://github.com/factorial-io/fstack/compare/javascript/v0.6.5...javascript/v0.6.6) (2022-02-09)
 
 ### [0.6.5](https://github.com/factorial-io/fstack/compare/javascript/v0.6.4...javascript/v0.6.5) (2022-02-07)
