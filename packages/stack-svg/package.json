@@ -1,6 +1,6 @@
 {
   "name": "@factorial/stack-svg",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "main": "index.js",
   "license": "MIT",
   "private": false,
