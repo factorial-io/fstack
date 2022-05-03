@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.4](https://github.com/factorial-io/fstack/compare/css/v0.6.3...css/v0.6.4) (2022-05-03)
+
+
+### Bug Fixes
+
+* upgrade @factorial/stack-core from 0.4.0 to 0.4.1 ([9322c88](https://github.com/factorial-io/fstack/commit/9322c8867612335576f916e590ae9080377adac3))
+* upgrade cssnano from 5.0.17 to 5.1.0 ([b6894f2](https://github.com/factorial-io/fstack/commit/b6894f26d0856609c4377ff0356298d078941088))
+* upgrade cssnano from 5.1.5 to 5.1.7 ([d1b9470](https://github.com/factorial-io/fstack/commit/d1b947028f4428dbf8a29754f937618915fd1277))
+* upgrade postcss from 8.4.6 to 8.4.7 ([ffbe5b1](https://github.com/factorial-io/fstack/commit/ffbe5b1a604ccccfc19ddc75482d92b3eea9096b))
+* upgrade postcss-import from 14.0.2 to 14.1.0 ([b72b05e](https://github.com/factorial-io/fstack/commit/b72b05ecd3eb280d58e9f622c97c1efba75dc713))
+* upgrade postcss-preset-env from 7.3.1 to 7.3.2 ([0f48cd3](https://github.com/factorial-io/fstack/commit/0f48cd37d98d3af23393bb2504072ec930d64ee0))
+* upgrade postcss-preset-env from 7.4.2 to 7.4.3 ([ca695c9](https://github.com/factorial-io/fstack/commit/ca695c958cd845ea47aa4feda25afe383b250af8))
+* upgrade stylelint from 14.4.0 to 14.5.0 ([3dc11e8](https://github.com/factorial-io/fstack/commit/3dc11e8fc519afb6689a5657858442e9dee6423f))
+* upgrade stylelint from 14.5.3 to 14.6.0 ([e02f9a5](https://github.com/factorial-io/fstack/commit/e02f9a5a9911b49deedadaba1ec02afa5b47cc0f))
+
 ### [0.6.3](https://github.com/factorial-io/fstack/compare/css/v0.6.2...css/v0.6.3) (2022-02-09)
 
 ### [0.6.2](https://github.com/factorial-io/fstack/compare/css/v0.6.1...css/v0.6.2) (2022-02-05)
