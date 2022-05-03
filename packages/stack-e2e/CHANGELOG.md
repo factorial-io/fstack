@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/factorial-io/fstack/compare/e2e/v0.2.1...e2e/v0.2.2) (2022-05-03)
+
+
+### Bug Fixes
+
+* upgrade cypress from 9.4.1 to 9.5.0 ([f3b23ba](https://github.com/factorial-io/fstack/commit/f3b23ba1540d82aa2e2fe56ee244cac0683b1c7d))
+* upgrade cypress from 9.5.1 to 9.5.2 ([d84e538](https://github.com/factorial-io/fstack/commit/d84e53844286f18f8257d432abf7de46163bfe4b))
+
 ### [0.2.1](https://github.com/factorial-io/fstack/compare/e2e/v0.2.0...e2e/v0.2.1) (2022-02-05)
 
 ## [0.2.0](https://github.com/factorial-io/fstack/compare/e2e/v0.1.6...e2e/v0.2.0) (2022-02-03)
