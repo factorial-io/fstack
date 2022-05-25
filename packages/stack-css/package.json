@@ -16,7 +16,7 @@
     "release": "standard-version -t css/v"
   },
   "dependencies": {
-    "@factorial/stack-core": "^0.4.1",
+    "@factorial/stack-core": "^0.4.2",
     "chalk": "^4.1.2",
     "cssnano": "^5.1.7",
     "deepmerge": "^4.2.2",
