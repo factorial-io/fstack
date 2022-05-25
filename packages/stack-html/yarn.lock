@@ -187,10 +187,10 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-html-validate@^6.9.1:
-  version "6.9.1"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.9.1.tgz#322863c931f2e9b5ef8b3c24c92713d50d11c0ae"
-  integrity sha512-8RcFyMIgmf7swCMAVA3XbCdVnciHdeAkv8gV7ZR+CK11k4SYTQ/+3rbZ8HFb+sbzF2auksedt+lkWRz+uEaLeg==
+html-validate@^6.10.0:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.11.1.tgz#1b0e6d714a7ac30c16fa1374c2903236b2fc7c4d"
+  integrity sha512-SyEEVN/7atyRSFmvTJgGH8yDZtvA7FH+gR4Uir5m9Cq1cME6udnfMaSVteafWqLVB7II+YLdfCSmdynrTs52Cw==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^2.0.0"
