@@ -951,14 +951,14 @@
     inquirer "^8.2.0"
     staged-git-files "1.3.0"
 
-"@factorial/stack-html@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.8.tgz#a7da315a86332f97b17c71765073ea57d7ee2d2f"
-  integrity sha512-sBm7kcbRVlfR6M2ZK5DJUoPEMdc9+Thqmi0Cov9/lFPpQ3HxnJBNyjnD7kxL4X2mfWVAAyDZViWuzZl2RRVrNQ==
+"@factorial/stack-html@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.9.tgz#cafc55f7e6eeba02561eab91f260a70c81107abd"
+  integrity sha512-RbC15tDgxLN8nPPzhIfV8JJI2+V+aUXes1mTZeKxFV5VYwF4GXSYmcP1zoDe+xaCKqp8vq5M/JrAW6xsLz8RUQ==
   dependencies:
     chalk "^4.1.2"
-    glob "^7.2.0"
-    html-validate "^6.5.0"
+    glob "^8.0.1"
+    html-validate "^6.9.1"
 
 "@factorial/stack-javascript@^0.6.6":
   version "0.6.6"
@@ -2770,7 +2770,7 @@ glob-parent@^6.0.1:
   dependencies:
     is-glob "^4.0.3"
 
-glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.2.0:
+glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
   integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
@@ -2793,6 +2793,17 @@ glob@^8.0.0:
     minimatch "^5.0.1"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
+
+glob@^8.0.1:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^5.0.1"
+    once "^1.3.0"
 
 globals@^11.1.0:
   version "11.12.0"
@@ -2881,10 +2892,10 @@ html-validate-vue@^4.2.4:
   resolved "https://registry.yarnpkg.com/html-validate-vue/-/html-validate-vue-4.2.4.tgz#869aef42de8841aec5f2d17af720321854ae795f"
   integrity sha512-tsjae6KjuJZghPWeW9j4ZkHErkqhdp3USJ7McMiigmGzO10T+SZ+KGmozF8yLIJd1khl1Uqho1iB9tNFTL6vSQ==
 
-html-validate@^6.5.0:
-  version "6.9.1"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.9.1.tgz#322863c931f2e9b5ef8b3c24c92713d50d11c0ae"
-  integrity sha512-8RcFyMIgmf7swCMAVA3XbCdVnciHdeAkv8gV7ZR+CK11k4SYTQ/+3rbZ8HFb+sbzF2auksedt+lkWRz+uEaLeg==
+html-validate@^6.9.1:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.11.1.tgz#1b0e6d714a7ac30c16fa1374c2903236b2fc7c4d"
+  integrity sha512-SyEEVN/7atyRSFmvTJgGH8yDZtvA7FH+gR4Uir5m9Cq1cME6udnfMaSVteafWqLVB7II+YLdfCSmdynrTs52Cw==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^2.0.0"
