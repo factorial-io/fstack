@@ -15,10 +15,10 @@
     "release": "standard-version -t javascript/v"
   },
   "dependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/core": "^7.17.12",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.12",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-env": "^7.17.12",
     "@factorial/stack-core": "^0.4.2",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.0",
