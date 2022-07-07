@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.5](https://github.com/factorial-io/fstack/compare/css/v0.6.4...css/v0.6.5) (2022-07-07)
+
+
+### Features
+
+* **css:** Proper error handling when a CSS file cannot be found during build ([9b17518](https://github.com/factorial-io/fstack/commit/9b1751862f22da63b7f4f676666c6c1c566b7955))
+
+
+### Bug Fixes
+
+* upgrade @factorial/stack-core from 0.4.1 to 0.4.2 ([86a2625](https://github.com/factorial-io/fstack/commit/86a2625c03d43392732db67dc4565a12109e2953))
+* upgrade cssnano from 5.1.7 to 5.1.8 ([9769f3b](https://github.com/factorial-io/fstack/commit/9769f3b2ddb8deacf8034b19021db8fb3bd582a1))
+* upgrade postcss from 8.4.13 to 8.4.14 ([759e8fa](https://github.com/factorial-io/fstack/commit/759e8fa5856ecb8c2fda1ecd2c3c1c9620d2dbc3))
+* upgrade postcss-preset-env from 7.5.0 to 7.6.0 ([a752d15](https://github.com/factorial-io/fstack/commit/a752d157b2f2b7484d597a633fa61bbfbd334dfd))
+* upgrade stylelint from 14.8.1 to 14.8.2 ([27b693e](https://github.com/factorial-io/fstack/commit/27b693e3ac8e08be6a418c03078d2cff0764eb83))
+* upgrade stylelint from 14.8.5 to 14.9.0 ([43a20db](https://github.com/factorial-io/fstack/commit/43a20db9dd227cb15b0262fe0345323098fa9b36))
+
 ### [0.6.4](https://github.com/factorial-io/fstack/compare/css/v0.6.3...css/v0.6.4) (2022-05-03)
 
 
