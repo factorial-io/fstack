@@ -112,61 +112,66 @@ module.exports = function buildCSS(
             : path.join(distFolder, folderRelativeFromRootFolder, basename);
 
           fs.readFile(fullPath, (err, css) => {
-            const hash = getRevisionHash(css);
+            if (err) {
+              console.log(err.toString());
+              reject();
+            } else {
+              const hash = getRevisionHash(css);
 
-            postcss(plugins)
-              .process(css, {
-                from: fullPath,
-                to: fileName.replace("[hash]", hash),
-                map: {
-                  inline: false,
-                },
-              })
-              .then((result) => {
-                const proms = [];
-                const dirName = path
-                  .dirname(fileName)
-                  .replace(`${process.cwd()}/`, "");
+              postcss(plugins)
+                .process(css, {
+                  from: fullPath,
+                  to: fileName.replace("[hash]", hash),
+                  map: {
+                    inline: false,
+                  },
+                })
+                .then((result) => {
+                  const proms = [];
+                  const dirName = path
+                    .dirname(fileName)
+                    .replace(`${process.cwd()}/`, "");
 
-                proms.push(
-                  new Promise((res, rej) => {
-                    mkdirp(dirName)
-                      .then(() => {
-                        fs.writeFile(
-                          fileName.replace("[hash]", hash),
-                          result.css,
-                          () => res()
-                        );
-                      })
-                      .catch(() => rej());
-                  })
-                );
-
-                if (result.map) {
                   proms.push(
                     new Promise((res, rej) => {
                       mkdirp(dirName)
                         .then(() => {
                           fs.writeFile(
-                            `${fileName.replace("[hash]", hash)}.map`,
-                            JSON.stringify(result.map),
+                            fileName.replace("[hash]", hash),
+                            result.css,
                             () => res()
                           );
                         })
                         .catch(() => rej());
                     })
                   );
-                }
 
-                Promise.all(proms)
-                  .then(() => resolve())
-                  .catch(() => reject());
-              })
-              .catch((error) => {
-                console.log(chalk.bold("\nCSS:"));
-                console.log(`\n${error}`);
-                reject();
-              });
+                  if (result.map) {
+                    proms.push(
+                      new Promise((res, rej) => {
+                        mkdirp(dirName)
+                          .then(() => {
+                            fs.writeFile(
+                              `${fileName.replace("[hash]", hash)}.map`,
+                              JSON.stringify(result.map),
+                              () => res()
+                            );
+                          })
+                          .catch(() => rej());
+                      })
+                    );
+                  }
+
+                  Promise.all(proms)
+                    .then(() => resolve())
+                    .catch(() => reject());
+                })
+                .catch((error) => {
+                  console.log(chalk.bold("\nCSS:"));
+                  console.log(`\n${error}`);
+                  reject();
+                });
+            }
           });
         })
       );
