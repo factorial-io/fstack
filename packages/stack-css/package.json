@@ -18,7 +18,7 @@
   "dependencies": {
     "@factorial/stack-core": "^0.4.2",
     "chalk": "^4.1.2",
-    "cssnano": "^5.1.8",
+    "cssnano": "^5.1.12",
     "deepmerge": "^4.2.2",
     "mkdirp": "^1.0.4",
     "node-env-file": "^0.1.8",
