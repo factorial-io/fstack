@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/factorial-io/fstack/compare/vue/v0.2.5...vue/v0.2.6) (2022-09-12)
+
+
+### Bug Fixes
+
+* upgrade @factorial/stack-html from 0.1.8 to 0.1.9 ([1788586](https://github.com/factorial-io/fstack/commit/1788586547ab652a214eb03b105b3d1a73128ef8))
+* upgrade @factorial/stack-javascript from 0.6.6 to 0.6.7 ([3789ef1](https://github.com/factorial-io/fstack/commit/3789ef178854dbbe54739e3441055d217c3fa2a1))
+
 ### [0.2.5](https://github.com/factorial-io/fstack/compare/vue/v0.2.4...vue/v0.2.5) (2022-05-03)
 
 
