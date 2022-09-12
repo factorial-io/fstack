@@ -23,18 +23,17 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@html-validate/stylish@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@html-validate/stylish/-/stylish-2.0.1.tgz#a21dac99e7bbf7d25a564b8560d9d2a17aa84dd4"
-  integrity sha512-iRLjgQnNq66rcsTukun6KwMhPEoUV2R3atPbTSapnEvD1aETjD+pfS+1yYrmaPeJFgXHzfsSYjAuyUVq7EID/Q==
+"@html-validate/stylish@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@html-validate/stylish/-/stylish-3.0.1.tgz#9d0304c6fd91e4b19467b8b7d6f3f112fc7831ff"
+  integrity sha512-jQNDrSnWvJEPSlqC1tFqcbmVuJy2x61UwqFsXHxYT2sgCXFW4AVhsoIcHkECCmUHtQ8hpHU6yOBGA+rMLZhS7A==
   dependencies:
     kleur "^4.0.0"
-    text-table "^0.2.0"
 
-"@sidvind/better-ajv-errors@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-1.1.1.tgz#310d4f38fb0bb631b464bebf036fa5b5ff50b400"
-  integrity sha512-CXnmMcV4QoyWuFA0zlDk0AWMHftaMFAIFWz68AH4EXOO2iUEq0gsonJEhY3OjM08xHYobqqDeCAPPEsL5E+8QA==
+"@sidvind/better-ajv-errors@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-2.0.0.tgz#88f822f04ea7314fc4e7fcc5e4b393640c74f6ab"
+  integrity sha512-S+3eyeMbWQifgbDF15eojGVJi8n5uU0bGJYQsvsHPyU4lmrMsXvfiCh7MM0IPEF4a4jRBsljMExtKlo7kM0jqQ==
   dependencies:
     "@babel/code-frame" "^7.16.0"
     chalk "^4.1.0"
@@ -198,14 +197,14 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-html-validate@^6.10.0:
-  version "6.11.1"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.11.1.tgz#1b0e6d714a7ac30c16fa1374c2903236b2fc7c4d"
-  integrity sha512-SyEEVN/7atyRSFmvTJgGH8yDZtvA7FH+gR4Uir5m9Cq1cME6udnfMaSVteafWqLVB7II+YLdfCSmdynrTs52Cw==
+html-validate@^7.4.1:
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.4.1.tgz#7f5171906f2840e191ab2f427b3a867dd0bb9f22"
+  integrity sha512-HJQQVmD2TWkwniaKonQo2BWQ7gWICSjumDFLG+DAY0TJM2oqqPMX9KJFXCpTsNorTuJAOR5kQss4HNjDZCvz6w==
   dependencies:
     "@babel/code-frame" "^7.10.0"
-    "@html-validate/stylish" "^2.0.0"
-    "@sidvind/better-ajv-errors" "^1.1.1"
+    "@html-validate/stylish" "^3.0.0"
+    "@sidvind/better-ajv-errors" "^2.0.0"
     acorn-walk "^8.0.0"
     ajv "^8.0.0"
     deepmerge "^4.2.0"
@@ -329,11 +328,6 @@ supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
-
-text-table@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
-  integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
 uri-js@^4.2.2:
   version "4.4.1"
