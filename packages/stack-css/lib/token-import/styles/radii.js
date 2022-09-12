@@ -9,13 +9,15 @@ module.exports = function getRadii(layer) {
           !styles.find(({ name }) => name === stringifiedName) &&
           stringifiedName.startsWith("radius-")
         ) {
+          const remifiedValue = child.cornerRadius / 10;
+
           styles.push({
             name: stringifiedName,
             values: {
-              topLeft: `${child.rectangleCornerRadii[0] / 10}rem`,
-              topRight: `${child.rectangleCornerRadii[1] / 10}rem`,
-              bottomRight: `${child.rectangleCornerRadii[2] / 10}rem`,
-              bottomLeft: `${child.rectangleCornerRadii[3] / 10}rem`,
+              topLeft: `${remifiedValue}rem`,
+              topRight: `${remifiedValue}rem`,
+              bottomRight: `${remifiedValue}rem`,
+              bottomLeft: `${remifiedValue}rem`,
             },
           });
         }

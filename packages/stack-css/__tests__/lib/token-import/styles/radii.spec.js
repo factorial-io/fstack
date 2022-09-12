@@ -9,7 +9,7 @@ describe("css/lib/token-import/styles/radii", () => {
             {
               type: "RECTANGLE",
               name: "radius-3",
-              rectangleCornerRadii: [1, 2, 3, 4],
+              cornerRadius: 5,
             },
             // This is an unlikely use case, but for whatever reason
             // there might be two nodes with the same name.
@@ -17,7 +17,7 @@ describe("css/lib/token-import/styles/radii", () => {
             {
               type: "RECTANGLE",
               name: "radius-3",
-              rectangleCornerRadii: [1, 2, 3, 4],
+              cornerRadius: 5,
             },
           ],
         })
@@ -25,10 +25,10 @@ describe("css/lib/token-import/styles/radii", () => {
         {
           name: "radius-3",
           values: {
-            topLeft: "0.1rem",
-            topRight: "0.2rem",
-            bottomRight: "0.3rem",
-            bottomLeft: "0.4rem",
+            topLeft: "0.5rem",
+            topRight: "0.5rem",
+            bottomRight: "0.5rem",
+            bottomLeft: "0.5rem",
           },
         },
       ]);
