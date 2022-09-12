@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.6](https://github.com/factorial-io/fstack/compare/css/v0.6.5...css/v0.6.6) (2022-09-12)
+
+
+### Bug Fixes
+
+* **css:** Fixes broken design token import after Figma API change ([c375052](https://github.com/factorial-io/fstack/commit/c3750520a52142b6a5ade82a99fa41cf988841b5))
+* **css:** Fixes wrong filename hash when content of imported CSS file changed ([#102](https://github.com/factorial-io/fstack/issues/102)) ([27076eb](https://github.com/factorial-io/fstack/commit/27076eb11044708dfbd52691ba8405207dc1ff33))
+* packages/stack-css/package.json & packages/stack-css/yarn.lock to reduce vulnerabilities ([80880f2](https://github.com/factorial-io/fstack/commit/80880f27d7eb79088662223b15a9c2316aebc0da))
+* upgrade cssnano from 5.1.11 to 5.1.12 ([6baa0bd](https://github.com/factorial-io/fstack/commit/6baa0bd5ccd593678fc9f1f408db8f9bbfbb53bb))
+* upgrade postcss-preset-env from 7.7.1 to 7.7.2 ([0919ebb](https://github.com/factorial-io/fstack/commit/0919ebb9eb13709dd19b3da7dfd3da02c7b4d3d7))
+
 ### [0.6.5](https://github.com/factorial-io/fstack/compare/css/v0.6.4...css/v0.6.5) (2022-07-07)
 
 
