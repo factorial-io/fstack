@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/factorial-io/fstack/compare/html/v0.1.9...html/v0.1.10) (2022-09-12)
+
+
+### Bug Fixes
+
+* upgrade glob from 8.0.1 to 8.0.2 ([59c22f5](https://github.com/factorial-io/fstack/commit/59c22f5ccf7288073b0e43059c438ded7fd8f927))
+* upgrade html-validate from 6.9.1 to 6.10.0 ([b826f34](https://github.com/factorial-io/fstack/commit/b826f3413c37559bedd878264250bcc8763713f4))
+
 ### [0.1.9](https://github.com/factorial-io/fstack/compare/html/v0.1.8...html/v0.1.9) (2022-05-03)
 
 
