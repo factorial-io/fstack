@@ -116,12 +116,10 @@ module.exports = function buildCSS(
               console.log(err.toString());
               reject();
             } else {
-              const hash = getRevisionHash(css);
-
               postcss(plugins)
                 .process(css, {
                   from: fullPath,
-                  to: fileName.replace("[hash]", hash),
+                  to: fileName,
                   map: {
                     inline: false,
                   },
@@ -131,6 +129,8 @@ module.exports = function buildCSS(
                   const dirName = path
                     .dirname(fileName)
                     .replace(`${process.cwd()}/`, "");
+
+                  const hash = getRevisionHash(result.css);
 
                   proms.push(
                     new Promise((res, rej) => {
