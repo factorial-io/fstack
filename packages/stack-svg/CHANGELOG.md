@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/factorial-io/fstack/compare/svg/v0.1.18...svg/v0.2.0) (2022-10-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **svg:** Updated svg-sprite
+* **javascript:** Updated node modules
+
+* **javascript:** Updated node modules ([87d7532](https://github.com/factorial-io/fstack/commit/87d7532c9099b7836e187ce2b37b5a117fca4332))
+* **svg:** Updated svg-sprite ([f9a7efe](https://github.com/factorial-io/fstack/commit/f9a7efe148064cd1ee4227f27e23f2bb85ba5b54))
+
 ### [0.1.18](https://github.com/factorial-io/fstack/compare/svg/v0.1.17...svg/v0.1.18) (2022-05-03)
 
 ### [0.1.17](https://github.com/factorial-io/fstack/compare/svg/v0.1.16...svg/v0.1.17) (2022-03-08)
