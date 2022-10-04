@@ -76,7 +76,7 @@
   resolved "https://registry.yarnpkg.com/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.1.0.tgz#d0239707b5f85ae984dcd8ae09da1939bb02109a"
   integrity sha512-NVYuQn9Aj/ZmRufKON7a+1U1XS+jGKMcWO4J8ZH2xhSP3aNVgO7Nfl45DMgqxdCcn0ZzYhzP+mSQFbA/ENE/mg==
 
-"@resvg/resvg-js@^2.0.1":
+"@resvg/resvg-js@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@resvg/resvg-js/-/resvg-js-2.1.0.tgz#d2e939e39d31e97fb5f61efba25ef5ab64bf27d1"
   integrity sha512-nR6uVR5ugXLT2jh7U141nhawzgUs4JBl8BpM4XH7/ughSsOA/+WRxVhMUfdtEsz7REpTMKe2Sat+1/eWAuQ04w==
@@ -626,12 +626,12 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svg-sprite@^2.0.0-beta7:
-  version "2.0.0-beta7"
-  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-2.0.0-beta7.tgz#c200a7136fab98a290d80100d37c4c0912653817"
-  integrity sha512-aXpeKKnMsbpwfDUETEg/EE7jl1ox0VdXKOukToR8w2kBPXkH/9ULwCKk3p7ITEglxLACuojhjePX9fuCiNCSkA==
+svg-sprite@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-2.0.0.tgz#8a6d3f8b4697b080dcc61200484845c39de671d2"
+  integrity sha512-Kt9vz7TZVw7g4p2sNIfmSodUJ1bVuOE1VtHzA1gMmUmGfVQQvjzuf+12KzYBxa37efAhmQgU6n+bPIlZT+68dA==
   dependencies:
-    "@resvg/resvg-js" "^2.0.1"
+    "@resvg/resvg-js" "^2.1.0"
     "@xmldom/xmldom" "^0.8.2"
     async "^3.2.4"
     css-selector-parser "^1.4.1"
@@ -647,7 +647,7 @@ svg-sprite@^2.0.0-beta7:
     prettysize "^2.0.0"
     svgo "^2.8.0"
     vinyl "^2.2.1"
-    winston "^3.7.2"
+    winston "^3.8.2"
     xpath "^0.0.32"
     yargs "^17.5.1"
 
@@ -700,7 +700,7 @@ winston-transport@^4.5.0:
     readable-stream "^3.6.0"
     triple-beam "^1.3.0"
 
-winston@^3.7.2:
+winston@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/winston/-/winston-3.8.2.tgz#56e16b34022eb4cff2638196d9646d7430fdad50"
   integrity sha512-MsE1gRx1m5jdTTO9Ld/vND4krP2To+lgDoMEHGGa4HIlAUyXJtfc7CxQcGXVyz2IBpw5hbFkj2b/AtUdQwyRew==

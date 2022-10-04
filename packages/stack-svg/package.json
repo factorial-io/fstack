@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "svg-sprite": "^2.0.0-beta7",
+    "svg-sprite": "^2.0.0",
     "svgo": "^2.8.0"
   }
 }
