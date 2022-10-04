@@ -966,14 +966,14 @@
     inquirer "^8.2.4"
     staged-git-files "1.3.0"
 
-"@factorial/stack-html@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.9.tgz#cafc55f7e6eeba02561eab91f260a70c81107abd"
-  integrity sha512-RbC15tDgxLN8nPPzhIfV8JJI2+V+aUXes1mTZeKxFV5VYwF4GXSYmcP1zoDe+xaCKqp8vq5M/JrAW6xsLz8RUQ==
+"@factorial/stack-html@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@factorial/stack-html/-/stack-html-0.1.10.tgz#39976eb89e7ba83a100a6dc303014a933fcae96c"
+  integrity sha512-XuZfWGoW+a+aGBuBhuaB+INGPeCrAQNlN5AaL+L31O95BTRqzAvsiI4bmcp9PB2Z9Y7NReTeq5bPtAo4eu17Ow==
   dependencies:
     chalk "^4.1.2"
-    glob "^8.0.1"
-    html-validate "^6.9.1"
+    glob "^8.0.2"
+    html-validate "^7.4.1"
 
 "@factorial/stack-javascript@^0.6.7":
   version "0.6.7"
@@ -1007,13 +1007,12 @@
     rollup "^2.71.1"
     rollup-plugin-terser "^7.0.2"
 
-"@html-validate/stylish@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@html-validate/stylish/-/stylish-2.0.1.tgz#a21dac99e7bbf7d25a564b8560d9d2a17aa84dd4"
-  integrity sha512-iRLjgQnNq66rcsTukun6KwMhPEoUV2R3atPbTSapnEvD1aETjD+pfS+1yYrmaPeJFgXHzfsSYjAuyUVq7EID/Q==
+"@html-validate/stylish@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@html-validate/stylish/-/stylish-3.0.1.tgz#9d0304c6fd91e4b19467b8b7d6f3f112fc7831ff"
+  integrity sha512-jQNDrSnWvJEPSlqC1tFqcbmVuJy2x61UwqFsXHxYT2sgCXFW4AVhsoIcHkECCmUHtQ8hpHU6yOBGA+rMLZhS7A==
   dependencies:
     kleur "^4.0.0"
-    text-table "^0.2.0"
 
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
@@ -1414,10 +1413,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sidvind/better-ajv-errors@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-1.1.1.tgz#310d4f38fb0bb631b464bebf036fa5b5ff50b400"
-  integrity sha512-CXnmMcV4QoyWuFA0zlDk0AWMHftaMFAIFWz68AH4EXOO2iUEq0gsonJEhY3OjM08xHYobqqDeCAPPEsL5E+8QA==
+"@sidvind/better-ajv-errors@^2.0.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-2.1.0.tgz#54f4216d2200d60e90ec25c6a27c1ea3afdc6cdf"
+  integrity sha512-JuIb009FhHuL9priFBho2kv7QmZOydj0LgYvj+h1t0mMCmhM/YmQNRlJR5wVtBZya6wrVFK5Hi5TIbv5BKEx7w==
   dependencies:
     "@babel/code-frame" "^7.16.0"
     chalk "^4.1.0"
@@ -2765,7 +2764,7 @@ glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^8.0.0, glob@^8.0.1:
+glob@^8.0.0, glob@^8.0.2:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
   integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
@@ -2861,14 +2860,14 @@ html-validate-vue@^5.1.0:
   resolved "https://registry.yarnpkg.com/html-validate-vue/-/html-validate-vue-5.1.0.tgz#8454f119fdc3c8aa00df792fac832f8e432e2e2d"
   integrity sha512-Kv2UUwehlzc+zhY0j4M7xRrNI+qaXRIAis0ZB0J7F2HrgHN+ynIDl9TzMq9mL7D+fhV31x7F11T67RAGVu4Cww==
 
-html-validate@^6.9.1:
-  version "6.11.1"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-6.11.1.tgz#1b0e6d714a7ac30c16fa1374c2903236b2fc7c4d"
-  integrity sha512-SyEEVN/7atyRSFmvTJgGH8yDZtvA7FH+gR4Uir5m9Cq1cME6udnfMaSVteafWqLVB7II+YLdfCSmdynrTs52Cw==
+html-validate@^7.4.1:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.5.0.tgz#7ba34a5ceffdd9461eb0259b47f752dd2435727c"
+  integrity sha512-eNcIQBlTv0+L+V+K5On+WuBdOVsqhPVPOK5Si4JpLLIgjBffEjw/5Wz4+UB8yPeBIvOzAnmZYnRxr4GBmNK6UQ==
   dependencies:
     "@babel/code-frame" "^7.10.0"
-    "@html-validate/stylish" "^2.0.0"
-    "@sidvind/better-ajv-errors" "^1.1.1"
+    "@html-validate/stylish" "^3.0.0"
+    "@sidvind/better-ajv-errors" "^2.0.0"
     acorn-walk "^8.0.0"
     ajv "^8.0.0"
     deepmerge "^4.2.0"
