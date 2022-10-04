@@ -15,7 +15,7 @@
     "release": "standard-version -t vue/v"
   },
   "dependencies": {
-    "@factorial/stack-html": "^0.1.9",
+    "@factorial/stack-html": "^0.1.10",
     "@factorial/stack-javascript": "^0.6.7",
     "eslint-plugin-vue": "^9.4.0",
     "html-validate-vue": "^5.1.0"
