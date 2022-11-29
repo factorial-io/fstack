@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.3](https://github.com/factorial-io/fstack/compare/core/v0.4.2...core/v0.4.3) (2022-11-29)
+
+
+### Bug Fixes
+
+* upgrade del from 6.0.0 to 6.1.0 ([3e36818](https://github.com/factorial-io/fstack/commit/3e3681800c4664e92641976be85d2ae53bcb39d5))
+
 ### [0.4.2](https://github.com/factorial-io/fstack/compare/core/v0.4.1...core/v0.4.2) (2022-05-03)
 
 
