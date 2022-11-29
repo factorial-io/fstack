@@ -26,8 +26,8 @@
     "chokidar": "^3.5.3",
     "deepmerge": "^4.2.2",
     "del": "^6.1.0",
-    "fs-extra": "^10.1.0",
-    "inquirer": "^8.2.4",
+    "fs-extra": "^11.0.0",
+    "inquirer": "^8.2.3",
     "staged-git-files": "1.3.0"
   }
 }
