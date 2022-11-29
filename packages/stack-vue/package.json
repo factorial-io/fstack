@@ -17,7 +17,7 @@
   "dependencies": {
     "@factorial/stack-html": "^0.1.10",
     "@factorial/stack-javascript": "^0.6.8",
-    "eslint-plugin-vue": "^9.4.0",
-    "html-validate-vue": "^5.1.0"
+    "eslint-plugin-vue": "^9.8.0",
+    "html-validate-vue": "^5.1.1"
   }
 }
