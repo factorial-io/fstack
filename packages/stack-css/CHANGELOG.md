@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.7](https://github.com/factorial-io/fstack/compare/css/v0.6.6...css/v0.6.7) (2022-11-29)
+
+
+### Bug Fixes
+
+* upgrade postcss-preset-env from 7.8.1 to 7.8.2 ([71a7775](https://github.com/factorial-io/fstack/commit/71a77758897ef115a0550163964376b6d39d8a3e))
+* upgrade stylelint from 14.11.0 to 14.12.0 ([6e1e402](https://github.com/factorial-io/fstack/commit/6e1e402e2e80469c2970535e8b2c58509843db38))
+
 ### [0.6.6](https://github.com/factorial-io/fstack/compare/css/v0.6.5...css/v0.6.6) (2022-09-12)
 
 
