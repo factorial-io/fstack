@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/factorial-io/fstack/compare/javascript/v0.6.8...javascript/v0.7.0) (2022-11-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** Dependencies update
+
+### Bug Fixes
+
+* upgrade @types/jest from 29.0.1 to 29.0.2 ([c236b1b](https://github.com/factorial-io/fstack/commit/c236b1bd3f42916a9bf254554ee58de2755d7d34))
+* upgrade multiple dependencies with Snyk ([54767c3](https://github.com/factorial-io/fstack/commit/54767c3b89a013469824f83f47e6854eb638dc73))
+
+
+* **javascript:** Dependencies update ([55cd9e8](https://github.com/factorial-io/fstack/commit/55cd9e8935d3d4e8bee934e375d61dfdc0dc4379))
+
 ### [0.6.8](https://github.com/factorial-io/fstack/compare/javascript/v0.6.7...javascript/v0.6.8) (2022-09-12)
 
 
