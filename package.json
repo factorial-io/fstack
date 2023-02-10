@@ -29,8 +29,10 @@
     "@factorial/html": "file:packages/stack-html",
     "@factorial/images": "file:packages/stack-images",
     "@factorial/javascript": "file:packages/stack-javascript",
+    "@factorial/svelte": "file:packages/stack-svelte",
     "@factorial/svg": "file:packages/stack-svg",
     "@factorial/twig": "file:packages/stack-twig",
+    "@factorial/typescript": "file:packages/stack-typescript",
     "@factorial/vue": "file:packages/stack-vue"
   },
   "scripts": {
@@ -42,8 +44,10 @@
     "html:release": "yarn --cwd packages/stack-html release",
     "images:release": "yarn --cwd packages/stack-images release",
     "javascript:release": "yarn --cwd packages/stack-javascript release",
+    "svelte:release": "yarn --cwd packages/stack-svelte release",
     "svg:release": "yarn --cwd packages/stack-svg release",
     "twig:release": "yarn --cwd packages/stack-twig release",
+    "typescript:release": "yarn --cwd packages/stack-typescript release",
     "vue:release": "yarn --cwd packages/stack-vue release"
   },
   "pre-commit": [

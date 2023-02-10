@@ -1,10 +1,10 @@
-# @factorial/stack-vue
+# @factorial/stack-svelte
 
-This is the Vue plugin for `@factorial/stack-core`.
+This is the Svelte plugin for `@factorial/stack-core`.
 
 It provides a linting task. The configuration files for that can be found in [eslint](eslint).
 
-Please be aware that this package not only lints `.vue`, but also `.js`, `.mjs` and `.cjs` files. This means that you do not need the `@factorial/stack-javascript` package.
+Please be aware that this package only lints `.svelte` files. This means that you need the `@factorial/stack-javascript` package to lint `.js` files.
 
 ## Installation
 
@@ -17,7 +17,7 @@ yarn factorial init
 or manually via:
 
 ```bash
-yarn add @factorial/stack-vue
+yarn add @factorial/stack-svelte
 ```
 
 Make sure it is added to your `.factorialrc.js` like this:
@@ -26,7 +26,7 @@ Make sure it is added to your `.factorialrc.js` like this:
 // .factorialrc.js
 
 module.exports = {
-  use: [require("@factorial/stack-vue")],
+  use: [require("@factorial/stack-svelte")],
 };
 ```
 
@@ -39,16 +39,16 @@ module.exports = {
   root: true,
   extends: [
     "@factorial/stack-javascript/eslint",
-    "@factorial/stack-vue/eslint/v3,
+    "@factorial/stack-svelte/eslint,
   ],
 };
 ```
 
 Available configurations:
 
-- `@factorial/stack-vue/eslint/v2`: Vue 2
-- `@factorial/stack-vue/eslint/v3`: Vue 3
-- `@factorial/stack-vue/eslint/typescript`: TypeScript for Vue
+- `@factorial/stack-svelte/eslint`: Default configuration, includes `base`
+- `@factorial/stack-svelte/eslint/base`: Basic linting rules, always necessary
+- `@factorial/stack-svelte/eslint/typescript`: TypeScript for Svelte
 
 ### TypeScript
 
@@ -69,8 +69,8 @@ module.exports = {
     "@factorial/stack-javascript/eslint/base",
     "@factorial/stack-javascript/eslint/jest",
     "@factorial/stack-typescript/eslint",
-    "@factorial/stack-vue/eslint/v3,
-    "@factorial/stack-vue/eslint/typescript,
+    "@factorial/stack-svelte/eslint/base,
+    "@factorial/stack-svelte/eslint/typescript,
   ],
 };
 ```
@@ -101,8 +101,8 @@ yarn factorial lint
 
 This will also run other linting tasks provided by other packages (in case you installed some).
 
-If you want to only lint `.vue` files, you can run:
+If you want to only lint `.svelte` files, you can run:
 
 ```bash
-yarn factorial lint --only vue
+yarn factorial lint --only svelte
 ```

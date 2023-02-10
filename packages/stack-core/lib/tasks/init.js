@@ -10,8 +10,10 @@ const packages = [
   "html",
   "images",
   "javascript",
+  "svelte",
   "svg",
   "twig",
+  "typescript",
   "vue",
 ];
 

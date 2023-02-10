@@ -8,8 +8,11 @@ The purpose of this stack is to allow [linting](#lint), [building](#build) and [
 - `html`
 - `images`
 - `javascript`
+- `svelte`
 - `svg`
 - `twig`
+- `typescript`
+- `vue`
 
 ## Content
 
@@ -141,7 +144,13 @@ If you want to lint only staged files, you can do that by adding `--staged`:
 yarn factorial lint --staged
 ```
 
-Please note, that this is only supported by the `css`, `javascript` and `vue` packages.
+Please note, that this is only supported by the following packages:
+
+- `css`
+- `javascript`
+- `svelte`
+- `typescript`
+- `vue`
 
 ### optimize
 
@@ -274,8 +283,11 @@ yarn e2e:release
 yarn html:release
 yarn images:release
 yarn javascript:release
+yarn svelte:release
 yarn svg:release
 yarn twig:release
+yarn typescript:release
+yarn vue:release
 ```
 
 This will automatically update the changelog based on the commit messages.
