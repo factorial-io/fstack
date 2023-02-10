@@ -2,9 +2,6 @@ const path = require("path");
 
 describe("vue/index", () => {
   test("exports the correct data", () => {
-    jest.mock(path.join(__dirname, "../.eslintrc"), () => {
-      return "eslint";
-    });
     jest.mock(path.join(__dirname, "../.htmlvalidate"), () => {
       return "htmlvalidate";
     });
@@ -16,9 +13,13 @@ describe("vue/index", () => {
       configFiles: [
         {
           name: ".eslintrc.js",
-          content: `const eslintConfig = require("@factorial/stack-vue").eslint;
-
-module.exports = eslintConfig;
+          content: `module.exports = {
+  root: true,
+  extends: [
+    "@factorial/stack-javascript/eslint",
+    "@factorial/stack-vue/eslint/3",
+  ],
+};
 `,
         },
         {
@@ -29,7 +30,6 @@ module.exports = htmlValidateConfig;
 `,
         },
       ],
-      eslint: "eslint",
       htmlValidate: "htmlvalidate",
       type: "vue",
       extensions: ["vue", "js", "mjs", "cjs"],
