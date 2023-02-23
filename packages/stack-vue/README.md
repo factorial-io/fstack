@@ -39,15 +39,15 @@ module.exports = {
   root: true,
   extends: [
     "@factorial/stack-javascript/eslint",
-    "@factorial/stack-vue/eslint/3,
+    "@factorial/stack-vue/eslint/v3,
   ],
 };
 ```
 
 Available configurations:
 
-- `@factorial/stack-vue/eslint/2`: Vue 2
-- `@factorial/stack-vue/eslint/3`: Vue 3
+- `@factorial/stack-vue/eslint/v2`: Vue 2
+- `@factorial/stack-vue/eslint/v3`: Vue 3
 
 ## Extending or overwriting linting rules
 

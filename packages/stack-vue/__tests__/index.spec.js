@@ -17,7 +17,7 @@ describe("vue/index", () => {
   root: true,
   extends: [
     "@factorial/stack-javascript/eslint",
-    "@factorial/stack-vue/eslint/3",
+    "@factorial/stack-vue/eslint/v3",
   ],
 };
 `,
