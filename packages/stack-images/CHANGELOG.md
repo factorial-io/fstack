@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/factorial-io/fstack/compare/image/v0.2.6...image/v0.2.7) (2023-02-24)
+
 ### [0.2.6](https://github.com/factorial-io/fstack/compare/image/v0.2.5...image/v0.2.6) (2022-03-08)
 
 
