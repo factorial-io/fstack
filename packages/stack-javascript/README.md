@@ -6,7 +6,7 @@ It adds
 
 - a build task (creating compiled and uncompiled build files) using
   - [rollup](https://www.npmjs.com/package/rollup)
-  - [@rollup/plugin-babel](https://www.npmpjs.com/package/https://www.npmjs.com/package/@rollup/plugin-babel)
+  - [@rollup/plugin-babel](https://www.npmjs.com/package/@rollup/plugin-babel)
   - [@rollup/plugin-url](https://www.npmpjs.com/package/@rollup/plugin-url)
   - [rollup-plugin-terser](https://www.npmpjs.com/package/rollup-plugin-terser)
   - [@rollup/plugin-node-resolve](https://www.npmpjs.com/package/@rollup/plugin-node-resolve)
@@ -22,11 +22,10 @@ It adds
   - [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)
   - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
   - [eslint-plugin-jsdoc](https://www.npmjs.com/package/eslint-plugin-jsdoc)
+  - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
 - a test task using
   - [jest](https://www.npmjs.com/package/jest)
   - [jest-standard-reporter](https://www.npmjs.com/package/jest-standard-reporter)
-
-[Full configuration](.eslintrc.js)
 
 ## Installation
 
@@ -57,10 +56,20 @@ And add a `.eslintrc.js`:
 ```js
 // .eslintrc.js
 
-const eslintConfig = require("@factorial/stack-javascript").eslint;
-
-module.exports = eslintConfig;
+module.exports = {
+  root: true,
+  extends: [
+    "@factorial/stack-javascript/eslint",
+  ],
+};
 ```
+
+Available configurations:
+
+- `@factorial/stack-javascript/eslint`: Default configuration, includes `base`, `jsdoc` and `jest`
+- `@factorial/stack-javascript/eslint/base`: Basic linting rules, always necessary
+- `@factorial/stack-javascript/eslint/jsdoc`: JSDoc linting
+- `@factorial/stack-javascript/eslint/jest`: Jest test spec linting
 
 ## Defining the output format
 
@@ -129,14 +138,15 @@ Make sure you added it to your `devDependencies` in the `package.json`.
 If you need to extend or overwrite the linting rules, you can do that like this:
 
 ```js
-const eslintConfig = require("@factorial/stack-javascript").eslint;
-const deepMerge = require("deepmerge");
+// .eslintrc.js
 
-module.exports = deepMerge(eslintConfig, {
+module.exports = {
+  root: true,
+  extends: […],
   rules: {
     ...
   },
-});
+};
 ```
 
 ## Exclude files from linting

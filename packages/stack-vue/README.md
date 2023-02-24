@@ -2,7 +2,7 @@
 
 This is the Vue plugin for `@factorial/stack-core`.
 
-It provides a linting task. The configuration for that can be found in [.eslintrc.js](.eslintrc.js), which also uses the `.eslintrc.js` from `@factorial/stack-javascript`.
+It provides a linting task. The configuration files for that can be found in [eslint](eslint).
 
 Please be aware that this package not only lints `.vue`, but also `.js`, `.mjs` and `.cjs` files. This means that you do not need the `@factorial/stack-javascript` package.
 
@@ -35,24 +35,34 @@ And add a `.eslintrc.js`:
 ```js
 // .eslintrc.js
 
-const eslintConfig = require("@factorial/stack-vue").eslint;
-
-module.exports = eslintConfig;
+module.exports = {
+  root: true,
+  extends: [
+    "@factorial/stack-javascript/eslint",
+    "@factorial/stack-vue/eslint/v3,
+  ],
+};
 ```
+
+Available configurations:
+
+- `@factorial/stack-vue/eslint/v2`: Vue 2
+- `@factorial/stack-vue/eslint/v3`: Vue 3
 
 ## Extending or overwriting linting rules
 
 If you need to extend or overwrite the linting rules, you can do that like this:
 
 ```js
-const eslintConfig = require("@factorial/stack-vue").eslint;
-const deepMerge = require("deepmerge");
+// .eslintrc.js
 
-module.exports = deepMerge(eslintConfig, {
+module.exports = {
+  root: true,
+  extends: […],
   rules: {
     ...
   },
-});
+};
 ```
 
 ## Usage
