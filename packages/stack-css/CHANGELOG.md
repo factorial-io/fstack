@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/factorial-io/fstack/compare/css/v0.6.7...css/v0.7.0) (2023-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** Adds cssTokens.rootFontSize option
+
+### Features
+
+* **css:** Adds cssTokens.rootFontSize option ([fcae063](https://github.com/factorial-io/fstack/commit/fcae063503c52d9cec526fe5591eb2b6e46b8fca))
+
 ### [0.6.7](https://github.com/factorial-io/fstack/compare/css/v0.6.6...css/v0.6.7) (2022-11-29)
 
 
