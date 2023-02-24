@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@squoosh/lib@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@squoosh/lib/-/lib-0.4.0.tgz#31d18cb082c69e404589e2e281414d10f91e1668"
-  integrity sha512-O1LyugWLZjMI4JZeZMA5vzfhfPjfMZXH5/HmVkRagP8B70wH3uoR7tjxfGNdSavey357MwL8YJDxbGwBBdHp7Q==
+"@squoosh/lib@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@squoosh/lib/-/lib-0.4.1.tgz#c0e30deb29dbe96728a581d2ace883c560496cc5"
+  integrity sha512-qAO4AXEpSnurikGFZwsG7DGi7QHBIaDpbumcDyUvJNOd652ksZSVXmFHwlEikc7hy0RQ9LczIURqfSDo/5oc5Q==
   dependencies:
     wasm-feature-detect "^1.2.11"
     web-streams-polyfill "^3.0.3"
@@ -50,11 +50,11 @@ supports-color@^7.1.0:
     has-flag "^4.0.0"
 
 wasm-feature-detect@^1.2.11:
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/wasm-feature-detect/-/wasm-feature-detect-1.2.11.tgz#e21992fd1f1d41a47490e392a5893cb39d81e29e"
-  integrity sha512-HUqwaodrQGaZgz1lZaNioIkog9tkeEJjrM3eq4aUL04whXOVDRc/o2EGb/8kV0QX411iAYWEqq7fMBmJ6dKS6w==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/wasm-feature-detect/-/wasm-feature-detect-1.5.1.tgz#0db57a7d7f8c26b743dde85386215ae2b135e78a"
+  integrity sha512-GHr23qmuehNXHY4902/hJ6EV5sUANIJC3R/yMfQ7hWDg3nfhlcJfnIL96R2ohpIwa62araN6aN4bLzzzq5GXkg==
 
 web-streams-polyfill@^3.0.3:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.0.tgz#a6b74026b38e4885869fb5c589e90b95ccfc7965"
-  integrity sha512-EqPmREeOzttaLRm5HS7io98goBgZ7IVz79aDvqjD0kYXLtFZTc0T/U6wHTPKyIjb+MdN7DFIIX6hgdBEpWmfPA==
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz#71c2718c52b45fd49dbeee88634b3a60ceab42a6"
+  integrity sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==
