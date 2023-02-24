@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/factorial-io/fstack/compare/vue/v0.2.8...vue/v0.3.0) (2023-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **javascript:** Shareable ESLint configs (#116)
+
+### Features
+
+* **javascript:** Shareable ESLint configs ([#116](https://github.com/factorial-io/fstack/issues/116)) ([7588a7f](https://github.com/factorial-io/fstack/commit/7588a7f4f5d5773a1ac382dc85f7b83179417cfc))
+
 ### [0.2.8](https://github.com/factorial-io/fstack/compare/vue/v0.2.7...vue/v0.2.8) (2022-11-29)
 
 ### [0.2.7](https://github.com/factorial-io/fstack/compare/vue/v0.2.6...vue/v0.2.7) (2022-10-04)
