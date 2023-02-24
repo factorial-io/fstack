@@ -27,15 +27,54 @@ module.exports = function writeFile(rootFolder, file, styles) {
   const shortPath = fullPath.replace(`${process.cwd()}/`, "");
 
   let string = "html {";
-  if (styles.colors.length > 0) string += `\n${getColors(styles.colors)}\n`;
-  if (styles.outlines.length > 0)
-    string += `\n${getOutlines(styles.outlines)}\n`;
-  if (styles.radii.length > 0) string += `\n${getRadii(styles.radii)}\n`;
-  if (styles.shadows.length > 0) string += `\n${getShadows(styles.shadows)}\n`;
-  if (styles.spacings.length > 0)
-    string += `\n${getSpacings(styles.spacings)}\n`;
-  if (styles.typography.length > 0)
-    string += `\n${getTypography(styles.typography)}\n`;
+  if (styles.colors.length > 0) {
+    string += `
+  /* Colors */
+
+${getColors(styles.colors)}
+`;
+  }
+
+  if (styles.outlines.length > 0) {
+    string += `
+  /* Outlines */
+
+${getOutlines(styles.outlines)}
+`;
+  }
+
+  if (styles.radii.length > 0) {
+    string += `
+  /* Radii */
+
+${getRadii(styles.radii)}
+`;
+  }
+
+  if (styles.shadows.length > 0) {
+    string += `
+  /* Shadows */
+
+${getShadows(styles.shadows)}
+`;
+  }
+
+  if (styles.spacings.length > 0) {
+    string += `
+  /* Spacings */
+
+${getSpacings(styles.spacings)}
+`;
+  }
+
+  if (styles.typography.length > 0) {
+    string += `
+  /* Typography */
+
+${getTypography(styles.typography)}
+`;
+  }
+
   string += "}\n";
 
   try {

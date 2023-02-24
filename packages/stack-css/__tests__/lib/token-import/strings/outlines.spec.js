@@ -16,6 +16,7 @@ describe("css/lib/token-import/strings/outlines", () => {
     ).toEqual(`  --outline-Primary-width: 0.1rem;
   --outline-Primary-style: solid;
   --outline-Primary-color: rgba(255, 0, 0, 1);
-  --outline-Primary: var(--outline-Primary-width) var(--outline-Primary-style) var(--outline-Primary-color);`);
+  --outline-Primary: var(--outline-Primary-width) var(--outline-Primary-style) var(--outline-Primary-color);
+`);
   });
 });

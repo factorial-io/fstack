@@ -18,6 +18,7 @@ describe("css/lib/token-import/strings/colors", () => {
   --color-Primary-g: 0;
   --color-Primary-b: 0;
   --color-Primary-a: 1;
-  --color-Primary: rgba(var(--color-Primary-r), var(--color-Primary-g), var(--color-Primary-b), var(--color-Primary-a));`);
+  --color-Primary: rgba(var(--color-Primary-r), var(--color-Primary-g), var(--color-Primary-b), var(--color-Primary-a));
+`);
   });
 });

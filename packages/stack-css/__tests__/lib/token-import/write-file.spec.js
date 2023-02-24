@@ -125,15 +125,27 @@ describe("css/lib/token-import/write-file", () => {
         expect(spy).toHaveBeenCalledWith(
           path.join(rootFolder, file),
           `html {
+  /* Colors */
+
 colors
+
+  /* Outlines */
 
 outlines
 
+  /* Radii */
+
 radii
+
+  /* Shadows */
 
 shadows
 
+  /* Spacings */
+
 spacings
+
+  /* Typography */
 
 typography
 }

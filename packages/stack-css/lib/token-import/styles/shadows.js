@@ -1,6 +1,6 @@
 const { getColor } = require("../converter");
 
-module.exports = function getShadows(layer) {
+module.exports = function getShadows(layer, rootFontSize) {
   const styles = [];
 
   if (layer && layer.children) {
@@ -12,16 +12,26 @@ module.exports = function getShadows(layer) {
           (stringifiedName.startsWith("outer-shadow-") ||
             stringifiedName.startsWith("inner-shadow-"))
         ) {
-          styles.push({
+          const data = {
             name: stringifiedName,
-            values: {
-              x: `${child.effects[0].offset.x / 10}rem`,
-              y: `${child.effects[0].offset.y / 10}rem`,
-              blur: `${child.effects[0].radius / 10}rem`,
-              color: getColor(child.effects[0].color),
-              inset: child.effects[0].type === "INNER_SHADOW",
-            },
+            values: [],
+          };
+
+          child.effects.reverse().forEach((effect) => {
+            if (effect.visible) {
+              data.values.push({
+                x: `${effect.offset.x / rootFontSize}rem`,
+                y: `${effect.offset.y / rootFontSize}rem`,
+                blur: `${effect.radius / rootFontSize}rem`,
+                spread: effect.spread
+                  ? `${effect.spread / rootFontSize}rem`
+                  : false,
+                color: getColor(effect.color),
+                inset: effect.type === "INNER_SHADOW",
+              });
+            }
           });
+          styles.push(data);
         }
       }
     });

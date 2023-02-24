@@ -14,13 +14,10 @@ module.exports = function getColors(colors) {
  * @returns {string}
  */
 function getColorsString(name, values) {
-  let str = "";
-
-  str += `  --color-${name}-r: ${values.r};\n`;
-  str += `  --color-${name}-g: ${values.g};\n`;
-  str += `  --color-${name}-b: ${values.b};\n`;
-  str += `  --color-${name}-a: ${values.a};\n`;
-  str += `  --color-${name}: rgba(var(--color-${name}-r), var(--color-${name}-g), var(--color-${name}-b), var(--color-${name}-a));`;
-
-  return str;
+  return `  --color-${name}-r: ${values.r};
+  --color-${name}-g: ${values.g};
+  --color-${name}-b: ${values.b};
+  --color-${name}-a: ${values.a};
+  --color-${name}: rgba(var(--color-${name}-r), var(--color-${name}-g), var(--color-${name}-b), var(--color-${name}-a));
+`;
 }

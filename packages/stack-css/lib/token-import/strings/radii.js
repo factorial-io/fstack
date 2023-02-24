@@ -14,13 +14,10 @@ module.exports = function getRadii(radii) {
  * @returns {string}
  */
 function getRadiiString(name, values) {
-  let str = "";
-
-  str += `  --${name}-top-left: ${values.topLeft};\n`;
-  str += `  --${name}-top-right: ${values.topRight};\n`;
-  str += `  --${name}-bottom-right: ${values.bottomRight};\n`;
-  str += `  --${name}-bottom-left: ${values.bottomLeft};\n`;
-  str += `  --${name}: var(--${name}-top-left) var(--${name}-top-right) var(--${name}-bottom-right) var(--${name}-bottom-left);`;
-
-  return str;
+  return `  --${name}-top-left: ${values.topLeft};
+  --${name}-top-right: ${values.topRight};
+  --${name}-bottom-right: ${values.bottomRight};
+  --${name}-bottom-left: ${values.bottomLeft};
+  --${name}: var(--${name}-top-left) var(--${name}-top-right) var(--${name}-bottom-right) var(--${name}-bottom-left);
+`;
 }

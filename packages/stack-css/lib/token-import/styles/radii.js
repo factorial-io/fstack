@@ -1,4 +1,4 @@
-module.exports = function getRadii(layer) {
+module.exports = function getRadii(layer, rootFontSize) {
   const styles = [];
 
   if (layer && layer.children) {
@@ -9,7 +9,7 @@ module.exports = function getRadii(layer) {
           !styles.find(({ name }) => name === stringifiedName) &&
           stringifiedName.startsWith("radius-")
         ) {
-          const remifiedValue = child.cornerRadius / 10;
+          const remifiedValue = child.cornerRadius / rootFontSize;
 
           styles.push({
             name: stringifiedName,

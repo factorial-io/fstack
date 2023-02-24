@@ -20,6 +20,7 @@ describe("css/lib/token-import/strings/typography", () => {
   --typo-Primary-font-size: font-size-value;
   --typo-Primary-line-height: line-height-value;
   --typo-Primary-font-family: font-family-value;
-  --typo-Primary: var(--typo-Primary-font-style) var(--typo-Primary-font-weight) var(--typo-Primary-font-size) / var(--typo-Primary-line-height) var(--typo-Primary-font-family);`);
+  --typo-Primary: var(--typo-Primary-font-style) var(--typo-Primary-font-weight) var(--typo-Primary-font-size) / var(--typo-Primary-line-height) var(--typo-Primary-font-family);
+`);
   });
 });

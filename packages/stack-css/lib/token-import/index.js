@@ -29,6 +29,7 @@ module.exports = async function createTokens({ rootFolder, cssTokens = {} }) {
         spacings: "spacings",
         typography: "typography",
       },
+      rootFontSize: 16,
     },
     cssTokens
   );
@@ -127,19 +128,24 @@ module.exports = async function createTokens({ rootFolder, cssTokens = {} }) {
   // To be able to do that, we need to pass the styles here.
   styles.outlines = getOutlines(
     artboard.children.find(({ name }) => name === config.layers.other),
+    config.rootFontSize,
     structure.styles
   );
   styles.radii = getRadii(
-    artboard.children.find(({ name }) => name === config.layers.other)
+    artboard.children.find(({ name }) => name === config.layers.other),
+    config.rootFontSize
   );
   styles.shadows = getShadows(
-    artboard.children.find(({ name }) => name === config.layers.other)
+    artboard.children.find(({ name }) => name === config.layers.other),
+    config.rootFontSize
   );
   styles.spacings = getSpacings(
-    artboard.children.find(({ name }) => name === config.layers.spacings)
+    artboard.children.find(({ name }) => name === config.layers.spacings),
+    config.rootFontSize
   );
   styles.typography = getTypography(
-    artboard.children.find(({ name }) => name === config.layers.typography)
+    artboard.children.find(({ name }) => name === config.layers.typography),
+    config.rootFontSize
   );
 
   return new Promise((resolve, reject) =>

@@ -65,6 +65,7 @@ describe("css/lib/token-import/styles/outlines", () => {
               },
             ],
           },
+          10,
           {
             ID_3: {
               name: "Stroke3",

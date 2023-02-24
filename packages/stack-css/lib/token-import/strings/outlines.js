@@ -14,12 +14,9 @@ module.exports = function getOutlines(outlines) {
  * @returns {string}
  */
 function getOutlinesString(name, values) {
-  let str = "";
-
-  str += `  --${name}-width: ${values.width};\n`;
-  str += `  --${name}-style: ${values.style};\n`;
-  str += `  --${name}-color: ${values.color};\n`;
-  str += `  --${name}: var(--${name}-width) var(--${name}-style) var(--${name}-color);`;
-
-  return str;
+  return `  --${name}-width: ${values.width};
+  --${name}-style: ${values.style};
+  --${name}-color: ${values.color};
+  --${name}: var(--${name}-width) var(--${name}-style) var(--${name}-color);
+`;
 }

@@ -1,4 +1,4 @@
-module.exports = function getSpacings(layer) {
+module.exports = function getSpacings(layer, rootFontSize) {
   const styles = [];
 
   if (layer && layer.children) {
@@ -9,7 +9,7 @@ module.exports = function getSpacings(layer) {
         if (!styles.find(({ name }) => name === stringifiedName)) {
           styles.push({
             name: stringifiedName,
-            value: `${child.absoluteBoundingBox.width / 10}rem`,
+            value: `${child.absoluteBoundingBox.width / rootFontSize}rem`,
           });
         }
       }

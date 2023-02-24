@@ -18,6 +18,7 @@ describe("css/lib/token-import/strings/radii", () => {
   --radius-Primary-top-right: 0.2rem;
   --radius-Primary-bottom-right: 0.3rem;
   --radius-Primary-bottom-left: 0.4rem;
-  --radius-Primary: var(--radius-Primary-top-left) var(--radius-Primary-top-right) var(--radius-Primary-bottom-right) var(--radius-Primary-bottom-left);`);
+  --radius-Primary: var(--radius-Primary-top-left) var(--radius-Primary-top-right) var(--radius-Primary-bottom-right) var(--radius-Primary-bottom-left);
+`);
   });
 });

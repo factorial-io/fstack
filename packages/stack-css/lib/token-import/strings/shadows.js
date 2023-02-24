@@ -14,19 +14,38 @@ module.exports = function getShadows(shadows) {
  * @returns {string}
  */
 function getShadowsString(name, values) {
-  let str = "";
+  if (values.length === 1) {
+    const [value] = values;
 
-  str += `  --${name}-x: ${values.x};\n`;
-  str += `  --${name}-y: ${values.y};\n`;
-  str += `  --${name}-blur: ${values.blur};\n`;
-  str += `  --${name}-color: ${values.color};\n`;
-  str += `  --${name}:`;
-
-  if (values.inset) {
-    str += " inset";
+    return `  --${name}-inset:${value.inset ? " inset" : ""};
+  --${name}-x: ${value.x};
+  --${name}-y: ${value.y};
+  --${name}-blur: ${value.blur};
+  --${name}-spread: ${value.spread || ""};
+  --${name}-color: ${value.color};
+  --${name}: var(--${name}-inset) var(--${name}-x) var(--${name}-y) var(--${name}-blur) var(--${name}-spread) var(--${name}-color);
+`;
   }
 
-  str += ` var(--${name}-x) var(--${name}-y) var(--${name}-blur) var(--${name}-color);`;
+  let string = "";
+  const combined = [];
 
-  return str;
+  values.forEach((value, i) => {
+    const index = i + 1;
+
+    string += `  --${name}-${index}-inset:${value.inset ? " inset" : ""};
+  --${name}-${index}-x: ${value.x};
+  --${name}-${index}-y: ${value.y};
+  --${name}-${index}-blur: ${value.blur};
+  --${name}-${index}-spread: ${value.spread || ""};
+  --${name}-${index}-color: ${value.color};
+  --${name}-${index}: var(--${name}-${index}-inset) var(--${name}-${index}-x) var(--${name}-${index}-y) var(--${name}-${index}-blur) var(--${name}-${index}-spread) var(--${name}-${index}-color);`;
+
+    if (i < values.length - 1) string += `\n`;
+
+    combined.push(`var(--${name}-${index})`);
+  });
+
+  return `${string}
+  --${name}: ${combined.join(", ")};\n`;
 }

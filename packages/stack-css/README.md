@@ -136,6 +136,7 @@ cssTokens: {
     spacings: "spacings",
     colors: "colors",
   },
+  rootFontSize: 16 // The tokens will use the rem unit, so in case you changed the font-size of the `html` element, you need set the pixel value here
 }
 ```
 

@@ -14,6 +14,7 @@ describe("css/lib/token-import/strings/spacings", () => {
         },
       ])
     ).toEqual(`  --spacing-1: 1rem;
-  --spacing-2: 2rem;`);
+  --spacing-2: 2rem;
+`);
   });
 });

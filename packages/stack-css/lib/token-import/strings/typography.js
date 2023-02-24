@@ -14,20 +14,13 @@ module.exports = function getTypography(typography) {
  * @returns {string}
  */
 function getTypographyString(name, values) {
-  let str = "";
-
-  str += `  --typo-${name}-font-style: ${values.fontStyle};\n`;
-  str += `  --typo-${name}-font-weight: ${values.fontWeight};\n`;
-  str += `  --typo-${name}-font-size: ${values.fontSize};\n`;
-  str += `  --typo-${name}-line-height: ${values.lineHeight};\n`;
-  str += `  --typo-${name}-font-family: ${values.fontFamily};\n`;
-  str += `  --typo-${name}:`;
-
-  if (values.fontStyle !== "none") {
-    str += ` var(--typo-${name}-font-style)`;
-  }
-
-  str += ` var(--typo-${name}-font-weight) var(--typo-${name}-font-size) / var(--typo-${name}-line-height) var(--typo-${name}-font-family);`;
-
-  return str;
+  return `  --typo-${name}-font-style: ${
+    values.fontStyle === "none" ? "normal" : values.fontStyle
+  };
+  --typo-${name}-font-weight: ${values.fontWeight};
+  --typo-${name}-font-size: ${values.fontSize};
+  --typo-${name}-line-height: ${values.lineHeight};
+  --typo-${name}-font-family: ${values.fontFamily};
+  --typo-${name}: var(--typo-${name}-font-style) var(--typo-${name}-font-weight) var(--typo-${name}-font-size) / var(--typo-${name}-line-height) var(--typo-${name}-font-family);
+`;
 }

@@ -1,6 +1,6 @@
 const { getColor } = require("../converter");
 
-module.exports = function getOutlines(layer, figmaStyles) {
+module.exports = function getOutlines(layer, rootFontSize, figmaStyles) {
   const styles = [];
 
   if (layer && layer.children) {
@@ -25,7 +25,7 @@ module.exports = function getOutlines(layer, figmaStyles) {
           styles.push({
             name: stringifiedName,
             values: {
-              width: `${child.strokeWeight / 10}rem`,
+              width: `${child.strokeWeight / rootFontSize}rem`,
               style: child.strokes[0].type.toLowerCase(),
               color,
             },

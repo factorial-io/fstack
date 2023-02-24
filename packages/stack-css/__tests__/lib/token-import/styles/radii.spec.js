@@ -4,23 +4,26 @@ describe("css/lib/token-import/styles/radii", () => {
       const radii = require("../../../../lib/token-import/styles/radii");
 
       expect(
-        radii({
-          children: [
-            {
-              type: "RECTANGLE",
-              name: "radius-3",
-              cornerRadius: 5,
-            },
-            // This is an unlikely use case, but for whatever reason
-            // there might be two nodes with the same name.
-            // If that is the case, the second one should be ignored.
-            {
-              type: "RECTANGLE",
-              name: "radius-3",
-              cornerRadius: 5,
-            },
-          ],
-        })
+        radii(
+          {
+            children: [
+              {
+                type: "RECTANGLE",
+                name: "radius-3",
+                cornerRadius: 5,
+              },
+              // This is an unlikely use case, but for whatever reason
+              // there might be two nodes with the same name.
+              // If that is the case, the second one should be ignored.
+              {
+                type: "RECTANGLE",
+                name: "radius-3",
+                cornerRadius: 5,
+              },
+            ],
+          },
+          10
+        )
       ).toEqual([
         {
           name: "radius-3",
