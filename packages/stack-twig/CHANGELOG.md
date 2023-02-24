@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/factorial-io/fstack/compare/twig/v0.2.8...twig/v0.2.9) (2023-02-24)
+
+
+### Bug Fixes
+
+* upgrade @factorial/stack-core from 0.4.1 to 0.4.2 ([5c16327](https://github.com/factorial-io/fstack/commit/5c163273559b426febf86a9980ab68f6dedd96f4))
+
 ### [0.2.8](https://github.com/factorial-io/fstack/compare/twig/v0.2.7...twig/v0.2.8) (2022-05-03)
 
 
