@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.1](https://github.com/factorial-io/fstack/compare/javascript/v0.8.0...javascript/v0.8.1) (2023-02-27)
+
+
+### Bug Fixes
+
+* **javascript:** Use require.resolve for shareable ESLint config ([d346d2b](https://github.com/factorial-io/fstack/commit/d346d2b9fc69daf978dced68807c66606da1c181))
+
 ## [0.8.0](https://github.com/factorial-io/fstack/compare/javascript/v0.7.0...javascript/v0.8.0) (2023-02-24)
 
 
