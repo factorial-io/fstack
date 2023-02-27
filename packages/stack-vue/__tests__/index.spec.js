@@ -16,8 +16,8 @@ describe("vue/index", () => {
           content: `module.exports = {
   root: true,
   extends: [
-    "@factorial/stack-javascript/eslint",
-    "@factorial/stack-vue/eslint/v3",
+    require.resolve("@factorial/stack-javascript/eslint"),
+    require.resolve("@factorial/stack-vue/eslint/v3"),
   ],
 };
 `,
