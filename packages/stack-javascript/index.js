@@ -14,7 +14,7 @@ module.exports = {
       content: `module.exports = {
   root: true,
   extends: [
-    "@factorial/stack-javascript/eslint",
+    require.resolve("@factorial/stack-javascript/eslint"),
   ],
 };
 `,
