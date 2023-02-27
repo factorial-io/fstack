@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/factorial-io/fstack/compare/vue/v0.3.0...vue/v0.3.1) (2023-02-27)
+
+
+### Bug Fixes
+
+* **vue:** Use require.resolve for shareable ESLint config ([7ee06b1](https://github.com/factorial-io/fstack/commit/7ee06b1cd96f670aa0e97cf4d989bf4784129024))
+
 ## [0.3.0](https://github.com/factorial-io/fstack/compare/vue/v0.2.8...vue/v0.3.0) (2023-02-24)
 
 
